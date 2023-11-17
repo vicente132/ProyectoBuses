@@ -15,7 +15,7 @@ public class VentanaPrincipal extends JFrame{
         this.setTitle("Ventana Principal");
         this.setContentPane(fondo);
         fondo.setIcon(imagenfondo);
-        fondo.setLayout(new BorderLayout());
+        fondo.setLayout(null);
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,720);
@@ -23,8 +23,8 @@ public class VentanaPrincipal extends JFrame{
 
 
         JButton planificar=new JButton("Planificar");
-        planificar.setPreferredSize(new Dimension(100,100));
-        fondo.add(planificar,BorderLayout.CENTER);
+        planificar.setBounds(100,120,200,100);
+        fondo.add(planificar);
         planificar.addMouseListener(new EscucharMouse() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -33,6 +33,7 @@ public class VentanaPrincipal extends JFrame{
                 ventanaplanificar.setVisible(true);
             }
         });
+
 
 
 
