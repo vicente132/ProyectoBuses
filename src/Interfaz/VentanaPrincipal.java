@@ -18,7 +18,8 @@ public class VentanaPrincipal extends JFrame{
         fondo.setIcon(imagenfondo);
         fondo.setLayout(new BorderLayout());
 
-        
+
+        this.setResizable(false);
         this.setContentPane(fondo);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,720);
