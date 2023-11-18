@@ -10,14 +10,21 @@ public class VentanaPlanificar extends JFrame{
 
     public VentanaPlanificar(){
         super();
-        this.setLayout(new BorderLayout());
         this.setTitle("Ventana Principal");
-        this.getContentPane().setBackground(Color.white);
-
-        this.setResizable(false);
         this.setContentPane(fondo);
+        fondo.setIcon(imagenfondo);
+        fondo.setLayout(null);
+        this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,720);
         this.setVisible(true);
+
+
+        JButton volver=new JButton("volver");
+        volver.setBounds(10,10,50,50);
+        fondo.add(volver);
+
+        
+
     }
 }
