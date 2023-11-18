@@ -10,6 +10,7 @@ public class VentanaPrincipal extends JFrame{
     private Icon imagenfondo=new ImageIcon("imagenes/Fondo.png");
 
 
+
     public VentanaPrincipal(){
         super();
         this.setTitle("Ventana Principal");
@@ -28,9 +29,11 @@ public class VentanaPrincipal extends JFrame{
         planificar.addMouseListener(new EscucharMouse() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                dispose();
                 super.mouseClicked(e);
                 VentanaPlanificar ventanaplanificar=new VentanaPlanificar();
                 ventanaplanificar.setVisible(true);
+
             }
         });
 
