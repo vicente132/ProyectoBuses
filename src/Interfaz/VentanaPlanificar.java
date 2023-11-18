@@ -21,10 +21,28 @@ public class VentanaPlanificar extends JFrame{
 
 
         JButton volver=new JButton("volver");
-        volver.setBounds(10,10,50,50);
+        volver.setBounds(10,10,100,50);
         fondo.add(volver);
+        volver.addMouseListener(new EscucharMouse() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                dispose();
+                VentanaPrincipal ventanaPrincipal=new VentanaPrincipal();
+                ventanaPrincipal.setVisible(true);
+            }
 
-        
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                volver.setBounds(10,10,110,55);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                volver.setBounds(10,10,100,50);
+            }
+        });
+
 
     }
 }
