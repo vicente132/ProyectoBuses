@@ -7,7 +7,7 @@ import javax.swing.*;
 public class VentanaPrincipal extends JFrame{
 
     JLabel fondo=new JLabel();
-    private Icon imagenfondo=new ImageIcon("C:/Users/user/Documents/GitHub/ProyectoBuses/imagenes/Fondo.png");
+    private Icon imagenfondo=new ImageIcon("imagenes/Fondo.png");
 
 
     public VentanaPrincipal(){
