@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class VentanaPlanificar extends JFrame{
     JLabel fondo=new JLabel();
-    private Icon imagenfondo=new ImageIcon("C:/Users/user/Documents/GitHub/ProyectoBuses/imagenes/Fondo.png");
+    private Icon imagenfondo=new ImageIcon("imagenes/FondoDatos1.png");
 
     public VentanaPlanificar(){
         super();
