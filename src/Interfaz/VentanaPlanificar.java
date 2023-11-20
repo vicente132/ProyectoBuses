@@ -42,14 +42,14 @@ public class VentanaPlanificar extends JFrame{
         fechavuelta.setVisible(false);
 
         ButtonGroup idavuelta=new ButtonGroup();
-        JCheckBox ida=new JCheckBox("Viaje solo ida");
+        JCheckBox soloida=new JCheckBox("Viaje solo ida");
         JCheckBox idayvuelta=new JCheckBox("Viaje ida y vuelta");
-        idavuelta.add(ida);
+        idavuelta.add(soloida);
         idavuelta.add(idayvuelta);
 
-        ida.setBounds(220,10,100,20);
+        soloida.setBounds(220,10,100,20);
         idayvuelta.setBounds(220,40,150,20);
-        fondo.add(ida);
+        fondo.add(soloida);
         fondo.add(idayvuelta);
 
         idayvuelta.addActionListener(new ActionListener() {
@@ -60,7 +60,7 @@ public class VentanaPlanificar extends JFrame{
                 }
             }
         });
-        ida.addActionListener(new ActionListener() {
+        soloida.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(ida.isSelected()){
