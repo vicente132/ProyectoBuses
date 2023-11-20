@@ -104,6 +104,8 @@ public class VentanaPlanificar extends JFrame{
 
 
         BotonVolver volver=new BotonVolver(fondo,this);
+        BotonSig siguiente=new BotonSig(fondo,this,cliente);
+
 
 
 
