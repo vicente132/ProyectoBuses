@@ -26,20 +26,23 @@ public class VentanaPlanificar extends Ventana{
         JTextField seleccionorigen=new JTextField();
         seleccionorigen.setBounds(80,340,100,20);
         fondo.add(seleccionorigen);
+        seleccionorigen.setEditable(false);
 
         JTextField selecciondestino=new JTextField();
         selecciondestino.setBounds(80,420,100,20);
         fondo.add(selecciondestino);
-
+        selecciondestino.setEditable(false);
 
         JTextField fechaida=new JTextField();
         fechaida.setBounds(540,340,100,20);
         fondo.add(fechaida);
+        fechaida.setEditable(false);
 
         JTextField fechavuelta=new JTextField();
         fechavuelta.setBounds(540,420,100,20);
         fondo.add(fechavuelta);
         fechavuelta.setVisible(false);
+        fechavuelta.setEditable(false);
 
         ButtonGroup idavuelta=new ButtonGroup();
         JCheckBox soloida=new JCheckBox("Viaje solo ida");
