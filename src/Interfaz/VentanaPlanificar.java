@@ -63,8 +63,9 @@ public class VentanaPlanificar extends JFrame{
         soloida.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(ida.isSelected()){
+                if(soloida.isSelected()){
                     fechavuelta.setVisible(false);
+                    fechavuelta.setText(" ");
                 }
             }
         });
