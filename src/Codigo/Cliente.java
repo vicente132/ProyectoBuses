@@ -7,6 +7,12 @@ public class Cliente {
     private String origen;
     private String destino;
 
+    public String getOrigen(){
+        return origen;
+    };
+    public String getDestino(){
+        return destino;
+    };
     public void setRut(int rut) {
         this.rut = rut;
     }

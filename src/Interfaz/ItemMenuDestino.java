@@ -19,6 +19,7 @@ public class ItemMenuDestino {
             public void actionPerformed(ActionEvent e) {
                 seleccion.setText(opcion.getText());
                 cliente.setDestino(opcion.getText());
+
             }
         });
     }
