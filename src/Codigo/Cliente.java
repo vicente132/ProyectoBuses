@@ -22,5 +22,5 @@ public class Cliente {
     public void setDestino(String destino) {
         this.destino = destino;
     }
-    public void setOrigen(String origen){this.origen=destino;}
+    public void setOrigen(String origen){this.origen=origen;}
 }
