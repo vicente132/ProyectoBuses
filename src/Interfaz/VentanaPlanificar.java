@@ -1,6 +1,7 @@
 package Interfaz;
 import Codigo.*;
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.event.MouseEvent;
 import java.awt.*;
 
@@ -29,21 +30,27 @@ public class VentanaPlanificar extends JFrame{
         fondo.add(ida);
         fondo.add(idavyvuelta);
 
+        JMenuBar barraorigen=new JMenuBar();
+        barraorigen.setBounds(10,140,50,60);
+        fondo.add(barraorigen);
+        JMenu opcionesorigen=new JMenu("Origen");
+        opcionesorigen.add("Santiago");
+        opcionesorigen.add("Concepcion");
+        opcionesorigen.add("Los Angeles");
+        barraorigen.add(opcionesorigen);
+
+        JMenuBar barradestino=new JMenuBar();
+        barradestino.setBounds(120,140,50,60);
+        fondo.add(barradestino);
+        JMenu opcionesdestino=new JMenu("Destino");
+        opcionesdestino.add("Santiago");
+        opcionesdestino.add("Concepcion");
+        opcionesdestino.add("Los Angeles");
+        barradestino.add(opcionesdestino);
 
 
-        JButton volver=new JButton("volver");
-        volver.setBounds(10,10,200,100);
-        volver.setIcon(imagenbotonvolver);
-        fondo.add(volver);
-        volver.addMouseListener(new EscucharMouse() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                dispose();
-                VentanaPrincipal ventanaPrincipal=new VentanaPrincipal();
-                ventanaPrincipal.setVisible(true);
-            }
-        });
+        BotonVolver volver=new BotonVolver(fondo);
+
 
 
     }

@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class VentanaPrincipal extends JFrame{
 
-
+    Cliente cliente=new Cliente();
     JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/Fondo.png");
     private Icon imagenbotonplanificar=new ImageIcon("imagenes/ImagenBotonPlanificar.png");
