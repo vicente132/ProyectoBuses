@@ -24,10 +24,12 @@ public class VentanaPlanificar extends JFrame{
         JCheckBox idavyvuelta=new JCheckBox("Viaje ida y vuelta");
         idavuelta.add(ida);
         idavuelta.add(idavyvuelta);
-        ida.setBounds(50,60,200,100);
-        idavyvuelta.setBounds(50,120,100,20);
+        ida.setBounds(220,10,100,20);
+        idavyvuelta.setBounds(220,40,100,20);
         fondo.add(ida);
         fondo.add(idavyvuelta);
+
+
 
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
