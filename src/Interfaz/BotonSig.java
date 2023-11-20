@@ -8,7 +8,7 @@ import java.awt.event.MouseEvent;
 public class BotonSig {
     public BotonSig(JLabel fondo, Ventana ventana, Cliente cliente){
         JButton siguiente=new JButton("siguiente");
-        siguiente.setBounds(500,500,200,100);
+        siguiente.setBounds(700,500,200,100);
         fondo.add(siguiente);
         siguiente.addMouseListener(new EscucharMouse() {
             @Override

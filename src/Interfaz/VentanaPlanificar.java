@@ -24,20 +24,20 @@ public class VentanaPlanificar extends Ventana{
         this.setVisible(true);
 
         JTextField seleccionorigen=new JTextField();
-        seleccionorigen.setBounds(10,500,100,20);
+        seleccionorigen.setBounds(80,340,100,20);
         fondo.add(seleccionorigen);
 
         JTextField selecciondestino=new JTextField();
-        selecciondestino.setBounds(10,530,100,20);
+        selecciondestino.setBounds(80,420,100,20);
         fondo.add(selecciondestino);
 
 
         JTextField fechaida=new JTextField();
-        fechaida.setBounds(10,400,100,20);
+        fechaida.setBounds(540,340,100,20);
         fondo.add(fechaida);
 
         JTextField fechavuelta=new JTextField();
-        fechavuelta.setBounds(10,430,100,20);
+        fechavuelta.setBounds(540,420,100,20);
         fondo.add(fechavuelta);
         fechavuelta.setVisible(false);
 
@@ -47,8 +47,8 @@ public class VentanaPlanificar extends Ventana{
         idavuelta.add(soloida);
         idavuelta.add(idayvuelta);
 
-        soloida.setBounds(220,10,100,20);
-        idayvuelta.setBounds(220,40,150,20);
+        soloida.setBounds(260,80,120,20);
+        idayvuelta.setBounds(400,80,140,20);
         fondo.add(soloida);
         fondo.add(idayvuelta);
 
@@ -84,7 +84,7 @@ public class VentanaPlanificar extends Ventana{
 
 
         JMenuBar barraorigen=new JMenuBar();
-        barraorigen.setBounds(10,140,50,60);
+        barraorigen.setBounds(10,320,50,60);
         fondo.add(barraorigen);
         JMenu opcionesorigen=new JMenu("Origen");
         opcionesorigen.add(opcion1.getItem());
@@ -94,7 +94,7 @@ public class VentanaPlanificar extends Ventana{
 
 
         JMenuBar barradestino=new JMenuBar();
-        barradestino.setBounds(120,140,50,60);
+        barradestino.setBounds(10,400,50,60);
         fondo.add(barradestino);
         JMenu opcionesdestino=new JMenu("Destino");
         opcionesdestino.add(opcion4.getItem());
