@@ -10,7 +10,7 @@ import java.awt.*;
 public class VentanaPlanificar extends JFrame{
     JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/FondoDatos1.png");
-    private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
+
     public VentanaPlanificar(){
         super();
         this.setTitle("Ventana Principal");
@@ -79,6 +79,7 @@ public class VentanaPlanificar extends JFrame{
             }
         });
 
+
         JMenuBar barraorigen=new JMenuBar();
         barraorigen.setBounds(10,140,50,60);
         fondo.add(barraorigen);
@@ -99,9 +100,7 @@ public class VentanaPlanificar extends JFrame{
         barradestino.add(opcionesdestino);
 
 
-
-
-        BotonVolver volver=new BotonVolver(fondo);
+        BotonVolver volver=new BotonVolver(fondo,this);
 
 
 
