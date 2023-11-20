@@ -23,8 +23,12 @@ public class VentanaPlanificar extends JFrame{
         this.setVisible(true);
 
         JTextField seleccionorigen=new JTextField();
-        seleccionorigen.setBounds(500,500,100,100);
+        seleccionorigen.setBounds(10,500,100,20);
         fondo.add(seleccionorigen);
+
+        JTextField selecciondestino=new JTextField();
+        selecciondestino.setBounds(10,530,100,20);
+        fondo.add(selecciondestino);
 
         ButtonGroup idavuelta=new ButtonGroup();
         JCheckBox ida=new JCheckBox("Viaje solo ida");
@@ -36,57 +40,22 @@ public class VentanaPlanificar extends JFrame{
         fondo.add(ida);
         fondo.add(idavyvuelta);
 
-        JMenuItem opcion1=new JMenuItem("Santiago");
-        JMenuItem opcion2=new JMenuItem("Concepcion");
-        JMenuItem opcion3=new JMenuItem("Los Angeles");
-        JMenuItem opcion4=new JMenuItem("Santiago");
-        JMenuItem opcion5=new JMenuItem("Concepcion");
-        JMenuItem opcion6=new JMenuItem("Los Angeles");
-        opcion1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                seleccionorigen.setText(opcion1.getText());
-            }
-        });
-        opcion2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                seleccionorigen.setText(opcion2.getText());
-            }
-        });
-        opcion3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                seleccionorigen.setText(opcion3.getText());
-            }
-        });
-        opcion4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                seleccionorigen.setText(opcion4.getText());
-            }
-        });
-        opcion5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                seleccionorigen.setText(opcion5.getText());
-            }
-        });
-        opcion6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                seleccionorigen.setText(opcion6.getText());
-            }
-        });
+        ItemMenu opcion1=new ItemMenu("Santiago",seleccionorigen);
+        ItemMenu opcion2=new ItemMenu("Concepcion",seleccionorigen);
+        ItemMenu opcion3=new ItemMenu("Los Angeles",seleccionorigen);
+        ItemMenu opcion4=new ItemMenu("Santiago",selecciondestino);
+        ItemMenu opcion5=new ItemMenu("Concepcion",selecciondestino);
+        ItemMenu opcion6=new ItemMenu("Los Angeles",selecciondestino);
+
 
 
         JMenuBar barraorigen=new JMenuBar();
         barraorigen.setBounds(10,140,50,60);
         fondo.add(barraorigen);
         JMenu opcionesorigen=new JMenu("Origen");
-        opcionesorigen.add(opcion1);
-        opcionesorigen.add(opcion2);
-        opcionesorigen.add(opcion3);
+        opcionesorigen.add(opcion1.getItem());
+        opcionesorigen.add(opcion2.getItem());
+        opcionesorigen.add(opcion3.getItem());
         barraorigen.add(opcionesorigen);
 
 
@@ -94,9 +63,9 @@ public class VentanaPlanificar extends JFrame{
         barradestino.setBounds(120,140,50,60);
         fondo.add(barradestino);
         JMenu opcionesdestino=new JMenu("Destino");
-        opcionesdestino.add(opcion4);
-        opcionesdestino.add(opcion5);
-        opcionesdestino.add(opcion6);
+        opcionesdestino.add(opcion4.getItem());
+        opcionesdestino.add(opcion5.getItem());
+        opcionesdestino.add(opcion6.getItem());
         barradestino.add(opcionesdestino);
 
 
