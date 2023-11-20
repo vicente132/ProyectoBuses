@@ -8,7 +8,7 @@ public class VentanaPrincipal extends JFrame{
 
     JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/Fondo.png");
-
+    private Icon imagenbotonplanificar=new ImageIcon("imagenes/ImagenBotonPlanificar.png");
 
 
     public VentanaPrincipal(){
@@ -25,6 +25,7 @@ public class VentanaPrincipal extends JFrame{
 
         JButton planificar=new JButton("Planificar");
         planificar.setBounds(100,120,200,100);
+        planificar.setIcon(imagenbotonplanificar);
         fondo.add(planificar);
         planificar.addMouseListener(new EscucharMouse() {
             @Override
