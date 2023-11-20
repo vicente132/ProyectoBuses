@@ -3,11 +3,13 @@ package Interfaz;
 import Codigo.Cliente;
 
 import javax.swing.*;
+import java.awt.event.MouseEvent;
 
-public class VentanaBuses extends JFrame {
+public class VentanaBuses extends Ventana {
     private Cliente cliente;
     JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/FondoDatos1.png");
+    private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
 
     public VentanaBuses(Cliente cliente){
         super();
@@ -19,6 +21,21 @@ public class VentanaBuses extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,720);
         this.setVisible(true);
+
+        JButton volver=new JButton("volver");
+        volver.setBounds(10,10,200,100);
+        volver.setIcon(imagenbotonvolver);
+        fondo.add(volver);
+        volver.addMouseListener(new EscucharMouse() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+
+                VentanaPlanificar ventanaPlanificar=new VentanaPlanificar(cliente);
+                ventanaPlanificar.setVisible(true);
+                dispose();
+            }
+        });
     }
 
 }

@@ -1,10 +1,10 @@
 package Interfaz;
 import Codigo.*;
-import java.awt.*;
+
 import java.awt.event.MouseEvent;
 import javax.swing.*;
 
-public class VentanaPrincipal extends JFrame{
+public class VentanaPrincipal extends Ventana{
 
     Cliente cliente=new Cliente();
     JLabel fondo=new JLabel();

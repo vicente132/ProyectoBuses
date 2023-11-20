@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class BotonVolver{
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
-    public BotonVolver(JLabel fondo,VentanaPlanificar ventana){
+    public BotonVolver(JLabel fondo,Ventana ventana){
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
         volver.setIcon(imagenbotonvolver);
