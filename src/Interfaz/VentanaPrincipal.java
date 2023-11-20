@@ -24,7 +24,7 @@ public class VentanaPrincipal extends JFrame{
         this.setVisible(true);
 
 
-        
+
 
         JButton planificar=new JButton("Planificar");
         planificar.setBounds(100,120,200,100);

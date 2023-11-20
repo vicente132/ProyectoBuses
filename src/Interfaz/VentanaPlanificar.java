@@ -1,6 +1,10 @@
 package Interfaz;
 import Codigo.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 public class VentanaPlanificar extends JFrame{
     private Cliente cliente;
@@ -27,15 +31,46 @@ public class VentanaPlanificar extends JFrame{
         selecciondestino.setBounds(10,530,100,20);
         fondo.add(selecciondestino);
 
+
+        JTextField fechaida=new JTextField();
+        fechaida.setBounds(10,400,100,20);
+        fondo.add(fechaida);
+
+        JTextField fechavuelta=new JTextField();
+        fechavuelta.setBounds(10,430,100,20);
+        fondo.add(fechavuelta);
+        fechavuelta.setVisible(false);
+
         ButtonGroup idavuelta=new ButtonGroup();
         JCheckBox ida=new JCheckBox("Viaje solo ida");
-        JCheckBox idavyvuelta=new JCheckBox("Viaje ida y vuelta");
+        JCheckBox idayvuelta=new JCheckBox("Viaje ida y vuelta");
         idavuelta.add(ida);
-        idavuelta.add(idavyvuelta);
+        idavuelta.add(idayvuelta);
+
         ida.setBounds(220,10,100,20);
-        idavyvuelta.setBounds(220,40,100,20);
+        idayvuelta.setBounds(220,40,150,20);
         fondo.add(ida);
-        fondo.add(idavyvuelta);
+        fondo.add(idayvuelta);
+
+        idayvuelta.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(idayvuelta.isSelected()){
+                    fechavuelta.setVisible(true);
+                }
+            }
+        });
+        ida.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(ida.isSelected()){
+                    fechavuelta.setVisible(false);
+                }
+            }
+        });
+
+
+
 
         ItemMenuOrigen opcion1=new ItemMenuOrigen("Santiago",seleccionorigen,cliente);
         ItemMenuOrigen opcion2=new ItemMenuOrigen("Concepcion",seleccionorigen,cliente);
