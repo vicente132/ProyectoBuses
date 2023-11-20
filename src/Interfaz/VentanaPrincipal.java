@@ -33,7 +33,7 @@ public class VentanaPrincipal extends JFrame{
             public void mouseClicked(MouseEvent e) {
                 dispose();
                 super.mouseClicked(e);
-                VentanaPlanificar ventanaplanificar=new VentanaPlanificar();
+                VentanaPlanificar ventanaplanificar=new VentanaPlanificar(cliente);
                 ventanaplanificar.setVisible(true);
 
             }

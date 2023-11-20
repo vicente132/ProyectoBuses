@@ -1,18 +1,15 @@
 package Interfaz;
 import Codigo.*;
 import javax.swing.*;
-import javax.swing.border.Border;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.*;
 
 public class VentanaPlanificar extends JFrame{
+    private Cliente cliente;
     JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/FondoDatos1.png");
 
-    public VentanaPlanificar(){
+    public VentanaPlanificar(Cliente cliente){
         super();
+        this.cliente=cliente;
         this.setTitle("Ventana Principal");
         this.setContentPane(fondo);
         fondo.setIcon(imagenfondo);
@@ -40,12 +37,13 @@ public class VentanaPlanificar extends JFrame{
         fondo.add(ida);
         fondo.add(idavyvuelta);
 
-        ItemMenu opcion1=new ItemMenu("Santiago",seleccionorigen);
-        ItemMenu opcion2=new ItemMenu("Concepcion",seleccionorigen);
-        ItemMenu opcion3=new ItemMenu("Los Angeles",seleccionorigen);
-        ItemMenu opcion4=new ItemMenu("Santiago",selecciondestino);
-        ItemMenu opcion5=new ItemMenu("Concepcion",selecciondestino);
-        ItemMenu opcion6=new ItemMenu("Los Angeles",selecciondestino);
+        ItemMenuOrigen opcion1=new ItemMenuOrigen("Santiago",seleccionorigen,cliente);
+        ItemMenuOrigen opcion2=new ItemMenuOrigen("Concepcion",seleccionorigen,cliente);
+        ItemMenuOrigen opcion3=new ItemMenuOrigen("Los Angeles",seleccionorigen,cliente);
+
+        ItemMenuDestino opcion4=new ItemMenuDestino("Santiago",selecciondestino,cliente);
+        ItemMenuDestino opcion5=new ItemMenuDestino("Concepcion",selecciondestino,cliente);
+        ItemMenuDestino opcion6=new ItemMenuDestino("Los Angeles",selecciondestino,cliente);
 
 
 
