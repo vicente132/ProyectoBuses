@@ -1,8 +1,9 @@
 package Codigo;
 
-public class Bus {
+abstract public class Bus {
     int serie;
-    public Bus(int serie){
+    int horasalida;
+    public Bus(int serie,int horasalida){
 
     }
 

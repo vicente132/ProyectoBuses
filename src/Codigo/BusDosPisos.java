@@ -1,8 +1,11 @@
 package Codigo;
 
 public class BusDosPisos extends Bus{
-    public BusDosPisos(int serie){
-        super(serie);
+    int serie;
+    int horasalida;
+    public BusDosPisos(int serie, int horasalida){
+        super(serie, horasalida);
         this.serie=serie;
     }
+
 }

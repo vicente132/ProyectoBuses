@@ -1,9 +1,12 @@
 package Interfaz;
 
+import Codigo.BusDosPisos;
 import Codigo.Cliente;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
+import java.util.Random;
+
 
 public class VentanaBuses extends Ventana {
     private Cliente cliente;
@@ -21,6 +24,16 @@ public class VentanaBuses extends Ventana {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,720);
         this.setVisible(true);
+
+        Random numerodebuses=new Random();
+        for (int i=0;i<2+numerodebuses.nextInt(3);i++){
+            int horasalida =8+numerodebuses.nextInt(15);
+            BusDosPisos bus=new BusDosPisos(i,horasalida);
+            System.out.println(bus.getSerie());
+        }
+
+
+
 
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
