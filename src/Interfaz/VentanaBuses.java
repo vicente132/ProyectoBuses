@@ -2,6 +2,7 @@ package Interfaz;
 
 import Codigo.BusDosPisos;
 import Codigo.Cliente;
+import Codigo.DepositoBuses;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
@@ -9,6 +10,7 @@ import java.util.Random;
 
 
 public class VentanaBuses extends Ventana {
+    private DepositoBuses deposito;
     private Cliente cliente;
     JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/FondoDatos1.png");
@@ -16,6 +18,7 @@ public class VentanaBuses extends Ventana {
 
     public VentanaBuses(Cliente cliente){
         super();
+        deposito=new DepositoBuses();
         this.cliente=cliente;
         this.setTitle("Horario Buses");
         this.setContentPane(fondo);
@@ -26,10 +29,14 @@ public class VentanaBuses extends Ventana {
         this.setVisible(true);
 
         Random numerodebuses=new Random();
-        for (int i=0;i<2+numerodebuses.nextInt(3);i++){
+        for (int i=0;i<2+numerodebuses.nextInt(6);i++){
             int horasalida =8+numerodebuses.nextInt(15);
             BusDosPisos bus=new BusDosPisos(i,horasalida);
-            System.out.println(bus.getSerie());
+            deposito.addBusdospisos(bus);
+        }
+
+        for(int i=0;i<deposito.getsizebusesdospisos();i++){
+            System.out.println(deposito.getbusdospisos(i).getSerie());
         }
 
 
