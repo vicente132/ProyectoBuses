@@ -11,4 +11,7 @@ abstract public class Bus {
     public int getSerie() {
         return serie;
     }
+    public int getHorasalida(){
+        return horasalida;
+    }
 }

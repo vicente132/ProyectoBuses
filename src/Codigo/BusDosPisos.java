@@ -1,13 +1,12 @@
 package Codigo;
 
-import java.awt.*;
-
 public class BusDosPisos extends Bus{
     int serie;
     int horasalida;
     public BusDosPisos(int serie, int horasalida){
         super(serie, horasalida);
         this.serie=serie;
+        this.horasalida=horasalida;
     }
     
 }
