@@ -8,4 +8,9 @@ public class BusUnPiso extends Bus{
         this.serie=serie;
         this.horasalida=horasalida;
     }
+
+    @Override
+    String tipo() {
+        return "Bus de un piso";
+    }
 }

@@ -30,7 +30,8 @@ public class VentanaBuses extends Ventana {
 
         deposito.llenardospisos();
         deposito.llenarunpiso();
-        deposito.horas();
+        deposito.horas1piso();
+        deposito.horas2piso();
 
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);

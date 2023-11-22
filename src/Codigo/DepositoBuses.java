@@ -40,12 +40,16 @@ public class DepositoBuses {
         }
     }
 
-    public void horas(){
+    public void horas1piso(){
         for(int i=0;i<busesunpiso.size();i++){
-            System.out.println(busesunpiso.get(i).getHorasalida());
+            System.out.println(busesunpiso.get(i).getHorasalida()+busesunpiso.get(i).tipo());
         }
+
+    }
+
+    public void horas2piso(){
         for(int i=0;i<busesdospisos.size();i++){
-            System.out.println(busesdospisos.get(i).getHorasalida());
+            System.out.println(busesdospisos.get(i).getHorasalida()+busesdospisos.get(i).tipo());
         }
     }
 
