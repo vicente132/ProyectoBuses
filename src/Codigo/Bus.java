@@ -12,6 +12,8 @@ abstract public class Bus {
         this.horasalida=horasalida;
         asientos=new DepositoAsientos();
 
+        asientos.llenar1erpiso();
+
     }
 
     public int getSerie() {

@@ -1,13 +1,23 @@
 package Codigo;
 import java.util.ArrayList;
+import java.util.Random;
+
 public class DepositoAsientos {
     private ArrayList<Asiento> asientos;
+    private Random numerofilas=new Random();
+    private int filas;
 
     public DepositoAsientos(){
         asientos=new ArrayList<>();
     }
 
-
+    public void llenar1erpiso(){
+        filas=1+numerofilas.nextInt(4)*2;
+        for(int i=1;i<filas*2;i++){
+            AsientoSemiCama asiento=new AsientoSemiCama(i);
+            asientos.add(asiento);
+        }
+    }
 }
 
 

@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class DepositoBuses {
-    Random numerodebuses=new Random();
-    Random horasalida=new Random();
+    private Random numerodebuses=new Random();
+    private Random horasalida=new Random();
     private ArrayList<BusUnPiso> busesunpiso;
     private ArrayList<BusDosPisos> busesdospisos;
 
