@@ -1,6 +1,10 @@
 package Codigo;
 import java.util.ArrayList;
+import java.util.Random;
+
 public class DepositoBuses {
+    Random numerodebuses=new Random();
+    Random horasalida=new Random();
     private ArrayList<BusUnPiso> busesunpiso;
     private ArrayList<BusDosPisos> busesdospisos;
 
@@ -13,10 +17,6 @@ public class DepositoBuses {
         busesunpiso.add(bus);
     }
 
-    public void addBusdospisos(BusDosPisos bus2){
-        busesdospisos.add(bus2);
-    }
-
     public int getsizebusesdospisos(){
         return busesdospisos.size();
     }
@@ -24,4 +24,22 @@ public class DepositoBuses {
     public Bus getbusdospisos(int index){
       return busesdospisos.get(index);
     }
+
+    public void llenardospisos(){
+        for(int i=1;i<2+numerodebuses.nextInt(10);i++){
+            int horasalidareal =8+horasalida.nextInt(15);
+            BusDosPisos bus=new BusDosPisos(i,horasalidareal);
+            busesdospisos.add(bus);
+        }
+    }
+    public void llenarunpiso(){
+        for(int i=0;i<2+numerodebuses.nextInt(10);i++){
+            int horasalidareal=8+horasalida.nextInt(15);
+            BusUnPiso bus=new BusUnPiso(i,horasalidareal);
+            busesunpiso.add(bus);
+        }
+    }
+
+    
+
 }

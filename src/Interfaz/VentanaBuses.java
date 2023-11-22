@@ -28,19 +28,8 @@ public class VentanaBuses extends Ventana {
         this.setSize(1280,720);
         this.setVisible(true);
 
-        Random numerodebuses=new Random();
-        for (int i=0;i<2+numerodebuses.nextInt(6);i++){
-            int horasalida =8+numerodebuses.nextInt(15);
-            BusDosPisos bus=new BusDosPisos(i,horasalida);
-            deposito.addBusdospisos(bus);
-        }
-
-        for(int i=0;i<deposito.getsizebusesdospisos();i++){
-            System.out.println(deposito.getbusdospisos(i).getSerie());
-        }
-
-
-
+        deposito.llenardospisos();
+        deposito.llenarunpiso();
 
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
