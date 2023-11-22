@@ -13,7 +13,7 @@ public class VentanaBuses extends Ventana {
     private DepositoBuses deposito;
     private Cliente cliente;
     JLabel fondo=new JLabel();
-    private Icon imagenfondo=new ImageIcon("imagenes/FondoDatos1.png");
+    private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
 
     public VentanaBuses(Cliente cliente){
