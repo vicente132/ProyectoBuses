@@ -25,6 +25,8 @@ public class DepositoBuses {
       return busesdospisos.get(index);
     }
 
+
+
     public void llenardospisos(){
         for(int i=1;i<2+numerodebuses.nextInt(10);i++){
             int horasalidareal =8+horasalida.nextInt(15);
@@ -39,6 +41,10 @@ public class DepositoBuses {
             busesunpiso.add(bus);
         }
     }
+
+
+
+
 
     public void horas1piso(){
         for(int i=0;i<busesunpiso.size();i++){

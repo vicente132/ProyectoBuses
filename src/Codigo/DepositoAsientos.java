@@ -18,6 +18,14 @@ public class DepositoAsientos {
             asientos.add(asiento);
         }
     }
+
+    public void llenar2piso(){
+        filas=1+numerofilas.nextInt(4)*2;
+        for(int i=1;i<filas;i++){
+            AsientoCama asientocama=new AsientoCama(i);
+            asientos.add(asientocama);
+        }
+    }
 }
 
 
