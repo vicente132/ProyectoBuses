@@ -1,11 +1,12 @@
 package Interfaz;
 import Codigo.*;
 
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import javax.swing.*;
+import javax.swing.ImageIcon;
 
 public class VentanaPrincipal extends Ventana{
-
     Cliente cliente=new Cliente();
     JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/Fondo.png");
@@ -22,7 +23,6 @@ public class VentanaPrincipal extends Ventana{
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,720);
         this.setVisible(true);
-
 
 
 
