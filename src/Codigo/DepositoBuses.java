@@ -16,6 +16,9 @@ public class DepositoBuses {
         this.valor=valor;
         busesunpiso=new ArrayList<>();
         busesdospisos=new ArrayList<>();
+        llenardospisos();
+        llenarunpiso();
+
     }
 
     public static DepositoBuses getInstancia(String valor){
@@ -25,11 +28,6 @@ public class DepositoBuses {
         return instancia;
     }
 
-
-    public void addBusunpiso(BusUnPiso bus){
-        busesunpiso.add(bus);
-    }
-
     public int getsizebusesdospisos(){
         return busesdospisos.size();
     }
@@ -37,7 +35,6 @@ public class DepositoBuses {
     public Bus getbusdospisos(int index){
       return busesdospisos.get(index);
     }
-
 
 
     public void llenardospisos(){

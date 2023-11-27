@@ -7,6 +7,7 @@ import javax.swing.*;
 import javax.swing.ImageIcon;
 
 public class VentanaPrincipal extends Ventana{
+    DepositoBuses depositoBuses=DepositoBuses.getInstancia("deposito1");
     Cliente cliente=new Cliente();
     JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/Fondo.png");

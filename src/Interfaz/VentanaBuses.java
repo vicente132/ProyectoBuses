@@ -18,7 +18,7 @@ public class VentanaBuses extends Ventana {
 
     public VentanaBuses(Cliente cliente){
         super();
-        deposito=new DepositoBuses("depositounico");
+        this.deposito=DepositoBuses.getInstancia("deposito1");
         this.cliente=cliente;
         this.setTitle("Horario Buses");
         this.setContentPane(fondo);
@@ -28,11 +28,7 @@ public class VentanaBuses extends Ventana {
         this.setSize(1280,720);
         this.setVisible(true);
 
-        deposito.llenardospisos();
-        deposito.llenarunpiso();
         deposito.horas1piso();
-        deposito.horas2piso();
-
 
 
         JButton volver=new JButton("volver");
