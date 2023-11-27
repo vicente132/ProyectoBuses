@@ -10,7 +10,6 @@ abstract public class Bus {
     public Bus(int serie,int horasalida){
         this.serie=serie;
         this.horasalida=horasalida;
-        asientos=new DepositoAsientos();
 
 
     }

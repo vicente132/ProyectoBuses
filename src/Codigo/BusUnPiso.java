@@ -8,7 +8,7 @@ public class BusUnPiso extends Bus{
         super(serie,horasalida);
         this.serie=serie;
         this.horasalida=horasalida;
-        this.asientos=new DepositoAsientos();
+        this.asientos=DepositoAsientos.getInstancia("deposito1");
 
         asientos.llenar1erpiso();
     }

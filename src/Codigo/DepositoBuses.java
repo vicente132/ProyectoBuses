@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class DepositoBuses {
     private static DepositoBuses instancia;
-    public String valor;
+    public String nombre;
 
 
     private Random numerodebuses=new Random();
@@ -13,7 +13,7 @@ public class DepositoBuses {
     private ArrayList<BusDosPisos> busesdospisos;
 
     public DepositoBuses(String valor){
-        this.valor=valor;
+        this.nombre=valor;
         busesunpiso=new ArrayList<>();
         busesdospisos=new ArrayList<>();
         llenardospisos();
@@ -28,13 +28,8 @@ public class DepositoBuses {
         return instancia;
     }
 
-    public int getsizebusesdospisos(){
-        return busesdospisos.size();
-    }
-
-    public Bus getbusdospisos(int index){
-      return busesdospisos.get(index);
-    }
+    public int getsizebusesdospisos(){return busesdospisos.size();}
+    public Bus getbusdospisos(int index){return busesdospisos.get(index);}
 
 
     public void llenardospisos(){
@@ -54,15 +49,13 @@ public class DepositoBuses {
 
 
 
-
-
+    //metodos para checkear que se crean correctamente los buses
     public void horas1piso(){
         for(int i=0;i<busesunpiso.size();i++){
             System.out.println(busesunpiso.get(i).getHorasalida()+busesunpiso.get(i).tipo());
         }
 
     }
-
     public void horas2piso(){
         for(int i=0;i<busesdospisos.size();i++){
             System.out.println(busesdospisos.get(i).getHorasalida()+busesdospisos.get(i).tipo());
