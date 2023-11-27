@@ -29,6 +29,7 @@ public class VentanaBuses extends Ventana {
         this.setVisible(true);
 
         deposito.horas1piso();
+        deposito.horas2piso();
 
 
         JButton volver=new JButton("volver");
