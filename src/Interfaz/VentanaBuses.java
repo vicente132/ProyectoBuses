@@ -10,7 +10,7 @@ import java.util.Random;
 
 
 public class VentanaBuses extends Ventana {
-    private DepositoBuses deposito;
+    private DepositoBuses depositoBuses;
     private Cliente cliente;
     JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
@@ -18,7 +18,7 @@ public class VentanaBuses extends Ventana {
 
     public VentanaBuses(Cliente cliente){
         super();
-        this.deposito=DepositoBuses.getInstancia("deposito1");
+        this.depositoBuses=DepositoBuses.getInstancia("deposito1");
         this.cliente=cliente;
         this.setTitle("Horario Buses");
         this.setContentPane(fondo);
@@ -28,8 +28,9 @@ public class VentanaBuses extends Ventana {
         this.setSize(1280,720);
         this.setVisible(true);
 
-        deposito.horas1piso();
-        deposito.horas2piso();
+        depositoBuses.horas1piso();
+        depositoBuses.horas2piso();
+
 
 
         JButton volver=new JButton("volver");

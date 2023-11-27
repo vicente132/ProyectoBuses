@@ -13,6 +13,6 @@ public class AsientoCama extends Asiento{
 
     public void Paint(Graphics g){
         g.setColor(Color.gray);
-        g.fillRect(100,10,100,100);
+        g.fillRect(10,50,100,20);
     }
 }

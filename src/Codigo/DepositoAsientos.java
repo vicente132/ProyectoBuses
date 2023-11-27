@@ -13,7 +13,11 @@ public class DepositoAsientos {
         llenar1erpiso();
         llenar2piso();
     }
-    
+
+    public Asiento getAsiento(int index){
+        return asientos.get(index);
+    }
+
     public void llenar1erpiso(){
         filas=1+numerofilas.nextInt(4)*2;
         for(int i=1;i<filas*2;i++){

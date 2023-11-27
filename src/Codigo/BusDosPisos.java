@@ -15,6 +15,10 @@ public class BusDosPisos extends Bus{
         asientos.llenar2piso();
     }
 
+    public Asiento getAsiento(int index){
+        return asientos.getAsiento(index);
+    }
+
     @Override
     String tipo() {
         return "Bus de 2 pisos";
