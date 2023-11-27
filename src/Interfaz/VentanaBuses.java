@@ -18,7 +18,7 @@ public class VentanaBuses extends Ventana {
 
     public VentanaBuses(Cliente cliente){
         super();
-        deposito=new DepositoBuses();
+        deposito=new DepositoBuses("depositounico");
         this.cliente=cliente;
         this.setTitle("Horario Buses");
         this.setContentPane(fondo);

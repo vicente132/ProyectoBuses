@@ -3,15 +3,28 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class DepositoBuses {
+    private static DepositoBuses instancia;
+    public String valor;
+
+
     private Random numerodebuses=new Random();
     private Random horasalida=new Random();
     private ArrayList<BusUnPiso> busesunpiso;
     private ArrayList<BusDosPisos> busesdospisos;
 
-    public DepositoBuses(){
+    public DepositoBuses(String valor){
+        this.valor=valor;
         busesunpiso=new ArrayList<>();
         busesdospisos=new ArrayList<>();
     }
+
+    public static DepositoBuses getInstancia(String valor){
+        if(instancia==null){
+            instancia=new DepositoBuses(valor);
+        }
+        return instancia;
+    }
+
 
     public void addBusunpiso(BusUnPiso bus){
         busesunpiso.add(bus);
