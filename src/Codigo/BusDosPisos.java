@@ -10,8 +10,7 @@ public class BusDosPisos extends Bus{
         super(serie, horasalida);
         this.serie=serie;
         this.horasalida=horasalida;
-        this.asientos=DepositoAsientos.getInstancia("deposito1");
-
+        this.asientos=new DepositoAsientos();
         asientos.llenar1erpiso();
         asientos.llenar2piso();
     }
