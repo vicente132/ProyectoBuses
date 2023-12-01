@@ -8,11 +8,9 @@ abstract public class Bus {
     int horasalida;
     private DepositoAsientos asientos;
 
-    public Bus(int serie,int horasalida){
-        this.serie=serie;
+    public Bus(int seriee,int horasalida){
+        this.serie=seriee;
         this.horasalida=horasalida;
-
-
     }
 
     public int getSerie() {

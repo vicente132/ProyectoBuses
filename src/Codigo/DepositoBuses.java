@@ -43,7 +43,7 @@ public class DepositoBuses {
     }
 
     public int getsize(){return buses.size();}
-    public Bus getBus(){return buses.get(0);}
+    public Bus getBus(int i){return buses.get(i);}
 
 
 

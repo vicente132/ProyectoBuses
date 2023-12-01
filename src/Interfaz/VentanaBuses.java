@@ -32,7 +32,7 @@ public class VentanaBuses extends Ventana {
 
         System.out.println(depositoBuses.getsize());
         for(int i=0;i<depositoBuses.getsize();i++){
-            System.out.println(depositoBuses.getBus().getSerie());
+            System.out.println(depositoBuses.getBus(i).getSerie());
         }
 
         JMenuBar barrabuses=new JMenuBar();
@@ -40,7 +40,7 @@ public class VentanaBuses extends Ventana {
         JMenu opcionesbuses=new JMenu("Buses Disponibles");
 
         for(int i=0;i<depositoBuses.getsize();i++){
-            Bus bus=depositoBuses.getBus();
+            Bus bus=depositoBuses.getBus(i);
             JMenuItem itembus=new ItemMenuBuses(bus.getSerie());
             opcionesbuses.add(itembus);
         }
