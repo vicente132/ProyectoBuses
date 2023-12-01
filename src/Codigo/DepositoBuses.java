@@ -50,7 +50,7 @@ public class DepositoBuses {
     //metodos para checkear que se crean correctamente los buses
     public void horas(){
         for(int i=0;i<buses.size();i++){
-            System.out.println(buses.get(i).getHorasalida()+buses.get(i).tipo());
+            System.out.println(buses.get(i).getHorasalida()+buses.get(i).gettipo());
         }
 
     }

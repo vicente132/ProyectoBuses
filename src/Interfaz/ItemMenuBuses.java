@@ -12,7 +12,7 @@ public class ItemMenuBuses{
     private Cliente cliente;
     private JMenuItem opcion;
     private String nombre;
-    public ItemMenuBuses(int index, JTextField horasalida, Bus bus){
+    public ItemMenuBuses(int index, JTextField horasalida, Bus bus,JTextField tipobus){
         this.opcion=new JMenuItem();
         nombre="Bus numero:"+index;
         opcion.setText(nombre);
@@ -21,7 +21,8 @@ public class ItemMenuBuses{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                horasalida.setText(String.valueOf(bus.getHorasalida()));
+                horasalida.setText(String.valueOf(bus.getHorasalida())+":00");
+                tipobus.setText(bus.gettipo());
             }
         });
 

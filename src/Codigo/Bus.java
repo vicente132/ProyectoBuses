@@ -20,7 +20,6 @@ abstract public class Bus {
         return horasalida;
     }
 
-
-    abstract String tipo();
+    public abstract String gettipo();
 
 }

@@ -30,13 +30,18 @@ public class VentanaBuses extends Ventana {
         this.setSize(1280,720);
         this.setVisible(true);
 
-        JTextField horasalida=new JTextField("");
-        horasalida.setBounds(100,100,115,30);
+        JTextField horasalida=new JTextField("Hora salida");
+        horasalida.setBounds(200,200,115,30);
         fondo.add(horasalida);
+
+        JTextField tipobus=new JTextField("Tipo de bus");
+        tipobus.setBounds(200,240,115,30);
+        fondo.add(tipobus);
+
 
         JMenu opcionesbuses=new JMenu("Buses Disponibles");
         for(int i=0;i<depositoBuses.getsize();i++){
-            ItemMenuBuses itembus=new ItemMenuBuses(i,horasalida,depositoBuses.getBus(i));
+            ItemMenuBuses itembus=new ItemMenuBuses(i,horasalida,depositoBuses.getBus(i),tipobus);
             opcionesbuses.add(itembus.getItem());
         }
 

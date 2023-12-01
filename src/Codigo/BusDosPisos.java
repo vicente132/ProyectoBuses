@@ -19,8 +19,7 @@ public class BusDosPisos extends Bus{
         return asientos.getAsiento(index);
     }
 
-    @Override
-    String tipo() {
-        return "Bus de 2 pisos";
+    public String gettipo(){
+        return "bus de 2 pisos";
     }
 }
