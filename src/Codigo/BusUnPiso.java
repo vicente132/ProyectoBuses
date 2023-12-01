@@ -13,6 +13,7 @@ public class BusUnPiso extends Bus{
         asientos.llenar1erpiso();
     }
 
+
     @Override
     String tipo() {
         return "Bus de un piso";

@@ -1,5 +1,6 @@
 package Interfaz;
 
+import Codigo.Bus;
 import Codigo.BusDosPisos;
 import Codigo.Cliente;
 import Codigo.DepositoBuses;
@@ -28,6 +29,23 @@ public class VentanaBuses extends Ventana {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,720);
         this.setVisible(true);
+
+        System.out.println(depositoBuses.getsize());
+        for(int i=0;i<depositoBuses.getsize();i++){
+            System.out.println(depositoBuses.getBus().getSerie());
+        }
+
+        JMenuBar barrabuses=new JMenuBar();
+        barrabuses.setBounds(10,200,100,200);
+        JMenu opcionesbuses=new JMenu("Buses Disponibles");
+
+        for(int i=0;i<depositoBuses.getsize();i++){
+            Bus bus=depositoBuses.getBus();
+            JMenuItem itembus=new ItemMenuBuses(bus.getSerie());
+            opcionesbuses.add(itembus);
+        }
+
+        fondo.add(barrabuses);
 
 
 
