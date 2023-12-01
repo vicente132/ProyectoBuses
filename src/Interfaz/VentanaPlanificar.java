@@ -106,8 +106,8 @@ public class VentanaPlanificar extends Ventana{
         barradestino.add(opcionesdestino);
 
 
-        BotonVolver volver=new BotonVolver(fondo,this);
-        BotonSig siguiente=new BotonSig(fondo,this,cliente);
+        BotonVolver volver=new BotonVolver(fondo,this,cliente,new VentanaPrincipal());
+        BotonSig siguiente=new BotonSig(fondo,this,cliente,new VentanaBuses(cliente));
 
 
 

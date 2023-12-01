@@ -18,6 +18,7 @@ public class VentanaBuses extends Ventana {
 
     public VentanaBuses(Cliente cliente){
         super();
+
         this.depositoBuses=DepositoBuses.getInstancia("deposito1");
         this.cliente=cliente;
         this.setTitle("Horario Buses");
@@ -29,6 +30,19 @@ public class VentanaBuses extends Ventana {
         this.setVisible(true);
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
         volver.setIcon(imagenbotonvolver);
@@ -37,13 +51,12 @@ public class VentanaBuses extends Ventana {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-
                 VentanaPlanificar ventanaPlanificar=new VentanaPlanificar(cliente);
                 ventanaPlanificar.setVisible(true);
                 dispose();
             }
         });
-        
+
     }
 
 }

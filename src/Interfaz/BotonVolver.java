@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class BotonVolver{
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
-    public BotonVolver(JLabel fondo,Ventana ventana){
+    public BotonVolver(JLabel fondo,Ventana ventanavieja,Cliente cliente,Ventana ventananueva){
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
         volver.setIcon(imagenbotonvolver);
@@ -17,9 +17,9 @@ public class BotonVolver{
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
 
-                VentanaPrincipal ventanaPrincipal=new VentanaPrincipal();
-                ventanaPrincipal.setVisible(true);
-                ventana.dispose();
+                Ventana ventananuevaa=ventananueva;
+                ventananuevaa.setVisible(true);
+                ventanavieja.dispose();
             }
         });
     }
