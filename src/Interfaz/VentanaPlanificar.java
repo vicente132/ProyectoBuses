@@ -107,6 +107,9 @@ public class VentanaPlanificar extends Ventana{
         opcionesdestino.add(opcion6.getItem());
         barradestino.add(opcionesdestino);
 
+
+
+
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
         volver.setIcon(imagenbotonvolver);
@@ -120,7 +123,7 @@ public class VentanaPlanificar extends Ventana{
                 dispose();}});
 
         JButton siguiente=new JButton("siguiente");
-        siguiente.setBounds(10,10,200,100);
+        siguiente.setBounds(800,500,200,100);
         fondo.add(siguiente);
         siguiente.addMouseListener(new EscucharMouse() {
             @Override
