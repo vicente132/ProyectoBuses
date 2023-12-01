@@ -76,6 +76,7 @@ public class VentanaPlanificar extends Ventana{
         });
 
 
+        JMenu opcionesorigen=new JMenu("Origen");
 
         ItemMenuOrigen opcion1=new ItemMenuOrigen("Santiago",seleccionorigen,cliente);
         ItemMenuOrigen opcion2=new ItemMenuOrigen("Concepcion",seleccionorigen,cliente);
@@ -90,7 +91,7 @@ public class VentanaPlanificar extends Ventana{
         JMenuBar barraorigen=new JMenuBar();
         barraorigen.setBounds(10,320,50,60);
         fondo.add(barraorigen);
-        JMenu opcionesorigen=new JMenu("Origen");
+
         opcionesorigen.add(opcion1.getItem());
         opcionesorigen.add(opcion2.getItem());
         opcionesorigen.add(opcion3.getItem());

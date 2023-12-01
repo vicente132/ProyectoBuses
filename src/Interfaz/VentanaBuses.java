@@ -30,24 +30,20 @@ public class VentanaBuses extends Ventana {
         this.setSize(1280,720);
         this.setVisible(true);
 
-        System.out.println(depositoBuses.getsize());
+        System.out.println("buses creados: "+depositoBuses.getsize());
+
+
+        JMenu opcionesbuses=new JMenu("Buses Disponibles");
+
         for(int i=0;i<depositoBuses.getsize();i++){
-            System.out.println(depositoBuses.getBus(i).getSerie());
+            ItemMenuBuses itembus=new ItemMenuBuses(i);
+            opcionesbuses.add(itembus.getItem());
         }
 
         JMenuBar barrabuses=new JMenuBar();
         barrabuses.setBounds(10,200,100,200);
-        JMenu opcionesbuses=new JMenu("Buses Disponibles");
-
-        for(int i=0;i<depositoBuses.getsize();i++){
-            Bus bus=depositoBuses.getBus(i);
-            JMenuItem itembus=new ItemMenuBuses(bus.getSerie());
-            opcionesbuses.add(itembus);
-        }
-
         fondo.add(barrabuses);
-
-
+        barrabuses.add(opcionesbuses);
 
 
         JButton volver=new JButton("volver");
