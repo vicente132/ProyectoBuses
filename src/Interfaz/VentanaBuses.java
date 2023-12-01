@@ -30,13 +30,13 @@ public class VentanaBuses extends Ventana {
         this.setSize(1280,720);
         this.setVisible(true);
 
-        System.out.println("buses creados: "+depositoBuses.getsize());
-
+        JTextField horasalida=new JTextField("");
+        horasalida.setBounds(100,100,115,30);
+        fondo.add(horasalida);
 
         JMenu opcionesbuses=new JMenu("Buses Disponibles");
-
         for(int i=0;i<depositoBuses.getsize();i++){
-            ItemMenuBuses itembus=new ItemMenuBuses(i);
+            ItemMenuBuses itembus=new ItemMenuBuses(i,horasalida,depositoBuses.getBus(i));
             opcionesbuses.add(itembus.getItem());
         }
 
@@ -44,6 +44,20 @@ public class VentanaBuses extends Ventana {
         barrabuses.setBounds(10,200,115,30);
         fondo.add(barrabuses);
         barrabuses.add(opcionesbuses);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         JButton volver=new JButton("volver");
