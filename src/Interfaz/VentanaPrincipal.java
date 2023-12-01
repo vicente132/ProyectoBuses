@@ -7,12 +7,11 @@ import javax.swing.*;
 import javax.swing.ImageIcon;
 
 public class VentanaPrincipal extends Ventana{
-    DepositoBuses depositoBuses=DepositoBuses.getInstancia("deposito1");
-    Cliente cliente=new Cliente();
-    JLabel fondo=new JLabel();
+    private DepositoBuses depositoBuses=DepositoBuses.getInstancia("deposito1");
+    private Cliente cliente=new Cliente();
+    private JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/Fondo.png");
     private Icon imagenbotonplanificar=new ImageIcon("imagenes/ImagenBotonPlanificar.png");
-
 
     public VentanaPrincipal(){
         super();
@@ -36,10 +35,7 @@ public class VentanaPrincipal extends Ventana{
                 dispose();
                 super.mouseClicked(e);
                 VentanaPlanificar ventanaplanificar=new VentanaPlanificar(cliente);
-                ventanaplanificar.setVisible(true);
-
-            }
-        });
+                ventanaplanificar.setVisible(true);}});
 
 
 

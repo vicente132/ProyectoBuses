@@ -32,17 +32,6 @@ public class VentanaBuses extends Ventana {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
         volver.setIcon(imagenbotonvolver);
@@ -51,11 +40,9 @@ public class VentanaBuses extends Ventana {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                VentanaPlanificar ventanaPlanificar=new VentanaPlanificar(cliente);
-                ventanaPlanificar.setVisible(true);
-                dispose();
-            }
-        });
+                Ventana ventananueva=new VentanaPlanificar(cliente);
+                ventananueva.setVisible(true);
+                dispose();}});
 
     }
 

@@ -4,12 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 
 
 public class VentanaPlanificar extends Ventana{
     private Cliente cliente;
     JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/FondoDatos1.png");
+    private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
 
     public VentanaPlanificar(Cliente cliente){
         super();
@@ -105,12 +107,29 @@ public class VentanaPlanificar extends Ventana{
         opcionesdestino.add(opcion6.getItem());
         barradestino.add(opcionesdestino);
 
+        JButton volver=new JButton("volver");
+        volver.setBounds(10,10,200,100);
+        volver.setIcon(imagenbotonvolver);
+        fondo.add(volver);
+        volver.addMouseListener(new EscucharMouse() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                Ventana ventananueva=new VentanaPrincipal();
+                ventananueva.setVisible(true);
+                dispose();}});
 
-        BotonVolver volver=new BotonVolver(fondo,this,cliente,new VentanaPrincipal());
-        BotonSig siguiente=new BotonSig(fondo,this,cliente,new VentanaBuses(cliente));
+        JButton siguiente=new JButton("siguiente");
+        siguiente.setBounds(10,10,200,100);
+        fondo.add(siguiente);
+        siguiente.addMouseListener(new EscucharMouse() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
 
-
-
+                Ventana ventananueva = new VentanaBuses(cliente);
+                ventananueva.setVisible(true);
+                dispose();}});
 
     }
 }
