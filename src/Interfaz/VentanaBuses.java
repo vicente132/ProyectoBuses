@@ -41,7 +41,7 @@ public class VentanaBuses extends Ventana {
         }
 
         JMenuBar barrabuses=new JMenuBar();
-        barrabuses.setBounds(10,200,100,200);
+        barrabuses.setBounds(10,200,115,30);
         fondo.add(barrabuses);
         barrabuses.add(opcionesbuses);
 
