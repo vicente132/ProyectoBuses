@@ -10,8 +10,8 @@ public class ItemMenuDestino {
     private Cliente cliente;
     private JMenuItem opcion;
 
-    public ItemMenuDestino(String nombre, JTextField seleccion, Cliente cliente){
-        this.cliente=cliente;
+    public ItemMenuDestino(String nombre, JTextField seleccion, Cliente clientee){
+        this.cliente=clientee;
         this.opcion=new JMenuItem();
         opcion.setText(nombre);
         opcion.addActionListener(new ActionListener() {

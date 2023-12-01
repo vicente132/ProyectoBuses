@@ -1,5 +1,6 @@
 package Codigo;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 abstract public class Bus {
@@ -23,6 +24,5 @@ abstract public class Bus {
 
 
     abstract String tipo();
-
 
 }

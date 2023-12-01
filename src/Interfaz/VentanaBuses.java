@@ -28,10 +28,6 @@ public class VentanaBuses extends Ventana {
         this.setSize(1280,720);
         this.setVisible(true);
 
-        depositoBuses.horas1piso();
-        depositoBuses.horas2piso();
-
-
 
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
@@ -47,8 +43,7 @@ public class VentanaBuses extends Ventana {
                 dispose();
             }
         });
-
-        repaint();
+        
     }
 
 }

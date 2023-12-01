@@ -26,7 +26,6 @@ public class VentanaPrincipal extends Ventana{
         this.setVisible(true);
 
 
-
         JButton planificar=new JButton("Planificar");
         planificar.setBounds(100,120,200,100);
         planificar.setIcon(imagenbotonplanificar);

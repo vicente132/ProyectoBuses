@@ -13,18 +13,18 @@ public class Cliente {
     public String getDestino(){
         return destino;
     };
+
+
+
     public void setRut(int rut) {
         this.rut = rut;
     }
-
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public void setDestino(String destino) {
         this.destino = destino;
     }
