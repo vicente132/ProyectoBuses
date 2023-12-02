@@ -18,3 +18,8 @@ Patrones de uso a utilizar:
 23/11/23 
   Hoy hubo retroalimentacion con el cliente, en resumen vamos en buen camino, nos resalto tambien el hecho de empezar luego con algun patron de diseño, antes de que se complique mas el codigo, con respecto a eso
   Singleton sera un nuevo patron de diseño que siento que sera util.
+
+01/11/23
+  Despues de una semana ocupada con certamenes, hoy volvimos a trabajar en el proyecto, a estas alturas ya tenemos nuestro singleton implementado para la lista de buses la cual ya no es aleatoria al 100%, se sigue creando aleatoriamente pero esta vez al iniciar el
+  programa, asi la lista de buses es constante con cada iteracion del proyecto, aun no implementamos memento ni command y estamos dudando su viabilidad, debido a la mala decision de emepzar el proyecto sin esto en mente, ademas hoy creamos una ventana donde podemos
+  seleccionar los buses y se muestra su informacion.
