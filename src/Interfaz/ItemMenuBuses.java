@@ -14,7 +14,7 @@ public class ItemMenuBuses{
     private String nombre;
     public ItemMenuBuses(int index, JTextField horasalida, Bus bus,JTextField tipobus){
         this.opcion=new JMenuItem();
-        nombre="Bus numero:"+index;
+        nombre="Bus "+index+" Hora salida:"+String.valueOf(bus.getHorasalida()+":00");
         opcion.setText(nombre);
 
         opcion.addActionListener(new ActionListener() {
