@@ -27,17 +27,21 @@ public class DepositoBuses {
         }
         return instancia;
     }
+
+
     public void llenardospisos(){
-        for(int i=1;i<2+numerodebuses.nextInt(10);i++){
+        for(int i=1;i<10+numerodebuses.nextInt(20);i++){
+            int j=numerodebuses.nextInt(7)+1;
             int horasalidareal =8+horasalida.nextInt(15);
-            BusDosPisos bus=new BusDosPisos(i,horasalidareal);
+            BusDosPisos bus=new BusDosPisos(i,horasalidareal,j);
             buses.add(bus);
         }
     }
     public void llenarunpiso(){
         for(int i=0;i<2+numerodebuses.nextInt(10);i++){
+            int j=numerodebuses.nextInt(7)+1;
             int horasalidareal=8+horasalida.nextInt(15);
-            BusUnPiso bus=new BusUnPiso(i,horasalidareal);
+            BusUnPiso bus=new BusUnPiso(i,horasalidareal,j);
             buses.add(bus);
         }
     }

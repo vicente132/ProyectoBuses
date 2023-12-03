@@ -6,10 +6,11 @@ public class BusDosPisos extends Bus{
     int serie;
     int horasalida;
     private DepositoAsientos asientos;
-    public BusDosPisos(int serie, int horasalida){
-        super(serie,horasalida);
+    public BusDosPisos(int serie, int horasalida,int type){
+        super(serie,horasalida,type);
 
-        this.horasalida=horasalida;
+
+
         this.asientos=new DepositoAsientos();
         asientos.llenar1erpiso();
         asientos.llenar2piso();

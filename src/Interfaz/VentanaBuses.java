@@ -20,6 +20,8 @@ public class VentanaBuses extends Ventana {
     public VentanaBuses(Cliente cliente){
         super();
 
+
+
         this.depositoBuses=DepositoBuses.getInstancia("deposito1");
         this.cliente=cliente;
         this.setTitle("Horario Buses");
@@ -32,10 +34,12 @@ public class VentanaBuses extends Ventana {
 
         JTextField horasalida=new JTextField("Hora salida");
         horasalida.setBounds(200,200,115,30);
+        horasalida.setEditable(false);
         fondo.add(horasalida);
 
         JTextField tipobus=new JTextField("Tipo de bus");
         tipobus.setBounds(200,240,115,30);
+        tipobus.setEditable(false);
         fondo.add(tipobus);
 
 
