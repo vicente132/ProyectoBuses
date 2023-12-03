@@ -32,16 +32,16 @@ abstract public class Bus {
         }
     }
 
-    public int getSerie() {
-        return serie;
-    }
-    public int getHorasalida(){
-        return horasalida;
-    }
+    public int getSerie() {return serie;}
+    public int getHorasalida(){return horasalida;}
     public String getOrigen(){return origen;}
     public String getDestino(){return destino;}
-    public void setOrigen(String origen){this.origen=origen;}
+    public int getIndextramo(){return indextramo;}
 
+
+
+
+    public void setOrigen(String origen){this.origen=origen;}
     public abstract String gettipo();
 
 }
