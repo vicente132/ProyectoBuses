@@ -14,6 +14,6 @@ public class AsientoSemiCama extends Asiento{
 
     public void paint(Graphics g){
         g.setColor(Color.GREEN);
-        g.fillRect(10,80,100,20);
+        g.fillRect(500,250,100,20);
     }
 }

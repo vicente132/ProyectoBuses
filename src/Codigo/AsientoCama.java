@@ -14,7 +14,7 @@ public class AsientoCama extends Asiento{
     @Override
     void paint(Graphics g) {
         g.setColor(Color.gray);
-        g.fillRect(10,50,100,20);
+        g.fillRect(500,200,100,20);
     }
 
 }
