@@ -14,10 +14,7 @@ abstract public class Asiento {
         return numero;
     }
 
-    public void paint(Graphics g){
-        g.drawRect(10,10,300,400);
-    }
-
+    abstract void paint(Graphics g);
 
 }
 

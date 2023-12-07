@@ -33,6 +33,10 @@ public class DepositoAsientos {
             asientos.add(asientocama);
         }
     }
+
+    public int getsize(){
+        return asientos.size();
+    }
 }
 
 

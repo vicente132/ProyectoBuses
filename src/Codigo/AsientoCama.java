@@ -11,8 +11,10 @@ public class AsientoCama extends Asiento{
         this.numero=numero;
     }
 
-    public void Paint(Graphics g){
+    @Override
+    void paint(Graphics g) {
         g.setColor(Color.gray);
         g.fillRect(10,50,100,20);
     }
+
 }

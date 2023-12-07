@@ -6,7 +6,7 @@ import java.util.ArrayList;
 abstract public class Bus {
     int serie;
     int horasalida;
-    private DepositoAsientos asientos;
+    private DepositoAsientos asientos=new DepositoAsientos();
     private int tipo;
     private int indextramo;
     private String origen;
@@ -43,5 +43,11 @@ abstract public class Bus {
 
     public void setOrigen(String origen){this.origen=origen;}
     public abstract String gettipo();
+
+    public void paint(Graphics g){
+        for(int i=0;i<asientos.getsize();i++){
+            asientos.getAsiento(i).paint(g);
+        }
+    }
 
 }

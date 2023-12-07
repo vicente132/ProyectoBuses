@@ -6,7 +6,10 @@ import Codigo.Cliente;
 import Codigo.DepositoBuses;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.awt.image.ImageObserver;
+import java.text.AttributedCharacterIterator;
 import java.util.Objects;
 import java.util.Random;
 
@@ -21,8 +24,6 @@ public class VentanaBuses extends Ventana {
     public VentanaBuses(Cliente cliente,JTextField origenbus,JTextField destinobus){
         super();
 
-
-
         this.depositoBuses=DepositoBuses.getInstancia("deposito1");
         this.cliente=cliente;
         this.setTitle("Horario Buses");
@@ -32,6 +33,7 @@ public class VentanaBuses extends Ventana {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,720);
         this.setVisible(true);
+
 
         JTextField horasalida=new JTextField("Hora salida");
         horasalida.setBounds(200,200,115,30);
@@ -52,20 +54,11 @@ public class VentanaBuses extends Ventana {
             }
         }
 
+
         JMenuBar barrabuses=new JMenuBar();
         barrabuses.setBounds(10,200,115,30);
         fondo.add(barrabuses);
         barrabuses.add(opcionesbuses);
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -84,6 +77,11 @@ public class VentanaBuses extends Ventana {
                 ventananueva.setVisible(true);
                 dispose();}});
 
+    }
+
+    public void paint(Graphics g){
+        super.paint(g);
+        depositoBuses.getBus(0).paint(g);
     }
 
 }
