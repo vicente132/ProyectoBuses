@@ -1,9 +1,11 @@
 package Interfaz;
 import Codigo.*;
 import javax.swing.*;
+import javax.xml.stream.util.XMLEventAllocator;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.util.Objects;
 
 
 public class VentanaPlanificar extends Ventana{
@@ -128,10 +130,18 @@ public class VentanaPlanificar extends Ventana{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                if(!Objects.equals(selecciondestino.getText(), "") && !Objects.equals(seleccionorigen.getText(), "")){
+                    Ventana ventananueva = new VentanaBuses(cliente,seleccionorigen,selecciondestino);
+                    ventananueva.setVisible(true);
+                    dispose();
+                }
+                else{
+                    Ventana missinginfo=new VentanaMissingInfo();
+                    missinginfo.setVisible(true);
 
-                Ventana ventananueva = new VentanaBuses(cliente,seleccionorigen,selecciondestino);
-                ventananueva.setVisible(true);
-                dispose();}});
+                }
+            }
+        });
 
     }
 }
