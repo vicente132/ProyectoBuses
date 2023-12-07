@@ -129,7 +129,7 @@ public class VentanaPlanificar extends Ventana{
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
 
-                Ventana ventananueva = new VentanaBuses(cliente);
+                Ventana ventananueva = new VentanaBuses(cliente,seleccionorigen,selecciondestino);
                 ventananueva.setVisible(true);
                 dispose();}});
 

@@ -7,6 +7,7 @@ import Codigo.DepositoBuses;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
+import java.util.Objects;
 import java.util.Random;
 
 
@@ -17,7 +18,7 @@ public class VentanaBuses extends Ventana {
     private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
 
-    public VentanaBuses(Cliente cliente){
+    public VentanaBuses(Cliente cliente,JTextField origenbus,JTextField destinobus){
         super();
 
 
@@ -45,8 +46,10 @@ public class VentanaBuses extends Ventana {
 
         JMenu opcionesbuses=new JMenu("Buses Disponibles");
         for(int i=0;i<depositoBuses.getsize();i++){
-            ItemMenuBuses itembus=new ItemMenuBuses(i,horasalida,depositoBuses.getBus(i),tipobus);
-            opcionesbuses.add(itembus.getItem());
+            if(Objects.equals(depositoBuses.getBus(i).getOrigen(), origenbus.getText())&&Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText())) {
+                ItemMenuBuses itembus = new ItemMenuBuses(i, horasalida, depositoBuses.getBus(i), tipobus);
+                opcionesbuses.add(itembus.getItem());
+            }
         }
 
         JMenuBar barrabuses=new JMenuBar();
