@@ -64,13 +64,36 @@ public class VentanaPlanificar extends Ventana{
         selecciondestino.setEditable(false);
 
         /**
+         * Menu de opciones desplegable para la seleccion de la fecha de ida
+         * @author vicente132
+         * @version version 2 (es en realidad un cambio de sistema con respecto a la version 1) 8 de diciembre de 2023
+         */
+        JMenuBar barrafechaida=new JMenuBar();
+        barrafechaida.setBounds(540,340,100,20);
+        fondo.add(barrafechaida);
+        JMenu fechaida=new JMenu();
+        ItemMenuFechaIda fecha1=new ItemMenuFechaIda();
+        ItemMenuFechaIda fecha2=new ItemMenuFechaIda();
+        ItemMenuFechaIda fecha3=new ItemMenuFechaIda();
+        ItemMenuFechaIda fecha4=new ItemMenuFechaIda();
+        ItemMenuFechaIda fecha5=new ItemMenuFechaIda();
+        ItemMenuFechaIda fecha6=new ItemMenuFechaIda();
+        fechaida.add(fecha1.getItem());
+        fechaida.add(fecha2.getItem());
+        fechaida.add(fecha3.getItem());
+        fechaida.add(fecha4.getItem());
+        fechaida.add(fecha5.getItem());
+        fechaida.add(fecha6.getItem());
+        barrafechaida.add(fechaida);
+
+        /**
          * Instancia de la clase JTextField para mostrar al usuario su seleccion actual de la fecha de ida del viaje
          * @author vicente132
          * @version version 1, 22 de noviembre de 2023
          */
-        JTextField fechaida=new JTextField();
-        fechaida.setBounds(540,340,100,20);
-        fondo.add(fechaida);
+        JTextField mostrarfechaida=new JTextField();
+        mostrarfechaida.setBounds(540,340,100,20);
+        fondo.add(mostrarfechaida);
         /**
          * Instancia de la clase JTextField para mostrar al usuario su seleccion actual de la fecha de vuelta de viaje
          * En este caso setvisible=false, ya que, este JTextField sera visible solo si la checkbox "soloida" esta seleccionada
@@ -113,6 +136,7 @@ public class VentanaPlanificar extends Ventana{
             }
         });
 
+
         /**
          * Para el menu desplegable de opciones de origen
          * Primero se crea una barra de origen y se configura
@@ -121,18 +145,11 @@ public class VentanaPlanificar extends Ventana{
          * @author vicente 132
          * @version version 1, 23 de noviembre 2023
          */
-
         JMenuBar barraorigen=new JMenuBar();
         barraorigen.setBounds(10,320,50,60);
         fondo.add(barraorigen);
 
         JMenu opcionesorigen=new JMenu("Origen");
-        ItemMenuOrigen opcion1=new ItemMenuOrigen("Santiago",seleccionorigen,cliente);
-        ItemMenuOrigen opcion2=new ItemMenuOrigen("Concepcion",seleccionorigen,cliente);
-        ItemMenuOrigen opcion3=new ItemMenuOrigen("Los Angeles",seleccionorigen,cliente);
-        opcionesorigen.add(opcion1.getItem());
-        opcionesorigen.add(opcion2.getItem());
-        opcionesorigen.add(opcion3.getItem());
 
         barraorigen.add(opcionesorigen);
 
