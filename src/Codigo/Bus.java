@@ -41,41 +41,37 @@ abstract public class Bus {
             case 3: this.fechaida="01/01/23";this.fechavuelta="10/01/24";
                     break;
             case 4: this.fechaida="02/01/23";this.fechavuelta="08/01/24";
-                break;
+                    break;
             case 5: this.fechaida="02/01/23";this.fechavuelta="09/01/24";
-                break;
+                    break;
             case 6: this.fechaida="02/01/23";this.fechavuelta="10/01/24";
-                break;
+                    break;
             case 7: this.fechaida="03/01/23";this.fechavuelta="08/01/24";
-                break;
+                    break;
             case 8: this.fechaida="03/01/23";this.fechavuelta="09/01/24";
-                break;
+                    break;
             case 9: this.fechaida="03/01/23";this.fechavuelta="10/01/24";
-                break;
+                    break;
             case 10: this.fechaida="04/01/23";this.fechavuelta="08/01/24";
-                break;
+                    break;
             case 11: this.fechaida="04/01/23";this.fechavuelta="09/01/24";
-                break;
+                    break;
             case 12: this.fechaida="04/01/23";this.fechavuelta="10/01/24";
-                break;
+                    break;
             case 13: this.fechaida="05/01/23";this.fechavuelta="08/01/24";
-                break;
+                    break;
             case 14: this.fechaida="05/01/23";this.fechavuelta="09/01/24";
-                break;
+                    break;
             case 15: this.fechaida="05/01/23";this.fechavuelta="10/01/24";
-                break;
+                    break;
             case 16: this.fechaida="06/01/23";this.fechavuelta="08/01/24";
-                break;
+                    break;
             case 17: this.fechaida="06/01/23";this.fechavuelta="09/01/24";
-                break;
+                    break;
             case 18: this.fechaida="06/01/23";this.fechavuelta="10/01/24";
-                break;
+                    break;
         }
     }
-
-
-
-
 
     public int getSerie() {return serie;}
     public int getHorasalida(){return horasalida;}
@@ -85,7 +81,7 @@ abstract public class Bus {
 
     public String getFechaida(){return fechaida;}
     public String getFechavuelta(){return fechavuelta;}
-
+    public int getFechas(){return fechas;}
 
 
     public void setOrigen(String origen){this.origen=origen;}

@@ -240,7 +240,7 @@ public class VentanaPlanificar extends Ventana{
                 super.mouseClicked(e);
                 if(!Objects.equals(selecciondestino.getText(), "") && !Objects.equals(seleccionorigen.getText(), "")){
                     Ventana ventananueva = null;
-                    ventananueva = new VentanaBuses(cliente,seleccionorigen,selecciondestino,mostrarfechaida);
+                    ventananueva = new VentanaBuses(cliente,seleccionorigen,selecciondestino,mostrarfechaida,mostrarfechavuelta);
                     ventananueva.setVisible(true);
                     dispose();
                 }

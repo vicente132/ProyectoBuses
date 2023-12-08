@@ -5,10 +5,13 @@ import java.util.Random;
 public class DepositoBuses {
     private static DepositoBuses instancia;
     public String nombre;
+    private int j,k,l,m;
 
 
     private Random numerodebuses=new Random();
     private Random horasalida=new Random();
+    private Random tramo=new Random();
+    private Random fechas=new Random();
     private ArrayList<Bus> buses;
 
 
@@ -30,18 +33,18 @@ public class DepositoBuses {
 
 
     public void llenardospisos(){
-        for(int i=1;i<10+numerodebuses.nextInt(40);i++){
-            int j=numerodebuses.nextInt(7)+1;
-            int k=numerodebuses.nextInt(19)+1;
+        for(int i=1;i<70+numerodebuses.nextInt(80);i++){
+            l=tramo.nextInt(6)+1;
+            m=fechas.nextInt(17)+1;
             int horasalidareal =8+horasalida.nextInt(15);
-            BusDosPisos bus=new BusDosPisos(i,horasalidareal,j,k);
+            BusDosPisos bus=new BusDosPisos(i,horasalidareal,l,m);
             buses.add(bus);
         }
     }
     public void llenarunpiso(){
-        for(int i=0;i<2+numerodebuses.nextInt(40);i++){
-            int j=numerodebuses.nextInt(7)+1;
-            int k=numerodebuses.nextInt(19)+1;
+        for(int i=1;i<70+numerodebuses.nextInt(80);i++){
+            j=tramo.nextInt(6)+1;
+            k=fechas.nextInt(17)+1;
             int horasalidareal=8+horasalida.nextInt(15);
             BusUnPiso bus=new BusUnPiso(i,horasalidareal,j,k);
             buses.add(bus);
@@ -56,7 +59,7 @@ public class DepositoBuses {
     //metodos para checkear que se crean correctamente los buses
     public void horas(){
         for(int i=0;i<buses.size();i++){
-            System.out.println(buses.get(i).getHorasalida()+buses.get(i).gettipo());
+            System.out.println(buses.get(i).getHorasalida()+" "+buses.get(i).getFechaida()+" "+buses.get(i).getIndextramo()+" "+buses.get(i).getFechas()+" "+buses.get(i).getIndextramo());
         }
 
     }
