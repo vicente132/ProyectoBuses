@@ -121,16 +121,11 @@ public class VentanaPlanificar extends Ventana{
         JMenu fechavuelta=new JMenu("Fecha vuelta");
         ItemMenuFechaVuelta fechaVuelta1=new ItemMenuFechaVuelta("08/01/23",cliente,mostrarfechavuelta);
         ItemMenuFechaVuelta fechaVuelta2=new ItemMenuFechaVuelta("09/01/23",cliente,mostrarfechavuelta);
-        ItemMenuFechaVuelta fechaVuelta3=new ItemMenuFechaVuelta("010/01/23",cliente,mostrarfechavuelta);
-        ItemMenuFechaVuelta fechaVuelta4=new ItemMenuFechaVuelta("011/01/23",cliente,mostrarfechavuelta);
-        ItemMenuFechaVuelta fechaVuelta5=new ItemMenuFechaVuelta("012/01/23",cliente,mostrarfechavuelta);
-        ItemMenuFechaVuelta fechaVuelta6=new ItemMenuFechaVuelta("013/01/23",cliente,mostrarfechavuelta);
+        ItemMenuFechaVuelta fechaVuelta3=new ItemMenuFechaVuelta("10/01/23",cliente,mostrarfechavuelta);
+
         fechavuelta.add(fechaVuelta1.getItem());
         fechavuelta.add(fechaVuelta2.getItem());
         fechavuelta.add(fechaVuelta3.getItem());
-        fechavuelta.add(fechaVuelta4.getItem());
-        fechavuelta.add(fechaVuelta5.getItem());
-        fechavuelta.add(fechaVuelta6.getItem());
 
         barrafechavuelta.add(fechavuelta);
 

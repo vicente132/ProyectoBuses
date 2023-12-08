@@ -6,8 +6,8 @@ public class BusDosPisos extends Bus{
     int serie;
     int horasalida;
     private DepositoAsientos asientos;
-    public BusDosPisos(int serie, int horasalida,int type){
-        super(serie,horasalida,type);
+    public BusDosPisos(int serie, int horasalida,int type, int fechas){
+        super(serie,horasalida,type,fechas);
 
 
 

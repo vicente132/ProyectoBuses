@@ -32,16 +32,18 @@ public class DepositoBuses {
     public void llenardospisos(){
         for(int i=1;i<10+numerodebuses.nextInt(40);i++){
             int j=numerodebuses.nextInt(7)+1;
+            int k=numerodebuses.nextInt(19)+1;
             int horasalidareal =8+horasalida.nextInt(15);
-            BusDosPisos bus=new BusDosPisos(i,horasalidareal,j);
+            BusDosPisos bus=new BusDosPisos(i,horasalidareal,j,k);
             buses.add(bus);
         }
     }
     public void llenarunpiso(){
         for(int i=0;i<2+numerodebuses.nextInt(40);i++){
             int j=numerodebuses.nextInt(7)+1;
+            int k=numerodebuses.nextInt(19)+1;
             int horasalidareal=8+horasalida.nextInt(15);
-            BusUnPiso bus=new BusUnPiso(i,horasalidareal,j);
+            BusUnPiso bus=new BusUnPiso(i,horasalidareal,j,k);
             buses.add(bus);
         }
     }

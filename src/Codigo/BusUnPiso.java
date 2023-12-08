@@ -9,8 +9,8 @@ public class BusUnPiso extends Bus{
     private String destino;
 
 
-    public BusUnPiso(int serie,int horasalida,int type){
-        super(serie,horasalida,type);
+    public BusUnPiso(int serie,int horasalida,int type,int fechas){
+        super(serie,horasalida,type,fechas);
 
 
 
