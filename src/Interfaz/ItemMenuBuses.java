@@ -23,6 +23,8 @@ public class ItemMenuBuses{
 
                 horasalida.setText(String.valueOf(bus.getHorasalida())+":00");
                 tipobus.setText(bus.gettipo());
+
+
             }
         });
 

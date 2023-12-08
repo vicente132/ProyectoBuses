@@ -1,17 +1,18 @@
 package Interfaz;
-import Codigo.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
 
-public class VentanaMissingInfo extends Ventana{
-    public VentanaMissingInfo(){
+public class VentanaError extends Ventana{
+    private String mensaje;
+    private JTextField info=new JTextField(" ");
+    public VentanaError(String mensaje){
         super();
+        this.mensaje=mensaje;
         this.setBounds(250,250,200,200);
         this.setLayout(null);
         this.setResizable(false);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
 
         JButton aceptar=new JButton("Aceptar");
         aceptar.setBounds(50,50,100,50);
@@ -22,14 +23,14 @@ public class VentanaMissingInfo extends Ventana{
             }
         });
 
-
-        JTextField info=new JTextField("Falta informacion relevante");
-        info.setEditable(false);
-        info.setAlignmentX(50);
-        info.setBounds(0,0,500,20);
+        this.info.setText(mensaje);
+        this.info.setEditable(false);
+        this.info.setAlignmentX(50);
+        this.info.setBounds(0,0,500,20);
 
         this.add(aceptar);
-        this.add(info);
+        this.add(this.info);
     }
+
 
 }

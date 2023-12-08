@@ -239,12 +239,13 @@ public class VentanaPlanificar extends Ventana{
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 if(!Objects.equals(selecciondestino.getText(), "") && !Objects.equals(seleccionorigen.getText(), "")){
-                    Ventana ventananueva = new VentanaBuses(cliente,seleccionorigen,selecciondestino);
+                    Ventana ventananueva = null;
+                    ventananueva = new VentanaBuses(cliente,seleccionorigen,selecciondestino,mostrarfechaida);
                     ventananueva.setVisible(true);
                     dispose();
                 }
                 else{
-                    Ventana missinginfo=new VentanaMissingInfo();
+                    Ventana missinginfo=new VentanaError("Falta informacion");
                     missinginfo.setVisible(true);
 
                 }

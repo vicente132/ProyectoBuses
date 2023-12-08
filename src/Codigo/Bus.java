@@ -33,7 +33,6 @@ abstract public class Bus {
                     break;
             case 6: this.origen="los Angeles";this.destino="Concepcion";
         }
-
         switch(this.fechas){
             case 1: this.fechaida="01/01/23";this.fechavuelta="08/01/24";
                     break;
@@ -84,6 +83,8 @@ abstract public class Bus {
     public String getDestino(){return destino;}
     public int getIndextramo(){return indextramo;}
 
+    public String getFechaida(){return fechaida;}
+    public String getFechavuelta(){return fechavuelta;}
 
 
 

@@ -14,7 +14,7 @@ public class VentanaBuses extends Ventana {
     private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
 
-    public VentanaBuses(Cliente cliente,JTextField origenbus,JTextField destinobus){
+    public VentanaBuses(Cliente cliente,JTextField origenbus,JTextField destinobus, JTextField mostrarfechaida){
         super();
 
         this.depositoBuses=DepositoBuses.getInstancia("deposito1");
@@ -38,22 +38,29 @@ public class VentanaBuses extends Ventana {
         tipobus.setEditable(false);
         fondo.add(tipobus);
 
+        JTextField fechaida=new JTextField("fecha ida");
+        tipobus.setBounds(200,280,115,30);
+        tipobus.setEditable(false);
+        fondo.add(fechaida);
+
+
 
         JMenu opcionesbuses=new JMenu("Buses Disponibles");
-        for(int i=0;i<depositoBuses.getsize();i++){
-            if(Objects.equals(depositoBuses.getBus(i).getOrigen(), origenbus.getText())&&Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText())) {
-                ItemMenuBuses itembus = new ItemMenuBuses(i, horasalida, depositoBuses.getBus(i), tipobus);
-                opcionesbuses.add(itembus.getItem());
+
+        for (int i = 0; i < depositoBuses.getsize(); i++) {
+            if (Objects.equals(depositoBuses.getBus(i).getOrigen(), origenbus.getText()) && Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText()) && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())) {
+                    ItemMenuBuses itembus = new ItemMenuBuses(i, horasalida, depositoBuses.getBus(i), tipobus);
+                    opcionesbuses.add(itembus.getItem());
             }
         }
+
+
+
 
         JMenuBar barrabuses=new JMenuBar();
         barrabuses.setBounds(10,200,115,30);
         fondo.add(barrabuses);
         barrabuses.add(opcionesbuses);
-
-
-
 
 
 
