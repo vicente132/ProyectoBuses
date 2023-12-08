@@ -7,6 +7,7 @@ public class Cliente {
     private String origen;
     private String destino;
     private String fechaorigen;
+    private String fechavuelta;
 
     public String getOrigen(){
         return origen;
@@ -33,4 +34,5 @@ public class Cliente {
         this.origen=origen;
     }
     public void setFechaorigen(String fechaorigen){this.fechaorigen=fechaorigen;}
+    public void setFechavuelta(String fechavuelta){this.fechavuelta=fechavuelta;}
 }

@@ -79,15 +79,21 @@ public class VentanaPlanificar extends Ventana{
          * @version version 2 (es en realidad un cambio de sistema con respecto a la version 1) 8 de diciembre de 2023
          */
         JMenuBar barrafechaida=new JMenuBar();
-        barrafechaida.setBounds(540,340,100,20);
+        barrafechaida.setBounds(540,340,80,40);
         fondo.add(barrafechaida);
-        JMenu fechaida=new JMenu();
+        JMenu fechaida=new JMenu("Fecha ida");
         ItemMenuFechaIda fecha1 =new ItemMenuFechaIda("01/01/24",cliente,mostrarfechaida);
         ItemMenuFechaIda fecha2 =new ItemMenuFechaIda("02/01/24",cliente,mostrarfechaida);
         ItemMenuFechaIda fecha3 =new ItemMenuFechaIda("03/01/23",cliente,mostrarfechaida);
         ItemMenuFechaIda fecha4 =new ItemMenuFechaIda("04/01/23",cliente,mostrarfechaida);
         ItemMenuFechaIda fecha5 =new ItemMenuFechaIda("05/01/23",cliente,mostrarfechaida);
         ItemMenuFechaIda fecha6 =new ItemMenuFechaIda("06/01/23",cliente,mostrarfechaida);
+        fechaida.add(fecha1.getItem());
+        fechaida.add(fecha2.getItem());
+        fechaida.add(fecha3.getItem());
+        fechaida.add(fecha4.getItem());
+        fechaida.add(fecha5.getItem());
+        fechaida.add(fecha6.getItem());
         barrafechaida.add(fechaida);
 
         /**
@@ -101,13 +107,32 @@ public class VentanaPlanificar extends Ventana{
         fondo.add(mostrarfechavuelta);
         mostrarfechavuelta.setVisible(false);
 
+        /**
+         * creacion del menu y las opciones para la seleccion de una fecha de vuelta, en este caso setvisible=false
+         * ya que tiene que ser visible solo si el cliente quiere un viaje de vuelta
+         * @author vicente132
+         * @version version 1, (implementacion de el nuevo metodo de seleccion de fechas), 8 de diciembre 2023
+         */
         JMenuBar barrafechavuelta=new JMenuBar();
-        barrafechavuelta.setBounds(540, 420,100,20);
+        barrafechavuelta.setBounds(540, 420,80,40);
         fondo.add(barrafechavuelta);
+        barrafechavuelta.setVisible(false);
 
-        JMenu fechavuelta=new JMenu();
+        JMenu fechavuelta=new JMenu("Fecha vuelta");
+        ItemMenuFechaVuelta fechaVuelta1=new ItemMenuFechaVuelta("08/01/23",cliente,mostrarfechavuelta);
+        ItemMenuFechaVuelta fechaVuelta2=new ItemMenuFechaVuelta("09/01/23",cliente,mostrarfechavuelta);
+        ItemMenuFechaVuelta fechaVuelta3=new ItemMenuFechaVuelta("010/01/23",cliente,mostrarfechavuelta);
+        ItemMenuFechaVuelta fechaVuelta4=new ItemMenuFechaVuelta("011/01/23",cliente,mostrarfechavuelta);
+        ItemMenuFechaVuelta fechaVuelta5=new ItemMenuFechaVuelta("012/01/23",cliente,mostrarfechavuelta);
+        ItemMenuFechaVuelta fechaVuelta6=new ItemMenuFechaVuelta("013/01/23",cliente,mostrarfechavuelta);
+        fechavuelta.add(fechaVuelta1.getItem());
+        fechavuelta.add(fechaVuelta2.getItem());
+        fechavuelta.add(fechaVuelta3.getItem());
+        fechavuelta.add(fechaVuelta4.getItem());
+        fechavuelta.add(fechaVuelta5.getItem());
+        fechavuelta.add(fechaVuelta6.getItem());
 
-
+        barrafechavuelta.add(fechavuelta);
 
 
         /**
@@ -128,6 +153,7 @@ public class VentanaPlanificar extends Ventana{
             public void actionPerformed(ActionEvent e) {
                 if(idayvuelta.isSelected()){
                     mostrarfechavuelta.setVisible(true);
+                    barrafechavuelta.setVisible(true);
                 }
             }
         });
@@ -136,6 +162,7 @@ public class VentanaPlanificar extends Ventana{
             public void actionPerformed(ActionEvent e) {
                 if(soloida.isSelected()){
                     mostrarfechavuelta.setVisible(false);
+                    barrafechavuelta.setVisible(false);
                     mostrarfechavuelta.setText(" ");
                 }
             }
@@ -151,7 +178,7 @@ public class VentanaPlanificar extends Ventana{
          * @version version 1, 23 de noviembre 2023
          */
         JMenuBar barraorigen=new JMenuBar();
-        barraorigen.setBounds(10,320,50,60);
+        barraorigen.setBounds(10,320,50,40);
         fondo.add(barraorigen);
 
         JMenu opcionesorigen=new JMenu("Origen");
@@ -172,7 +199,7 @@ public class VentanaPlanificar extends Ventana{
          * @version version 1, 23 de noviembre 2023
          */
         JMenuBar barradestino=new JMenuBar();
-        barradestino.setBounds(10,400,50,60);
+        barradestino.setBounds(10,400,50,40);
         fondo.add(barradestino);
 
         JMenu opcionesdestino=new JMenu("Destino");
