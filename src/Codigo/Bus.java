@@ -34,41 +34,41 @@ abstract public class Bus {
             case 6: this.origen="los Angeles";this.destino="Concepcion";
         }
         switch(this.fechas){
-            case 1: this.fechaida="01/01/23";this.fechavuelta="08/01/24";
+            case 1: this.fechaida="01/01/24";this.fechavuelta="08/01/24";
                     break;
-            case 2: this.fechaida="01/01/23";this.fechavuelta="09/01/24";
+            case 2: this.fechaida="01/01/24";this.fechavuelta="09/01/24";
                     break;
-            case 3: this.fechaida="01/01/23";this.fechavuelta="10/01/24";
+            case 3: this.fechaida="01/01/24";this.fechavuelta="10/01/24";
                     break;
-            case 4: this.fechaida="02/01/23";this.fechavuelta="08/01/24";
+            case 4: this.fechaida="02/01/24";this.fechavuelta="08/01/24";
                     break;
-            case 5: this.fechaida="02/01/23";this.fechavuelta="09/01/24";
+            case 5: this.fechaida="02/01/24";this.fechavuelta="09/01/24";
                     break;
-            case 6: this.fechaida="02/01/23";this.fechavuelta="10/01/24";
+            case 6: this.fechaida="02/01/24";this.fechavuelta="10/01/24";
                     break;
-            case 7: this.fechaida="03/01/23";this.fechavuelta="08/01/24";
+            case 7: this.fechaida="03/01/24";this.fechavuelta="08/01/24";
                     break;
-            case 8: this.fechaida="03/01/23";this.fechavuelta="09/01/24";
+            case 8: this.fechaida="03/01/24";this.fechavuelta="09/01/24";
                     break;
-            case 9: this.fechaida="03/01/23";this.fechavuelta="10/01/24";
+            case 9: this.fechaida="03/01/24";this.fechavuelta="10/01/24";
                     break;
-            case 10: this.fechaida="04/01/23";this.fechavuelta="08/01/24";
+            case 10: this.fechaida="04/01/24";this.fechavuelta="08/01/24";
                     break;
-            case 11: this.fechaida="04/01/23";this.fechavuelta="09/01/24";
+            case 11: this.fechaida="04/01/24";this.fechavuelta="09/01/24";
                     break;
-            case 12: this.fechaida="04/01/23";this.fechavuelta="10/01/24";
+            case 12: this.fechaida="04/01/24";this.fechavuelta="10/01/24";
                     break;
-            case 13: this.fechaida="05/01/23";this.fechavuelta="08/01/24";
+            case 13: this.fechaida="05/01/24";this.fechavuelta="08/01/24";
                     break;
-            case 14: this.fechaida="05/01/23";this.fechavuelta="09/01/24";
+            case 14: this.fechaida="05/01/24";this.fechavuelta="09/01/24";
                     break;
-            case 15: this.fechaida="05/01/23";this.fechavuelta="10/01/24";
+            case 15: this.fechaida="05/01/24";this.fechavuelta="10/01/24";
                     break;
-            case 16: this.fechaida="06/01/23";this.fechavuelta="08/01/24";
+            case 16: this.fechaida="06/01/24";this.fechavuelta="08/01/24";
                     break;
-            case 17: this.fechaida="06/01/23";this.fechavuelta="09/01/24";
+            case 17: this.fechaida="06/01/24";this.fechavuelta="09/01/24";
                     break;
-            case 18: this.fechaida="06/01/23";this.fechavuelta="10/01/24";
+            case 18: this.fechaida="06/01/24";this.fechavuelta="10/01/24";
                     break;
         }
     }
@@ -92,5 +92,7 @@ abstract public class Bus {
             asientos.getAsiento(i).paint(g);
         }
     }
+
+
 
 }

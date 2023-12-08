@@ -84,10 +84,10 @@ public class VentanaPlanificar extends Ventana{
         JMenu fechaida=new JMenu("Fecha ida");
         ItemMenuFechaIda fecha1 =new ItemMenuFechaIda("01/01/24",cliente,mostrarfechaida);
         ItemMenuFechaIda fecha2 =new ItemMenuFechaIda("02/01/24",cliente,mostrarfechaida);
-        ItemMenuFechaIda fecha3 =new ItemMenuFechaIda("03/01/23",cliente,mostrarfechaida);
-        ItemMenuFechaIda fecha4 =new ItemMenuFechaIda("04/01/23",cliente,mostrarfechaida);
-        ItemMenuFechaIda fecha5 =new ItemMenuFechaIda("05/01/23",cliente,mostrarfechaida);
-        ItemMenuFechaIda fecha6 =new ItemMenuFechaIda("06/01/23",cliente,mostrarfechaida);
+        ItemMenuFechaIda fecha3 =new ItemMenuFechaIda("03/01/24",cliente,mostrarfechaida);
+        ItemMenuFechaIda fecha4 =new ItemMenuFechaIda("04/01/24",cliente,mostrarfechaida);
+        ItemMenuFechaIda fecha5 =new ItemMenuFechaIda("05/01/24",cliente,mostrarfechaida);
+        ItemMenuFechaIda fecha6 =new ItemMenuFechaIda("06/01/24",cliente,mostrarfechaida);
         fechaida.add(fecha1.getItem());
         fechaida.add(fecha2.getItem());
         fechaida.add(fecha3.getItem());
@@ -119,9 +119,9 @@ public class VentanaPlanificar extends Ventana{
         barrafechavuelta.setVisible(false);
 
         JMenu fechavuelta=new JMenu("Fecha vuelta");
-        ItemMenuFechaVuelta fechaVuelta1=new ItemMenuFechaVuelta("08/01/23",cliente,mostrarfechavuelta);
-        ItemMenuFechaVuelta fechaVuelta2=new ItemMenuFechaVuelta("09/01/23",cliente,mostrarfechavuelta);
-        ItemMenuFechaVuelta fechaVuelta3=new ItemMenuFechaVuelta("10/01/23",cliente,mostrarfechavuelta);
+        ItemMenuFechaVuelta fechaVuelta1=new ItemMenuFechaVuelta("08/01/24",cliente,mostrarfechavuelta);
+        ItemMenuFechaVuelta fechaVuelta2=new ItemMenuFechaVuelta("09/01/24",cliente,mostrarfechavuelta);
+        ItemMenuFechaVuelta fechaVuelta3=new ItemMenuFechaVuelta("10/01/24",cliente,mostrarfechavuelta);
 
         fechavuelta.add(fechaVuelta1.getItem());
         fechavuelta.add(fechaVuelta2.getItem());
