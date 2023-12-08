@@ -8,7 +8,7 @@ public class ItemMenuFechaIda {
     private Cliente cliente;
     private JMenuItem fecha;
     private String diamesano;
-    public void ItemMenuFechaIda(String diamesano,Cliente cliente,JTextField mostrarfechaida){
+    public  ItemMenuFechaIda(String diamesano,Cliente cliente,JTextField mostrarfechaida){
         this.cliente=cliente;
         this.diamesano=diamesano;
         this.fecha=new JMenuItem();

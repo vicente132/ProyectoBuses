@@ -64,6 +64,16 @@ public class VentanaPlanificar extends Ventana{
         selecciondestino.setEditable(false);
 
         /**
+         * Instancia de la clase JTextField para mostrar al usuario su seleccion actual de la fecha de ida del viaje
+         * @author vicente132
+         * @version version 1, 22 de noviembre de 2023
+         */
+        JTextField mostrarfechaida=new JTextField();
+        mostrarfechaida.setBounds(660,340,100,20);
+        fondo.add(mostrarfechaida);
+        mostrarfechaida.setEditable(false);
+
+        /**
          * Menu de opciones desplegable para la seleccion de la fecha de ida
          * @author vicente132
          * @version version 2 (es en realidad un cambio de sistema con respecto a la version 1) 8 de diciembre de 2023
@@ -72,38 +82,33 @@ public class VentanaPlanificar extends Ventana{
         barrafechaida.setBounds(540,340,100,20);
         fondo.add(barrafechaida);
         JMenu fechaida=new JMenu();
-        ItemMenuFechaIda fecha1=new ItemMenuFechaIda();
-        ItemMenuFechaIda fecha2=new ItemMenuFechaIda();
-        ItemMenuFechaIda fecha3=new ItemMenuFechaIda();
-        ItemMenuFechaIda fecha4=new ItemMenuFechaIda();
-        ItemMenuFechaIda fecha5=new ItemMenuFechaIda();
-        ItemMenuFechaIda fecha6=new ItemMenuFechaIda();
-        fechaida.add(fecha1.getItem());
-        fechaida.add(fecha2.getItem());
-        fechaida.add(fecha3.getItem());
-        fechaida.add(fecha4.getItem());
-        fechaida.add(fecha5.getItem());
-        fechaida.add(fecha6.getItem());
+        ItemMenuFechaIda fecha1 =new ItemMenuFechaIda("01/01/24",cliente,mostrarfechaida);
+        ItemMenuFechaIda fecha2 =new ItemMenuFechaIda("02/01/24",cliente,mostrarfechaida);
+        ItemMenuFechaIda fecha3 =new ItemMenuFechaIda("03/01/23",cliente,mostrarfechaida);
+        ItemMenuFechaIda fecha4 =new ItemMenuFechaIda("04/01/23",cliente,mostrarfechaida);
+        ItemMenuFechaIda fecha5 =new ItemMenuFechaIda("05/01/23",cliente,mostrarfechaida);
+        ItemMenuFechaIda fecha6 =new ItemMenuFechaIda("06/01/23",cliente,mostrarfechaida);
         barrafechaida.add(fechaida);
 
-        /**
-         * Instancia de la clase JTextField para mostrar al usuario su seleccion actual de la fecha de ida del viaje
-         * @author vicente132
-         * @version version 1, 22 de noviembre de 2023
-         */
-        JTextField mostrarfechaida=new JTextField();
-        mostrarfechaida.setBounds(540,340,100,20);
-        fondo.add(mostrarfechaida);
         /**
          * Instancia de la clase JTextField para mostrar al usuario su seleccion actual de la fecha de vuelta de viaje
          * En este caso setvisible=false, ya que, este JTextField sera visible solo si la checkbox "soloida" esta seleccionada
          * @author vicente132
          * @version version 1, 22 de noviembre de 2023
          */
-        JTextField fechavuelta=new JTextField();
-        fechavuelta.setBounds(540,420,100,20);
-        fondo.add(fechavuelta);
-        fechavuelta.setVisible(false);
+        JTextField mostrarfechavuelta=new JTextField();
+        mostrarfechavuelta.setBounds(660,420,100,20);
+        fondo.add(mostrarfechavuelta);
+        mostrarfechavuelta.setVisible(false);
+
+        JMenuBar barrafechavuelta=new JMenuBar();
+        barrafechavuelta.setBounds(540, 420,100,20);
+        fondo.add(barrafechavuelta);
+
+        JMenu fechavuelta=new JMenu();
+
+
+
 
         /**
          * Grupo de botones para que estos sean exclusivos
@@ -122,7 +127,7 @@ public class VentanaPlanificar extends Ventana{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(idayvuelta.isSelected()){
-                    fechavuelta.setVisible(true);
+                    mostrarfechavuelta.setVisible(true);
                 }
             }
         });
@@ -130,8 +135,8 @@ public class VentanaPlanificar extends Ventana{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(soloida.isSelected()){
-                    fechavuelta.setVisible(false);
-                    fechavuelta.setText(" ");
+                    mostrarfechavuelta.setVisible(false);
+                    mostrarfechavuelta.setText(" ");
                 }
             }
         });
@@ -150,7 +155,12 @@ public class VentanaPlanificar extends Ventana{
         fondo.add(barraorigen);
 
         JMenu opcionesorigen=new JMenu("Origen");
-
+        ItemMenuOrigen opcion1=new ItemMenuOrigen("Santiago",seleccionorigen,cliente);
+        ItemMenuOrigen opcion2=new ItemMenuOrigen("Concepcion",seleccionorigen,cliente);
+        ItemMenuOrigen opcion3=new ItemMenuOrigen("Los Angeles",seleccionorigen,cliente);
+        opcionesorigen.add(opcion1.getItem());
+        opcionesorigen.add(opcion2.getItem());
+        opcionesorigen.add(opcion3.getItem());
         barraorigen.add(opcionesorigen);
 
         /**
@@ -161,7 +171,6 @@ public class VentanaPlanificar extends Ventana{
          * @author vicente 132
          * @version version 1, 23 de noviembre 2023
          */
-
         JMenuBar barradestino=new JMenuBar();
         barradestino.setBounds(10,400,50,60);
         fondo.add(barradestino);
@@ -182,7 +191,6 @@ public class VentanaPlanificar extends Ventana{
          * @author vicente132
          * @version version 2, 28 de noviembre 2023
          */
-
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
         volver.setIcon(imagenbotonvolver);
@@ -201,7 +209,6 @@ public class VentanaPlanificar extends Ventana{
          * @author vicente 132
          * @version version 2, 5 de diciembre 2023
          */
-
         JButton siguiente=new JButton("siguiente");
         siguiente.setBounds(800,500,200,100);
         fondo.add(siguiente);
