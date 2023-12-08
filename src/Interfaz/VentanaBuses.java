@@ -1,17 +1,10 @@
 package Interfaz;
-
-import Codigo.Bus;
-import Codigo.BusDosPisos;
 import Codigo.Cliente;
 import Codigo.DepositoBuses;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.awt.image.ImageObserver;
-import java.text.AttributedCharacterIterator;
 import java.util.Objects;
-import java.util.Random;
 
 
 public class VentanaBuses extends Ventana {
@@ -53,7 +46,6 @@ public class VentanaBuses extends Ventana {
                 opcionesbuses.add(itembus.getItem());
             }
         }
-
 
         JMenuBar barrabuses=new JMenuBar();
         barrabuses.setBounds(10,200,115,30);

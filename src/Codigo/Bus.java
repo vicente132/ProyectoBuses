@@ -1,7 +1,7 @@
 package Codigo;
 
 import java.awt.*;
-import java.util.ArrayList;
+
 
 abstract public class Bus {
     int serie;
