@@ -35,7 +35,7 @@ public class VentanaPlanificar extends Ventana{
          *
          */
         this.cliente=cliente;
-        this.setTitle("Ventana Principal");
+        this.setTitle("Ventana Planificar");
         this.setContentPane(fondo);
         fondo.setIcon(imagenfondo);
         fondo.setLayout(null);

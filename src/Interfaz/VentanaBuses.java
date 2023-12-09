@@ -3,6 +3,8 @@ import Codigo.Cliente;
 import Codigo.DepositoBuses;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.util.Objects;
 
@@ -12,19 +14,13 @@ public class VentanaBuses extends Ventana {
     private Cliente cliente;
     private JLabel fondo=new JLabel();
     private int seleccionbus;
-    private JInternalFrame piso1;
+    private JLabel piso1;
     private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
 
 
     public VentanaBuses(Cliente cliente, JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta){
         super();
-
-        System.out.println(origenbus.getText());
-        System.out.println(destinobus.getText());
-        System.out.println(mostrarfechaida.getText());
-        System.out.println(mostrarfechavuelta.getText());
-
         this.depositoBuses=DepositoBuses.getInstancia("deposito1");
         this.cliente=cliente;
         this.setTitle("Horario Buses");
@@ -35,8 +31,8 @@ public class VentanaBuses extends Ventana {
         this.setSize(1280,720);
         this.setVisible(true);
 
-        piso1=new JInternalFrame();
-        piso1.setLayout(new FlowLayout());
+        piso1=new JLabel();
+        piso1.setLayout(new FlowLayout(FlowLayout.LEADING,40,50));
         piso1.setBounds(500,90,400,700);
         fondo.add(piso1);
         piso1.setVisible(true);
@@ -105,21 +101,6 @@ public class VentanaBuses extends Ventana {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
         volver.setIcon(imagenbotonvolver);
@@ -132,6 +113,18 @@ public class VentanaBuses extends Ventana {
                 ventananueva.setVisible(true);
                 dispose();}});
 
+        JButton siguiente=new JButton("siguiente");
+        siguiente.setBounds(800,500,200,100);
+        fondo.add(siguiente);
+        siguiente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                VentanaAsientos ventanaAsientos=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta);
+                ventanaAsientos.setVisible(true);
+            }
+        });
     }
+
 
 }
