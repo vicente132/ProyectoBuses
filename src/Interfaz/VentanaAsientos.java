@@ -3,12 +3,15 @@ import Codigo.Cliente;
 import Codigo.DepositoBuses;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.image.ImageObserver;
 import java.text.AttributedCharacterIterator;
 import java.util.Objects;
 
 public class VentanaAsientos extends Ventana{
+
     private JLabel fondo=new JLabel();
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
     private Icon imagenfondo=new ImageIcon("imagenes/FondoAsientos.png");
@@ -17,6 +20,9 @@ public class VentanaAsientos extends Ventana{
 
     private JLabel primerpiso=new JLabel();
     private JLabel segundopiso=new JLabel();
+
+    private JTextField seleccionasiento;
+    private JTextField tipodeasiento;
 
     public VentanaAsientos(Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,JTextField numerobus){
         super();
@@ -38,48 +44,96 @@ public class VentanaAsientos extends Ventana{
         segundopiso.setVisible(true);
         fondo.add(segundopiso);
 
+        seleccionasiento=new JTextField();
+        seleccionasiento.setBounds(80,340,100,20);
+        fondo.add(seleccionasiento);
+        seleccionasiento.setEditable(false);
+
+        System.out.println(depositoBuses.getBus(0).getasientos().getAsiento(21).gettipo());
+
+
         if(Objects.equals(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).gettipo(), "Bus de 1 piso")) {
 
             System.out.println("bus de 1 piso");
-            for(int i=0;i<14;i++){
+            for(int i=0;i<13;i++){
                 if(i<10){
                     JButton asiento=new JButton("0"+Integer.toString(i));
                     asiento.setPreferredSize(new Dimension(60,40));
+                    int finalI = i;
+                    int finalI1 = i;
+                    asiento.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            seleccionasiento.setText(String.valueOf(finalI1));
+                        }
+                    });
                     primerpiso.add(asiento);
 
                 }
                 else{
                     JButton asiento=new JButton(Integer.toString(i));
                     asiento.setPreferredSize(new Dimension(60,40));
+                    int finalI = i;
+                    int finalI1 = i;
+                    asiento.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            seleccionasiento.setText(String.valueOf(finalI1));
+                        }
+                    });
                     primerpiso.add(asiento);
                 }
 
             }
 
         }
-
         else{
 
             for(int i=0;i<14;i++){
                 if(i<10){
                     JButton asiento=new JButton("0"+Integer.toString(i));
                     asiento.setPreferredSize(new Dimension(60,40));
+
+                    int finalI = i;
+                    int finalI1 = i;
+                    asiento.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            seleccionasiento.setText(String.valueOf(finalI1));
+                        }
+                    });
                     primerpiso.add(asiento);
 
                 }
                 else{
                     JButton asiento=new JButton(Integer.toString(i));
                     asiento.setPreferredSize(new Dimension(60,40));
+                    int finalI = i;
+                    int finalI1 = i;
+                    asiento.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            seleccionasiento.setText(String.valueOf(finalI1));
+                        }
+                    });
                     primerpiso.add(asiento);
                 }
 
             }
 
             System.out.println("bus de 2 pisos");
-            for(int i=0;i<10;i++){
+            for(int i=14;i<22;i++){
                 if(i<10){
                     JButton asiento=new JButton("0"+Integer.toString(i));
                     asiento.setPreferredSize(new Dimension(60,40));
+                    int finalI = i;
+                    int finalI1 = i;
+                    asiento.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            seleccionasiento.setText(String.valueOf(finalI1));
+                        }
+                    });
                     segundopiso.add(asiento);;
 
 
@@ -87,6 +141,14 @@ public class VentanaAsientos extends Ventana{
                 else{
                     JButton asiento=new JButton(Integer.toString(i));
                     asiento.setPreferredSize(new Dimension(60,40));
+                    int finalI = i;
+                    int finalI1 = i;
+                    asiento.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            seleccionasiento.setText(String.valueOf(finalI1));
+                        }
+                    });
                     segundopiso.add(asiento);
                 }
 

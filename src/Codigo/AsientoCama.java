@@ -19,4 +19,8 @@ public class AsientoCama extends Asiento{
         JButton asiento=new JButton();
     }
 
+    public String gettipo(){
+        return "cama";
+    }
+
 }

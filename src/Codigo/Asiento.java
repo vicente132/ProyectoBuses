@@ -19,6 +19,7 @@ abstract public class Asiento {
     public boolean getestado(){return libre;}
 
     public abstract void paint(Graphics g);
+    public abstract String gettipo();
 
 }
 

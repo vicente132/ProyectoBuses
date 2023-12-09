@@ -16,4 +16,8 @@ public class AsientoSemiCama extends Asiento{
         g.setColor(Color.GREEN);
         g.fillRect(500,250,100,20);
     }
+
+    public String gettipo(){
+        return "semicama";
+    }
 }
