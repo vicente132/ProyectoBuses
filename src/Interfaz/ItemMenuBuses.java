@@ -12,8 +12,10 @@ public class ItemMenuBuses{
     private Cliente cliente;
     private JMenuItem opcion;
     private String nombre;
-    public ItemMenuBuses(int index, JTextField horasalida, Bus bus,JTextField tipobus){
+
+    public ItemMenuBuses(int index, JTextField horasalida, Bus bus,JTextField tipobus,JTextField fechaida,JTextField fechavuelta,JTextField numerobus){
         this.opcion=new JMenuItem();
+
         nombre="Bus "+index+" Hora salida:"+String.valueOf(bus.getHorasalida()+":00");
         opcion.setText(nombre);
 
@@ -23,7 +25,9 @@ public class ItemMenuBuses{
 
                 horasalida.setText(String.valueOf(bus.getHorasalida())+":00");
                 tipobus.setText(bus.gettipo());
-
+                fechaida.setText(bus.getFechaida());
+                fechavuelta.setText(bus.getFechavuelta());
+                numerobus.setText(String.valueOf(bus.getSerie()));
 
             }
         });
