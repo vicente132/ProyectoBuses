@@ -13,7 +13,6 @@ public class VentanaBuses extends Ventana {
     private DepositoBuses depositoBuses;
     private Cliente cliente;
     private JLabel fondo=new JLabel();
-    private int seleccionbus;
     private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
 
@@ -80,7 +79,7 @@ public class VentanaBuses extends Ventana {
                         && Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText())
                         && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())
                 ) {
-                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses);
+                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida,depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses);
                     opcionesbuses.add(itembus.getItem());
                 }
             }
@@ -113,7 +112,7 @@ public class VentanaBuses extends Ventana {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                VentanaAsientos ventanaAsientos=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,seleccionbus);
+                VentanaAsientos ventanaAsientos=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus);
                 ventanaAsientos.setVisible(true);
             }
         });

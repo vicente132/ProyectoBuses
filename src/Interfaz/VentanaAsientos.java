@@ -18,7 +18,7 @@ public class VentanaAsientos extends Ventana{
     private JLabel primerpiso=new JLabel();
     private JLabel segundopiso=new JLabel();
 
-    public VentanaAsientos(Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,int seleccionbus){
+    public VentanaAsientos(Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,JTextField numerobus){
         super();
         this.cliente=cliente;
 
@@ -28,15 +28,27 @@ public class VentanaAsientos extends Ventana{
         this.setContentPane(fondo);fondo.setIcon(imagenfondo);fondo.setLayout(null);this.setResizable(false);this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,720);this.setVisible(true);
 
+        primerpiso.setLayout(new FlowLayout(FlowLayout.TRAILING,10,10));
+        primerpiso.setBounds(100,100,200,200);
+        primerpiso.repaint(100,100,200,200);
+        primerpiso.setVisible(true);
+        fondo.add(primerpiso);
 
-        if(Objects.equals(depositoBuses.getBus(seleccionbus).gettipo(), "Bus de 1 piso")){
-            for(int i=0;i<depositoBuses.getBus(seleccionbus).getasientos().getsize();i++){
+        System.out.println(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).gettipo());
 
+        if(Objects.equals(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).gettipo(), "Bus de 1 piso")) {
+
+            System.out.println("bus de 1 piso");
+            for(int i=0;i<14;i++){
+                JButton asiento=new JButton(Integer.toString(i));
+                asiento.setBounds(1,1,10,10);
+                primerpiso.add(asiento);
             }
 
 
         }
         else{
+            System.out.println("bus de 2 pisos");
 
         }
 

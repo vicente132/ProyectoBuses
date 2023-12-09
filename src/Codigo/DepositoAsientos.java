@@ -18,16 +18,14 @@ public class DepositoAsientos {
     }
 
     public void llenar1erpiso(){
-        filas=6;
-        for(int i=1;i<filas*2+2;i++){
+        for(int i=1;i<14;i++){
             AsientoSemiCama asiento=new AsientoSemiCama(i);
             asientos.add(asiento);
         }
     }
 
     public void llenar2piso(){
-        filas=4;
-        for(int i=1;i<filas;i++){
+        for(int i=1;i<10;i++){
             AsientoCama asientocama=new AsientoCama(i);
             asientos.add(asientocama);
         }
