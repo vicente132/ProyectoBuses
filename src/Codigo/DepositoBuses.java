@@ -39,7 +39,7 @@ public class DepositoBuses {
         }
     }
     public void llenarunpiso(){
-        for(int i=1;i<100;i++){
+        for(int i=100;i<200;i++){
             j=tramo.nextInt(6)+1;
             k=fechas.nextInt(17)+1;
             int horasalidareal=8+horasalida.nextInt(15);

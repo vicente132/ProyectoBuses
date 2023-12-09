@@ -238,16 +238,37 @@ public class VentanaPlanificar extends Ventana{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                if(!Objects.equals(selecciondestino.getText(), "") && !Objects.equals(seleccionorigen.getText(), "")){
-                    Ventana ventananueva = null;
-                    ventananueva = new VentanaBuses(cliente,seleccionorigen,selecciondestino,mostrarfechaida,mostrarfechavuelta);
-                    ventananueva.setVisible(true);
-                    dispose();
+
+                if(mostrarfechavuelta.isVisible()) {
+                    if (!Objects.equals(selecciondestino.getText(), "")
+                            && !Objects.equals(seleccionorigen.getText(), "")
+                            && !Objects.equals(mostrarfechaida.getText(), "")
+                            && !Objects.equals(mostrarfechavuelta.getText(), "")) {
+
+                        Ventana ventananueva = null;
+                        ventananueva = new VentanaBuses(cliente, seleccionorigen, selecciondestino, mostrarfechaida, mostrarfechavuelta);
+                        ventananueva.setVisible(true);
+                        dispose();
+                    } else {
+                        Ventana missinginfo = new VentanaError("Falta informacion");
+                        missinginfo.setVisible(true);
+
+                    }
                 }
                 else{
-                    Ventana missinginfo=new VentanaError("Falta informacion");
-                    missinginfo.setVisible(true);
+                    if (!Objects.equals(selecciondestino.getText(), "")
+                            && !Objects.equals(seleccionorigen.getText(), "")
+                            && !Objects.equals(mostrarfechaida.getText(), "")) {
 
+                        Ventana ventananueva = null;
+                        ventananueva = new VentanaBuses(cliente, seleccionorigen, selecciondestino, mostrarfechaida, mostrarfechavuelta);
+                        ventananueva.setVisible(true);
+                        dispose();
+                    } else {
+                        Ventana missinginfo = new VentanaError("Falta informacion");
+                        missinginfo.setVisible(true);
+
+                    }
                 }
             }
         });

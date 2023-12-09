@@ -51,14 +51,27 @@ public class VentanaBuses extends Ventana {
 
         JMenu opcionesbuses=new JMenu("Buses Disponibles");
 
-        for (int i = 0; i < depositoBuses.getsize(); i++) {
-            if (    Objects.equals(depositoBuses.getBus(i).getOrigen(), origenbus.getText())
-                    && Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText())
-                    && Objects.equals(depositoBuses.getBus(i).getFechaida(),mostrarfechaida.getText())
-                    && Objects.equals(depositoBuses.getBus(i).getFechavuelta(),mostrarfechavuelta.getText())
-            ) {
+        if(mostrarfechavuelta.isVisible()) {
+            for (int i = 0; i < depositoBuses.getsize(); i++) {
+                if (Objects.equals(depositoBuses.getBus(i).getOrigen(), origenbus.getText())
+                        && Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText())
+                        && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())
+                        && Objects.equals(depositoBuses.getBus(i).getFechavuelta(), mostrarfechavuelta.getText())
+                ) {
                     ItemMenuBuses itembus = new ItemMenuBuses(i, horasalida, depositoBuses.getBus(i), tipobus);
                     opcionesbuses.add(itembus.getItem());
+                }
+            }
+        }
+        else{
+            for (int i = 0; i < depositoBuses.getsize(); i++) {
+                if (Objects.equals(depositoBuses.getBus(i).getOrigen(), origenbus.getText())
+                        && Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText())
+                        && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())
+                ) {
+                    ItemMenuBuses itembus = new ItemMenuBuses(i, horasalida, depositoBuses.getBus(i), tipobus);
+                    opcionesbuses.add(itembus.getItem());
+                }
             }
         }
 
