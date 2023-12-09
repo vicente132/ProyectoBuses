@@ -18,7 +18,7 @@ abstract public class Asiento {
     }
     public boolean getestado(){return libre;}
 
-    abstract void paint(Graphics g);
+    public abstract void paint(Graphics g);
 
 }
 

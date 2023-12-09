@@ -4,6 +4,8 @@ import Codigo.DepositoBuses;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.awt.image.ImageObserver;
+import java.text.AttributedCharacterIterator;
 import java.util.Objects;
 
 public class VentanaAsientos extends Ventana{
@@ -28,7 +30,9 @@ public class VentanaAsientos extends Ventana{
 
 
         if(Objects.equals(depositoBuses.getBus(seleccionbus).gettipo(), "Bus de 1 piso")){
+            for(int i=0;i<depositoBuses.getBus(seleccionbus).getasientos().getsize();i++){
 
+            }
 
 
         }

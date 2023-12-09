@@ -1,5 +1,6 @@
 package Codigo;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class AsientoCama extends Asiento{
@@ -12,9 +13,10 @@ public class AsientoCama extends Asiento{
     }
 
     @Override
-    void paint(Graphics g) {
+    public void paint(Graphics g) {
         g.setColor(Color.gray);
         g.fillRect(500,200,100,20);
+        JButton asiento=new JButton();
     }
 
 }
