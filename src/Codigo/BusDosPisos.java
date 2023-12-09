@@ -21,6 +21,6 @@ public class BusDosPisos extends Bus{
     }
 
     public String gettipo(){
-        return "bus de 2 pisos";
+        return "Bus de 2 pisos";
     }
 }

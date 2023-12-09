@@ -83,6 +83,10 @@ abstract public class Bus {
     public String getFechavuelta(){return fechavuelta;}
     public int getFechas(){return fechas;}
 
+    public DepositoAsientos getasientos(){
+        return asientos;
+    }
+
 
     public void setOrigen(String origen){this.origen=origen;}
     public abstract String gettipo();

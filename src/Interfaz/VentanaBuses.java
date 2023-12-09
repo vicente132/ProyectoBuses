@@ -10,7 +10,9 @@ import java.util.Objects;
 public class VentanaBuses extends Ventana {
     private DepositoBuses depositoBuses;
     private Cliente cliente;
-    JLabel fondo=new JLabel();
+    private JLabel fondo=new JLabel();
+    private int seleccionbus;
+    private JInternalFrame piso1;
     private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
 
@@ -33,6 +35,11 @@ public class VentanaBuses extends Ventana {
         this.setSize(1280,720);
         this.setVisible(true);
 
+        piso1=new JInternalFrame();
+        piso1.setLayout(new FlowLayout());
+        piso1.setBounds(500,90,400,700);
+        fondo.add(piso1);
+        piso1.setVisible(true);
 
         JTextField horasalida=new JTextField("Hora salida");
         horasalida.setBounds(200,200,115,30);
@@ -52,9 +59,13 @@ public class VentanaBuses extends Ventana {
         JTextField fechavuelta=new JTextField("Fecha vuelta");
         fechavuelta.setBounds(200,320,115,30);
         fechavuelta.setEditable(false);
+        fechavuelta.setVisible(false);
         fondo.add(fechavuelta);
+        if(mostrarfechavuelta.isVisible()){
+            fechavuelta.setVisible(true);
+        }
 
-        JTextField numerobus=new JTextField("Bus numero: ");
+        JTextField numerobus=new JTextField("0");
         numerobus.setBounds(200,360,115,30);
         fechavuelta.setEditable(false);
         fondo.add(numerobus);
@@ -69,7 +80,7 @@ public class VentanaBuses extends Ventana {
                         && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())
                         && Objects.equals(depositoBuses.getBus(i).getFechavuelta(), mostrarfechavuelta.getText())
                 ) {
-                    ItemMenuBuses itembus = new ItemMenuBuses(i, horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus);
+                    ItemMenuBuses itembus = new ItemMenuBuses(piso1,horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses);
                     opcionesbuses.add(itembus.getItem());
                 }
             }
@@ -80,7 +91,7 @@ public class VentanaBuses extends Ventana {
                         && Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText())
                         && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())
                 ) {
-                    ItemMenuBuses itembus = new ItemMenuBuses(i, horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus);
+                    ItemMenuBuses itembus = new ItemMenuBuses(piso1,horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses);
                     opcionesbuses.add(itembus.getItem());
                 }
             }
@@ -91,6 +102,9 @@ public class VentanaBuses extends Ventana {
         barrabuses.setBounds(10,200,115,30);
         fondo.add(barrabuses);
         barrabuses.add(opcionesbuses);
+
+
+
 
 
 
@@ -118,11 +132,6 @@ public class VentanaBuses extends Ventana {
                 ventananueva.setVisible(true);
                 dispose();}});
 
-    }
-
-    public void paint(Graphics g){
-        super.paint(g);
-        depositoBuses.getBus(0).paint(g);
     }
 
 }
