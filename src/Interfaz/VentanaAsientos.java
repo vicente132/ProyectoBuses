@@ -9,24 +9,32 @@ import java.util.Objects;
 public class VentanaAsientos extends Ventana{
     private JLabel fondo=new JLabel();
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
-    private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
+    private Icon imagenfondo=new ImageIcon("imagenes/FondoAsientos.png");
     private DepositoBuses depositoBuses;
     private Cliente cliente;
 
-    public VentanaAsientos(Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta){
+    private JLabel primerpiso=new JLabel();
+    private JLabel segundopiso=new JLabel();
+
+    public VentanaAsientos(Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,int seleccionbus){
         super();
         this.cliente=cliente;
 
 
         this.depositoBuses=DepositoBuses.getInstancia("deposito1");
         this.setTitle("Seleccion Asientos");
-        this.setContentPane(fondo);
-        fondo.setIcon(imagenfondo);
-        fondo.setLayout(null);this.setResizable(false);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setSize(1280,720);
-        this.setVisible(true);
+        this.setContentPane(fondo);fondo.setIcon(imagenfondo);fondo.setLayout(null);this.setResizable(false);this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setSize(1280,720);this.setVisible(true);
 
+
+        if(Objects.equals(depositoBuses.getBus(seleccionbus).gettipo(), "Bus de 1 piso")){
+
+
+
+        }
+        else{
+
+        }
 
 
 

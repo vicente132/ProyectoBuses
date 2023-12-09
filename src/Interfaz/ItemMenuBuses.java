@@ -15,7 +15,7 @@ public class ItemMenuBuses{
     private JMenuItem opcion;
     private String nombre;
     private int seleccionbus;
-    public ItemMenuBuses(JLabel fondo,JTextField horasalida, Bus bus, JTextField tipobus, JTextField fechaida, JTextField fechavuelta, JTextField numerobus, DepositoBuses depositobuses){
+    public ItemMenuBuses(JTextField horasalida, Bus bus, JTextField tipobus, JTextField fechaida, JTextField fechavuelta, JTextField numerobus, DepositoBuses depositobuses){
         this.opcion=new JMenuItem();
         seleccionbus=depositobuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();
         nombre="Bus "+bus.getSerie()+" Hora salida:"+String.valueOf(bus.getHorasalida()+":00");

@@ -14,7 +14,6 @@ public class VentanaBuses extends Ventana {
     private Cliente cliente;
     private JLabel fondo=new JLabel();
     private int seleccionbus;
-    private JLabel piso1;
     private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
 
@@ -30,12 +29,6 @@ public class VentanaBuses extends Ventana {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,720);
         this.setVisible(true);
-
-        piso1=new JLabel();
-        piso1.setLayout(new FlowLayout(FlowLayout.LEADING,40,50));
-        piso1.setBounds(500,90,400,700);
-        fondo.add(piso1);
-        piso1.setVisible(true);
 
         JTextField horasalida=new JTextField("Hora salida");
         horasalida.setBounds(200,200,115,30);
@@ -76,7 +69,7 @@ public class VentanaBuses extends Ventana {
                         && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())
                         && Objects.equals(depositoBuses.getBus(i).getFechavuelta(), mostrarfechavuelta.getText())
                 ) {
-                    ItemMenuBuses itembus = new ItemMenuBuses(piso1,horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses);
+                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses);
                     opcionesbuses.add(itembus.getItem());
                 }
             }
@@ -87,7 +80,7 @@ public class VentanaBuses extends Ventana {
                         && Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText())
                         && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())
                 ) {
-                    ItemMenuBuses itembus = new ItemMenuBuses(piso1,horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses);
+                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses);
                     opcionesbuses.add(itembus.getItem());
                 }
             }
@@ -113,14 +106,14 @@ public class VentanaBuses extends Ventana {
                 ventananueva.setVisible(true);
                 dispose();}});
 
-        JButton siguiente=new JButton("siguiente");
+        JButton siguiente=new JButton("Escoger Asientos");
         siguiente.setBounds(800,500,200,100);
         fondo.add(siguiente);
         siguiente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                VentanaAsientos ventanaAsientos=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta);
+                VentanaAsientos ventanaAsientos=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,seleccionbus);
                 ventanaAsientos.setVisible(true);
             }
         });
