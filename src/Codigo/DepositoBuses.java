@@ -30,7 +30,7 @@ public class DepositoBuses {
 
 
     public void llenardospisos(){
-        for(int i=1;i<100;i++){
+        for(int i=1;i<101;i++){
             l=tramo.nextInt(6)+1;
             m=fechas.nextInt(17)+1;
             int horasalidareal =8+horasalida.nextInt(15);
@@ -39,7 +39,7 @@ public class DepositoBuses {
         }
     }
     public void llenarunpiso(){
-        for(int i=100;i<200;i++){
+        for(int i=100;i<201;i++){
             j=tramo.nextInt(6)+1;
             k=fechas.nextInt(17)+1;
             int horasalidareal=8+horasalida.nextInt(15);

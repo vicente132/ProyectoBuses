@@ -28,27 +28,69 @@ public class VentanaAsientos extends Ventana{
         this.setContentPane(fondo);fondo.setIcon(imagenfondo);fondo.setLayout(null);this.setResizable(false);this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(1280,720);this.setVisible(true);
 
-        primerpiso.setLayout(new FlowLayout(FlowLayout.TRAILING,10,10));
-        primerpiso.setBounds(100,100,200,200);
-        primerpiso.repaint(100,100,200,200);
+        primerpiso.setLayout(new FlowLayout(FlowLayout.TRAILING,65,20));
+        primerpiso.setBounds(400,105,300,450);
         primerpiso.setVisible(true);
         fondo.add(primerpiso);
 
-        System.out.println(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).gettipo());
+        segundopiso.setLayout(new FlowLayout(FlowLayout.TRAILING,65,20));
+        segundopiso.setBounds(800,105,300,450);
+        segundopiso.setVisible(true);
+        fondo.add(segundopiso);
 
         if(Objects.equals(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).gettipo(), "Bus de 1 piso")) {
 
             System.out.println("bus de 1 piso");
             for(int i=0;i<14;i++){
-                JButton asiento=new JButton(Integer.toString(i));
-                asiento.setBounds(1,1,10,10);
-                primerpiso.add(asiento);
+                if(i<10){
+                    JButton asiento=new JButton("0"+Integer.toString(i));
+                    asiento.setPreferredSize(new Dimension(60,40));
+                    primerpiso.add(asiento);
+
+                }
+                else{
+                    JButton asiento=new JButton(Integer.toString(i));
+                    asiento.setPreferredSize(new Dimension(60,40));
+                    primerpiso.add(asiento);
+                }
+
             }
 
-
         }
+
         else{
+
+            for(int i=0;i<14;i++){
+                if(i<10){
+                    JButton asiento=new JButton("0"+Integer.toString(i));
+                    asiento.setPreferredSize(new Dimension(60,40));
+                    primerpiso.add(asiento);
+
+                }
+                else{
+                    JButton asiento=new JButton(Integer.toString(i));
+                    asiento.setPreferredSize(new Dimension(60,40));
+                    primerpiso.add(asiento);
+                }
+
+            }
+
             System.out.println("bus de 2 pisos");
+            for(int i=0;i<10;i++){
+                if(i<10){
+                    JButton asiento=new JButton("0"+Integer.toString(i));
+                    asiento.setPreferredSize(new Dimension(60,40));
+                    segundopiso.add(asiento);;
+
+
+                }
+                else{
+                    JButton asiento=new JButton(Integer.toString(i));
+                    asiento.setPreferredSize(new Dimension(60,40));
+                    segundopiso.add(asiento);
+                }
+
+            }
 
         }
 
