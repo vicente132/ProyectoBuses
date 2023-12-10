@@ -11,6 +11,7 @@ abstract public class Asiento {
     public Asiento(int numero){
         libre=true;
         this.numero=numero;
+
     }
 
     public int getnumero(){
