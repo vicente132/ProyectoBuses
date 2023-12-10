@@ -113,20 +113,5 @@ public class VentanaPago extends Ventana {
 
 
 
-        JButton volver=new JButton("volver");
-        volver.setBounds(10,10,200,100);
-        volver.setIcon(imagenbotonvolver);
-        fondo.add(volver);
-        volver.addMouseListener(new EscucharMouse() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                Ventana ventananueva=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus,mostrarfechavuelta);
-                ventananueva.setVisible(true);
-                dispose();
-
-            }});
-
-
     }
 }

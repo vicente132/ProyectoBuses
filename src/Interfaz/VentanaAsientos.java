@@ -21,7 +21,7 @@ public class VentanaAsientos extends Ventana{
 
 
 
-    public VentanaAsientos(Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,JTextField numerobus,JTextField mostrarfechvuelta){
+    public VentanaAsientos(JTextField numerobusvuelta,Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,JTextField mostrarfechvuelta,JTextField numerobus){
         super();
         this.cliente=cliente;
 
@@ -41,7 +41,7 @@ public class VentanaAsientos extends Ventana{
         segundopiso.setVisible(true);
         fondo.add(segundopiso);
 
-
+        System.out.println(numerobus.getText());
         if(Objects.equals(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).gettipo(), "Bus de 1 piso")) {
             System.out.println("bus de 1 piso");
             for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();i++){
@@ -186,7 +186,7 @@ public class VentanaAsientos extends Ventana{
                 dispose();
 
                 if(mostrarfechavuelta.isVisible()){
-                    Ventana ventanaasientos2=new VentanaAsientos2(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus);
+                    Ventana ventanaasientos2=new VentanaAsientos2(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobusvuelta,numerobus);
                     ventanaasientos2.setVisible(true);
 
                     for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();i++){

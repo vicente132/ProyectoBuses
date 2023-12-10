@@ -17,7 +17,7 @@ public class VentanaAsientos2 extends Ventana{
     private JLabel primerpiso=new JLabel();
     private JLabel segundopiso=new JLabel();
 
-    public VentanaAsientos2(Cliente cliente, JTextField origenbus,JTextField destinobus,JTextField mostrarfechaida,JTextField mostrarfechavuelta,JTextField numerobus){
+    public VentanaAsientos2(Cliente cliente, JTextField origenbus,JTextField destinobus,JTextField mostrarfechaida,JTextField mostrarfechavuelta,JTextField numerobusvuelta,JTextField numerobus){
         super();
         this.cliente=cliente;
 
@@ -49,6 +49,117 @@ public class VentanaAsientos2 extends Ventana{
         origen.setText(cliente.getOrigenvuelta());
         destino.setText(cliente.getDestinovuelta());
 
+
+        if(Objects.equals(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).gettipo(), "Bus de 1 piso")) {
+            System.out.println("bus de 1 piso");
+            for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getsize();i++){
+                JButton asiento;
+                int finalI1 = i;
+                if(i<10){
+                    asiento = new JButton("0" + Integer.toString(i));
+
+                }
+                else {
+                    asiento = new JButton(Integer.toString(i));
+                }
+                asiento.setPreferredSize(new Dimension(60,40));
+                if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).getestado()){
+                    asiento.setBackground(Color.GREEN);
+                }
+                else{
+                    asiento.setBackground(Color.RED);
+                    asiento.setEnabled(false);
+                }
+                asiento.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).getestado()){
+                            depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).setestado(false);
+                            asiento.setBackground(Color.RED);
+                        }
+                        else{
+                            depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).setestado(true);
+                            asiento.setBackground(Color.GREEN);
+                        }
+
+                    }
+                });
+                primerpiso.add(asiento);
+            }
+
+        }
+        //bus de 2 pisos
+        else{
+            for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getsize();i++){
+                JButton asiento;
+                int finalI1 = i;
+                if(i<10){
+                    asiento = new JButton("0" + Integer.toString(i));
+                }
+                else {
+                    asiento = new JButton(Integer.toString(i));
+                }
+                asiento.setPreferredSize(new Dimension(60,40));
+                if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).getestado()){
+                    asiento.setBackground(Color.GREEN);
+                }
+                else{
+                    asiento.setBackground(Color.RED);
+                    asiento.setEnabled(false);
+                }
+                asiento.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).getestado()){
+                            depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).setestado(false);
+                            asiento.setBackground(Color.RED);
+                        }
+                        else{
+                            depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).setestado(true);
+                            asiento.setBackground(Color.GREEN);
+                        }
+
+                    }
+                });
+                primerpiso.add(asiento);
+            }
+
+            for(int i=0;i<8;i++){
+                int finalI1 = i;
+                JButton asiento;
+                asiento=new JButton(Integer.toString(i+13));
+                asiento.setPreferredSize(new Dimension(60,40));
+
+                if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(finalI1).getestado()){
+                    asiento.setBackground(Color.GREEN);
+                }
+                else{
+                    asiento.setBackground(Color.RED);
+                    asiento.setEnabled(false);
+                }
+                asiento.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+
+                        if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(finalI1).getestado()){
+                            depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(finalI1).setestado(false);
+                            asiento.setBackground(Color.RED);
+                        }
+                        else{
+                            depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(finalI1).setestado(true);
+                            asiento.setBackground(Color.GREEN);
+                        }
+                    }
+                });
+                segundopiso.add(asiento);;
+
+            }
+
+        }
+
+
+
+
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
         volver.setIcon(imagenbotonvolver);
@@ -57,7 +168,7 @@ public class VentanaAsientos2 extends Ventana{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                Ventana ventanaAsientos=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus,mostrarfechavuelta);
+                Ventana ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,mostrarfechavuelta,numerobus);
                 ventanaAsientos.setVisible(true);
                 dispose();}});
 

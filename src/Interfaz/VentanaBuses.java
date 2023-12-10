@@ -34,6 +34,11 @@ public class VentanaBuses extends Ventana {
         horasalida.setEditable(false);
         fondo.add(horasalida);
 
+        JTextField horasalidavuelta=new JTextField("Hora salida");
+        horasalidavuelta.setBounds(630,200,115,30);
+        horasalidavuelta.setEditable(false);
+        fondo.add(horasalidavuelta);
+
 
 
         JTextField tipobus=new JTextField("Tipo de bus");
@@ -41,12 +46,18 @@ public class VentanaBuses extends Ventana {
         tipobus.setEditable(false);
         fondo.add(tipobus);
 
+        JTextField tipobusvuelta=new JTextField("Tipo de bus");
+        tipobusvuelta.setBounds(630,240,115,30);
+        tipobusvuelta.setEditable(false);
+        fondo.add(tipobusvuelta);
+
 
 
         JTextField fechaida=new JTextField("fecha ida");
         fechaida.setBounds(500,280,115,30);
         fechaida.setEditable(false);
         fondo.add(fechaida);
+
 
 
 
@@ -60,10 +71,16 @@ public class VentanaBuses extends Ventana {
         }
 
 
+
         JTextField numerobus=new JTextField("0");
         numerobus.setBounds(500,360,115,30);
-        fechavuelta.setEditable(false);
+        numerobus.setEditable(false);
         fondo.add(numerobus);
+
+        JTextField numerobusvuelta=new JTextField("0");
+        numerobusvuelta.setBounds(630,360,115,30);
+        numerobusvuelta.setEditable(false);
+        fondo.add(numerobusvuelta);
 
 
 
@@ -96,7 +113,7 @@ public class VentanaBuses extends Ventana {
                         && Objects.equals(depositoBuses.getBus(i).getFechavuelta(),cliente.getFechavuelta())
                 ) {
                     System.out.println("si");
-                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida, depositoBuses.getBus(i), tipobus, fechaida, fechavuelta, numerobus, cliente);
+                    ItemMenuBusesVuelta itembus = new ItemMenuBusesVuelta(horasalidavuelta,tipobusvuelta,numerobusvuelta,cliente, depositoBuses.getBus(i));
                     opcionesbusesvuelta.add(itembus.getItem());
                 }
                 else{System.out.println("no");}
@@ -132,7 +149,7 @@ public class VentanaBuses extends Ventana {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                VentanaAsientos ventanaAsientos=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus,mostrarfechavuelta);
+                VentanaAsientos ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,mostrarfechavuelta,numerobus);
                 ventanaAsientos.setVisible(true);
             }
         });
