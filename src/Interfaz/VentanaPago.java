@@ -42,9 +42,10 @@ public class VentanaPago extends Ventana {
         horasalida.setEditable(false);
         fondo.add(horasalida);
 
-        for(int i=0;i<14;i++){
+        for(int i=0;i<22;i++){
 
             if(!depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).getestado()){
+                System.out.println(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).gettipo());
                 JTextField asiento=new JTextField();
                 JTextField tipoasiento=new JTextField();
 
@@ -59,23 +60,7 @@ public class VentanaPago extends Ventana {
 
             }
         }
-        for(int i=14;i<22;i++){
 
-            if(!depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).getestado()){
-                JTextField asiento=new JTextField();
-                JTextField tipoasiento=new JTextField();
-
-                asiento.setText(String.valueOf(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).getnumero()-1));
-                tipoasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).gettipo());
-
-                asiento.setBounds(520,240+40*i,115,30);
-                tipoasiento.setBounds(645,240+40*i,115,30);
-
-                fondo.add(asiento);
-                fondo.add(tipoasiento);
-
-            }
-        }
 
 
 
