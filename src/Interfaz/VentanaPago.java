@@ -2,12 +2,10 @@ package Interfaz;
 import Codigo.Cliente;
 import Codigo.DepositoBuses;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.Objects;
+
 
 public class VentanaPago extends Ventana {
 
@@ -176,7 +174,6 @@ public class VentanaPago extends Ventana {
         volver.addMouseListener(new EscucharMouse() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
                 if(mostrarfechavuelta.isVisible()){super.mouseClicked(e);
                     Ventana ventanaasientos2=new VentanaAsientos2(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobusvuelta,numerobus);
                     ventanaasientos2.setVisible(true);
@@ -187,11 +184,24 @@ public class VentanaPago extends Ventana {
                     VentanaAsientos ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,mostrarfechavuelta,numerobus);
                     ventanaAsientos.setVisible(true);
                 }
-
-
             }
         }
         );
+
+        JButton siguiente=new JButton("siguiente");
+        siguiente.setBounds(800,500,200,100);
+        fondo.add(siguiente);
+
+        siguiente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                Ventana ventanalisto=new VentanaListo();
+                ventanalisto.setVisible(true);
+            }
+        });
+
+
 
 
 
