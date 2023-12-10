@@ -19,8 +19,6 @@ public class VentanaAsientos extends Ventana{
     private JLabel primerpiso=new JLabel();
     private JLabel segundopiso=new JLabel();
 
-    private JTextField seleccionasiento;
-    private JTextField tipodeasiento;
 
 
     public VentanaAsientos(Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,JTextField numerobus){
@@ -43,18 +41,6 @@ public class VentanaAsientos extends Ventana{
         segundopiso.setVisible(true);
         fondo.add(segundopiso);
 
-        seleccionasiento=new JTextField();
-        seleccionasiento.setBounds(80,340,100,20);
-        fondo.add(seleccionasiento);
-        seleccionasiento.setEditable(false);
-
-        tipodeasiento=new JTextField();
-        tipodeasiento.setBounds(80,370,100,20);
-        fondo.add(tipodeasiento);
-        tipodeasiento.setVisible(true);
-
-
-
 
         if(Objects.equals(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).gettipo(), "Bus de 1 piso")) {
             System.out.println("bus de 1 piso");
@@ -76,10 +62,6 @@ public class VentanaAsientos extends Ventana{
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            seleccionasiento.setText(String.valueOf(finalI1));
-                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
-
-
                             if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
                                 depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
                                 asiento.setBackground(Color.RED);
@@ -108,9 +90,6 @@ public class VentanaAsientos extends Ventana{
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            seleccionasiento.setText(String.valueOf(finalI1));
-                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
-
                             if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
                                 depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
                                 asiento.setBackground(Color.RED);
@@ -144,9 +123,6 @@ public class VentanaAsientos extends Ventana{
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            seleccionasiento.setText(String.valueOf(finalI1));
-                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
-
                             if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
                                 depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
                                 asiento.setBackground(Color.RED);
@@ -174,8 +150,6 @@ public class VentanaAsientos extends Ventana{
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            seleccionasiento.setText(String.valueOf(finalI1));
-                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
 
                             if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
                                 depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
@@ -208,8 +182,6 @@ public class VentanaAsientos extends Ventana{
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            seleccionasiento.setText(String.valueOf(finalI1));
-                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
 
                             if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
                                 depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
@@ -239,8 +211,6 @@ public class VentanaAsientos extends Ventana{
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
-                            seleccionasiento.setText(String.valueOf(finalI1));
-                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
 
                             if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
                                 depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
@@ -285,6 +255,13 @@ public class VentanaAsientos extends Ventana{
                 dispose();
                 VentanaPago ventanapago=new VentanaPago(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus);
                 ventanapago.setVisible(true);
+
+                for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();i++){
+                    if(!depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).getestado()){
+                        depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).setestado(false);
+                    }
+                }
+
             }
         });
 
