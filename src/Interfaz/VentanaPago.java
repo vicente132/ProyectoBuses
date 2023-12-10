@@ -208,11 +208,8 @@ public class VentanaPago extends Ventana {
                 dispose();
                 Ventana ventanalisto=new VentanaListo();
                 ventanalisto.setVisible(true);
-                for(int i=0;i<depositobotones.getdepositobotonesasiento().size();i++){
-                    if(Objects.equals(depositobotones.getboton(i).getIcon(), imagenocupado)){
-                        depositobotones.getboton(i).setEnabled(false);
-                    }
-                }
+
+
             }
         });
 

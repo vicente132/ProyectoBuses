@@ -65,6 +65,9 @@ public class VentanaAsientos extends Ventana{
                  * Color de los botones
                  */
 
+                if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                    asiento.setBackground(Color.GREEN);
+                } else{asiento.setBackground(Color.RED);}
 
                 asiento.addActionListener(new ActionListener() {
                     @Override
@@ -73,13 +76,13 @@ public class VentanaAsientos extends Ventana{
                             depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
                             asiento.setBackground(Color.RED);
                             cliente.getDepositoAsientoscliente().addasiento(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1));
-                            asiento.setIcon(imagenocupado);
+
                         }
                         else{
                             depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(true);
                             asiento.setBackground(Color.GREEN);
                             cliente.getDepositoAsientoscliente().quitarasiento(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1));
-                            asiento.setText("0" + Integer.toString(finalI1));
+
                         }
 
                     }
@@ -111,13 +114,13 @@ public class VentanaAsientos extends Ventana{
                             depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
                             asiento.setBackground(Color.RED);
                             cliente.getDepositoAsientoscliente().addasiento(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1));
-                            asiento.setIcon(imagenocupado);
+
                         }
                         else{
                             depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(true);
                             asiento.setBackground(Color.GREEN);
                             cliente.getDepositoAsientoscliente().quitarasiento(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1));
-                            asiento.setText("0" + Integer.toString(finalI1));
+
                         }
 
                     }
@@ -146,13 +149,13 @@ public class VentanaAsientos extends Ventana{
                             depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(finalI1).setestado(false);
                             asiento.setBackground(Color.RED);
                             cliente.getDepositoAsientoscliente().addasientocama(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(finalI1));
-                            asiento.setIcon(imagenocupado);
+
                         }
                         else{
                             depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(finalI1).setestado(true);
                             asiento.setBackground(Color.GREEN);
                             cliente.getDepositoAsientoscliente().quitarasientocama(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(finalI1));
-                            asiento.setText(Integer.toString(finalI1+13));
+
                         }
                     }
                 });
@@ -197,6 +200,11 @@ public class VentanaAsientos extends Ventana{
         siguiente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                for(int i=0;i<cliente.getDepositoAsientoscliente().getsize();i++){
+                    if(!cliente.getDepositoAsientoscliente().getAsiento(i).getestado()){
+                        depositoBotonesAsientos.getboton(i).setEnabled(false);
+                    }
+                }
                 dispose();
 
                 for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();i++){
@@ -213,6 +221,7 @@ public class VentanaAsientos extends Ventana{
                 if(mostrarfechavuelta.isVisible()){
                     Ventana ventanaasientos2=new VentanaAsientos2(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobusvuelta,numerobus,depositoBotonesAsientos);
                     ventanaasientos2.setVisible(true);
+
                 }
                 else {
                     VentanaPago ventanapago=new VentanaPago(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus,numerobusvuelta,depositoBotonesAsientos);
