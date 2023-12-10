@@ -1,4 +1,5 @@
 package Interfaz;
+import Codigo.Asiento;
 import Codigo.Cliente;
 import Codigo.DepositoBuses;
 import javax.swing.*;
@@ -23,6 +24,7 @@ public class VentanaAsientos extends Ventana{
 
     private JTextField seleccionasiento;
     private JTextField tipodeasiento;
+
 
     public VentanaAsientos(Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,JTextField numerobus){
         super();
@@ -49,40 +51,81 @@ public class VentanaAsientos extends Ventana{
         fondo.add(seleccionasiento);
         seleccionasiento.setEditable(false);
 
-        System.out.println(depositoBuses.getBus(0).getasientos().getAsiento(21).gettipo());
+        tipodeasiento=new JTextField();
+        tipodeasiento.setBounds(80,370,100,20);
+        fondo.add(tipodeasiento);
+        tipodeasiento.setVisible(true);
+
+
 
 
         if(Objects.equals(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).gettipo(), "Bus de 1 piso")) {
-
             System.out.println("bus de 1 piso");
             for(int i=0;i<13;i++){
+                JButton asiento;
                 if(i<10){
-                    JButton asiento=new JButton("0"+Integer.toString(i));
-                    asiento.setPreferredSize(new Dimension(60,40));
-                    int finalI = i;
                     int finalI1 = i;
+                    asiento = new JButton("0" + Integer.toString(i));
+                    asiento.setPreferredSize(new Dimension(60,40));
+
+                    if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                        asiento.setBackground(Color.GREEN);
+                    }
+                    else{
+                        asiento.setBackground(Color.RED);
+                        asiento.setEnabled(false);
+                    }
+
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             seleccionasiento.setText(String.valueOf(finalI1));
+                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
+
+
+                            if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
+                                asiento.setBackground(Color.RED);
+                            }
+                            else{
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(true);
+                                asiento.setBackground(Color.GREEN);
+                            }
+
                         }
                     });
-                    primerpiso.add(asiento);
 
                 }
                 else{
-                    JButton asiento=new JButton(Integer.toString(i));
+                    asiento = new JButton(Integer.toString(i));
                     asiento.setPreferredSize(new Dimension(60,40));
-                    int finalI = i;
                     int finalI1 = i;
+
+                    if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                        asiento.setBackground(Color.GREEN);
+                    }
+                    else{
+                        asiento.setBackground(Color.RED);
+                        asiento.setEnabled(false);
+                    }
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             seleccionasiento.setText(String.valueOf(finalI1));
+                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
+
+                            if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
+                                asiento.setBackground(Color.RED);
+                            }
+                            else{
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(true);
+                                asiento.setBackground(Color.GREEN);
+                            }
                         }
                     });
-                    primerpiso.add(asiento);
                 }
+                primerpiso.add(asiento);
 
             }
 
@@ -93,13 +136,28 @@ public class VentanaAsientos extends Ventana{
                 if(i<10){
                     JButton asiento=new JButton("0"+Integer.toString(i));
                     asiento.setPreferredSize(new Dimension(60,40));
-
-                    int finalI = i;
                     int finalI1 = i;
+                    if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                        asiento.setBackground(Color.GREEN);
+                    }
+                    else{
+                        asiento.setBackground(Color.RED);
+                        asiento.setEnabled(false);
+                    }
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             seleccionasiento.setText(String.valueOf(finalI1));
+                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
+
+                            if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
+                                asiento.setBackground(Color.RED);
+                            }
+                            else{
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(true);
+                                asiento.setBackground(Color.GREEN);
+                            }
                         }
                     });
                     primerpiso.add(asiento);
@@ -108,12 +166,28 @@ public class VentanaAsientos extends Ventana{
                 else{
                     JButton asiento=new JButton(Integer.toString(i));
                     asiento.setPreferredSize(new Dimension(60,40));
-                    int finalI = i;
                     int finalI1 = i;
+                    if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                        asiento.setBackground(Color.GREEN);
+                    }
+                    else{
+                        asiento.setBackground(Color.RED);
+                        asiento.setEnabled(false);
+                    }
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             seleccionasiento.setText(String.valueOf(finalI1));
+                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
+
+                            if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
+                                asiento.setBackground(Color.RED);
+                            }
+                            else{
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(true);
+                                asiento.setBackground(Color.GREEN);
+                            }
                         }
                     });
                     primerpiso.add(asiento);
@@ -126,12 +200,28 @@ public class VentanaAsientos extends Ventana{
                 if(i<10){
                     JButton asiento=new JButton("0"+Integer.toString(i));
                     asiento.setPreferredSize(new Dimension(60,40));
-                    int finalI = i;
                     int finalI1 = i;
+                    if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                        asiento.setBackground(Color.GREEN);
+                    }
+                    else{
+                        asiento.setBackground(Color.RED);
+                        asiento.setEnabled(false);
+                    }
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             seleccionasiento.setText(String.valueOf(finalI1));
+                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
+
+                            if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
+                                asiento.setBackground(Color.RED);
+                            }
+                            else{
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(true);
+                                asiento.setBackground(Color.GREEN);
+                            }
                         }
                     });
                     segundopiso.add(asiento);;
@@ -141,12 +231,28 @@ public class VentanaAsientos extends Ventana{
                 else{
                     JButton asiento=new JButton(Integer.toString(i));
                     asiento.setPreferredSize(new Dimension(60,40));
-                    int finalI = i;
                     int finalI1 = i;
+                    if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                        asiento.setBackground(Color.GREEN);
+                    }
+                    else{
+                        asiento.setBackground(Color.RED);
+                        asiento.setEnabled(false);
+                    }
                     asiento.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             seleccionasiento.setText(String.valueOf(finalI1));
+                            tipodeasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).gettipo());
+
+                            if(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).getestado()){
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(false);
+                                asiento.setBackground(Color.RED);
+                            }
+                            else{
+                                depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(finalI1).setestado(true);
+                                asiento.setBackground(Color.GREEN);
+                            }
                         }
                     });
                     segundopiso.add(asiento);
