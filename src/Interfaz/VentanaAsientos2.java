@@ -68,7 +68,7 @@ public class VentanaAsientos2 extends Ventana{
                 }
                 else{
                     asiento.setBackground(Color.RED);
-                    asiento.setEnabled(false);
+
                 }
                 asiento.addActionListener(new ActionListener() {
                     @Override
@@ -105,7 +105,7 @@ public class VentanaAsientos2 extends Ventana{
                 }
                 else{
                     asiento.setBackground(Color.RED);
-                    asiento.setEnabled(false);
+
                 }
                 asiento.addActionListener(new ActionListener() {
                     @Override

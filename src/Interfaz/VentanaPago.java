@@ -1,4 +1,5 @@
 package Interfaz;
+import Codigo.BusquedaArray;
 import Codigo.Cliente;
 import Codigo.DepositoBuses;
 import javax.swing.*;
@@ -83,10 +84,11 @@ public class VentanaPago extends Ventana {
 
 
 
-
+        //buses solo ida
+            //asientos semicama
         for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();i++){
 
-            if(!depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).getestado()){
+            if(new BusquedaArray(cliente.getDepositoAsientoscliente().getasientosarray(),depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i)).estaenelarray()) {
                 JTextField asiento=new JTextField();
                 JTextField tipoasiento=new JTextField();
                 asiento.setEditable(false);
@@ -103,9 +105,10 @@ public class VentanaPago extends Ventana {
 
             }
         }
+            //asientos cama
         for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsizecama();i++){
 
-            if(!depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(i).getestado()){
+            if(new BusquedaArray(cliente.getDepositoAsientoscliente().getasientoscamaarray(),depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(i)).estaenelarray()){
 
                 JTextField asiento=new JTextField();
                 JTextField tipoasiento=new JTextField();
@@ -124,9 +127,12 @@ public class VentanaPago extends Ventana {
             }
         }
 
+
+        //buses vuelta
+            //asientos semicama
         for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getsize();i++){
 
-            if(!depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(i).getestado()){
+            if(new BusquedaArray(cliente.getDepositoAsientoscliente().getasientosarray(),depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i)).estaenelarray()){
                 JTextField asiento=new JTextField();
                 JTextField tipoasiento=new JTextField();
                 asiento.setEditable(false);

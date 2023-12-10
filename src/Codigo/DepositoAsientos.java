@@ -41,6 +41,9 @@ public class DepositoAsientos {
         return asientos.size();
     }
     public int getsizecama(){return asientoscama.size();}
+
+    public ArrayList getasientosarray(){return asientos;}
+    public ArrayList getasientoscamaarray(){return asientoscama;}
 }
 
 
