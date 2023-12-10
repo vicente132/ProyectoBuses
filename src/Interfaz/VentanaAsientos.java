@@ -152,6 +152,10 @@ public class VentanaAsientos extends Ventana{
 
         }
 
+
+
+
+
         JTextField origen=new JTextField("Origen");
         origen.setBounds(200,200,115,30);
         origen.setEditable(false);

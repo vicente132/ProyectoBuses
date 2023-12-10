@@ -37,6 +37,8 @@ public class DepositoAsientos {
     public void quitarasiento(Asiento asiento){asientos.remove(asiento);}
     public void addasientocama(Asiento asiento){asientoscama.add(asiento);}
     public void quitarasientocama(Asiento asiento){asientoscama.remove(asiento);}
+
+
     public int getsize(){
         return asientos.size();
     }

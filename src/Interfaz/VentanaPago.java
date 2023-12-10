@@ -132,7 +132,7 @@ public class VentanaPago extends Ventana {
             //asientos semicama
         for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getsize();i++){
 
-            if(new BusquedaArray(cliente.getDepositoAsientoscliente().getasientosarray(),depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i)).estaenelarray()){
+            if(new BusquedaArray(cliente.getDepositoAsientosVuelta().getasientosarray(),depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(i)).estaenelarray()){
                 JTextField asiento=new JTextField();
                 JTextField tipoasiento=new JTextField();
                 asiento.setEditable(false);
@@ -149,9 +149,10 @@ public class VentanaPago extends Ventana {
 
             }
         }
+            //asientos cama
         for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getsizecama();i++){
 
-            if(!depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(i).getestado()){
+            if(new BusquedaArray(cliente.getDepositoAsientosVuelta().getasientoscamaarray(),depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(i)).estaenelarray()){
 
                 JTextField asiento=new JTextField();
                 JTextField tipoasiento=new JTextField();

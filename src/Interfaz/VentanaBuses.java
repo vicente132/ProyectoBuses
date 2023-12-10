@@ -112,11 +112,11 @@ public class VentanaBuses extends Ventana {
                         && Objects.equals(depositoBuses.getBus(i).getFechaida(), cliente.getFechaorigen())
                         && Objects.equals(depositoBuses.getBus(i).getFechavuelta(),cliente.getFechavuelta())
                 ) {
-                    System.out.println("si");
+
                     ItemMenuBusesVuelta itembus = new ItemMenuBusesVuelta(horasalidavuelta,tipobusvuelta,numerobusvuelta,cliente, depositoBuses.getBus(i));
                     opcionesbusesvuelta.add(itembus.getItem());
                 }
-                else{System.out.println("no");}
+
             }
         }
 

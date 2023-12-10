@@ -51,35 +51,37 @@ public class VentanaAsientos2 extends Ventana{
 
 
         if(Objects.equals(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).gettipo(), "Bus de 1 piso")) {
-            System.out.println("bus de 1 piso");
             for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getsize();i++){
+                /**
+                 *  inicializacion de botones y arreglo en el nombre
+                 */
+
                 JButton asiento;
                 int finalI1 = i;
-                if(i<10){
-                    asiento = new JButton("0" + Integer.toString(i));
-
-                }
-                else {
-                    asiento = new JButton(Integer.toString(i));
-                }
+                if(i<10){asiento = new JButton("0" + Integer.toString(i));} else {asiento = new JButton(Integer.toString(i));}
                 asiento.setPreferredSize(new Dimension(60,40));
+
+                /**
+                 * Color de los botones
+                 */
+
                 if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).getestado()){
                     asiento.setBackground(Color.GREEN);
-                }
-                else{
-                    asiento.setBackground(Color.RED);
+                } else{asiento.setBackground(Color.RED);}
 
-                }
+
                 asiento.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).getestado()){
                             depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).setestado(false);
                             asiento.setBackground(Color.RED);
+                            cliente.getDepositoAsientosVuelta().addasiento(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1));
                         }
                         else{
                             depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).setestado(true);
                             asiento.setBackground(Color.GREEN);
+                            cliente.getDepositoAsientosVuelta().quitarasiento(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1));
                         }
 
                     }
@@ -91,32 +93,29 @@ public class VentanaAsientos2 extends Ventana{
         //bus de 2 pisos
         else{
             for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getsize();i++){
+
                 JButton asiento;
                 int finalI1 = i;
-                if(i<10){
-                    asiento = new JButton("0" + Integer.toString(i));
-                }
-                else {
-                    asiento = new JButton(Integer.toString(i));
-                }
+                if(i<10){asiento = new JButton("0" + Integer.toString(i));} else {asiento = new JButton(Integer.toString(i));}
                 asiento.setPreferredSize(new Dimension(60,40));
+
                 if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).getestado()){
                     asiento.setBackground(Color.GREEN);
                 }
-                else{
-                    asiento.setBackground(Color.RED);
+                else{asiento.setBackground(Color.RED);}
 
-                }
                 asiento.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).getestado()){
                             depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).setestado(false);
                             asiento.setBackground(Color.RED);
+                            cliente.getDepositoAsientosVuelta().addasiento(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1));
                         }
                         else{
                             depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1).setestado(true);
                             asiento.setBackground(Color.GREEN);
+                            cliente.getDepositoAsientosVuelta().quitarasiento(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(finalI1));
                         }
 
                     }
@@ -125,6 +124,7 @@ public class VentanaAsientos2 extends Ventana{
             }
 
             for(int i=0;i<8;i++){
+
                 int finalI1 = i;
                 JButton asiento;
                 asiento=new JButton(Integer.toString(i+13));
@@ -132,11 +132,9 @@ public class VentanaAsientos2 extends Ventana{
 
                 if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(finalI1).getestado()){
                     asiento.setBackground(Color.GREEN);
-                }
-                else{
-                    asiento.setBackground(Color.RED);
-                    asiento.setEnabled(false);
-                }
+                } else{asiento.setBackground(Color.RED);}
+
+
                 asiento.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -144,10 +142,12 @@ public class VentanaAsientos2 extends Ventana{
                         if(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(finalI1).getestado()){
                             depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(finalI1).setestado(false);
                             asiento.setBackground(Color.RED);
+                            cliente.getDepositoAsientosVuelta().addasientocama(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(finalI1));
                         }
                         else{
                             depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(finalI1).setestado(true);
                             asiento.setBackground(Color.GREEN);
+                            cliente.getDepositoAsientosVuelta().quitarasientocama(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(finalI1));
                         }
                     }
                 });
