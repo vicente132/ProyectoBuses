@@ -8,6 +8,9 @@ public class Cliente {
     private String destino;
     private String fechaorigen;
     private String fechavuelta;
+    private String horasalida;
+
+
 
     public String getOrigen(){
         return origen;
@@ -15,9 +18,11 @@ public class Cliente {
     public String getDestino(){
         return destino;
     };
+    public String getFechaorigen(){return fechaorigen;}
+    public String getFechavuelta(){return fechavuelta;}
+    public String getHorasalida(){return horasalida;}
 
-
-
+    public void sethorasalida(String horaslida){this.horasalida=horaslida;}
     public void setRut(int rut) {
         this.rut = rut;
     }

@@ -53,7 +53,7 @@ public class VentanaBuses extends Ventana {
             fechavuelta.setVisible(true);
         }
 
-        JTextField numerobus=new JTextField("0");
+        JTextField numerobus=new JTextField("");
         numerobus.setBounds(200,360,115,30);
         fechavuelta.setEditable(false);
         fondo.add(numerobus);
@@ -68,7 +68,7 @@ public class VentanaBuses extends Ventana {
                         && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())
                         && Objects.equals(depositoBuses.getBus(i).getFechavuelta(), mostrarfechavuelta.getText())
                 ) {
-                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses);
+                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses,cliente);
                     opcionesbuses.add(itembus.getItem());
                 }
             }
@@ -79,7 +79,7 @@ public class VentanaBuses extends Ventana {
                         && Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText())
                         && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())
                 ) {
-                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida,depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses);
+                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida,depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses,cliente);
                     opcionesbuses.add(itembus.getItem());
                 }
             }

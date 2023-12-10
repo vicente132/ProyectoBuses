@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Objects;
 
 public class VentanaPago extends Ventana {
@@ -27,6 +28,7 @@ public class VentanaPago extends Ventana {
 
         this.cliente=cliente;
         this.depositoBuses=this.depositoBuses=DepositoBuses.getInstancia("deposito1");
+
         JTextField origen=new JTextField("Origen");
         origen.setBounds(200,200,115,30);
         origen.setEditable(false);
@@ -42,12 +44,38 @@ public class VentanaPago extends Ventana {
         horasalida.setEditable(false);
         fondo.add(horasalida);
 
+        JTextField fechaida=new JTextField("fecha de ida");
+        fechaida.setBounds(200,320,115,30);
+        fechaida.setEditable(false);
+        fondo.add(fechaida);
+
+        JTextField fechavuelta=new JTextField("fecha vuelta");
+        fechavuelta.setBounds(200,360,115,30);
+        fechavuelta.setEditable(false);
+        fechavuelta.setVisible(false);
+        fondo.add(fechavuelta);
+
+        if(mostrarfechavuelta.isVisible()){
+            fechavuelta.setVisible(true);
+        }
+
+
+        origen.setText(cliente.getOrigen());
+        destino.setText(cliente.getDestino());
+        horasalida.setText(cliente.getHorasalida());
+        fechaida.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getFechaida());
+
+
+
+
         for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();i++){
 
             if(!depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).getestado()){
                 System.out.println(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).gettipo());
                 JTextField asiento=new JTextField();
                 JTextField tipoasiento=new JTextField();
+                asiento.setEditable(false);
+                tipoasiento.setEditable(false);
 
                 asiento.setText(String.valueOf(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).getnumero()-1));
                 tipoasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).gettipo());
@@ -67,6 +95,8 @@ public class VentanaPago extends Ventana {
                 System.out.println(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(i).gettipo());
                 JTextField asiento=new JTextField();
                 JTextField tipoasiento=new JTextField();
+                asiento.setEditable(false);
+                tipoasiento.setEditable(false);
 
                 asiento.setText(String.valueOf(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(i).getnumero()-1));
                 tipoasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(i).gettipo());
