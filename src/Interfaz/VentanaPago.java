@@ -1,11 +1,15 @@
 package Interfaz;
 import Codigo.BusquedaArray;
 import Codigo.Cliente;
+import Codigo.DepositoBotonesAsientos;
 import Codigo.DepositoBuses;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class VentanaPago extends Ventana {
@@ -13,10 +17,12 @@ public class VentanaPago extends Ventana {
     private JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
+    private Icon imagenocupado=new ImageIcon("imagenes/asientoocupado.jpg");
     private Cliente cliente;
     private DepositoBuses depositoBuses;
 
-    public VentanaPago(Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,JTextField numerobus,JTextField numerobusvuelta){
+    public VentanaPago(Cliente cliente, JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida,
+                       JTextField mostrarfechavuelta, JTextField numerobus, JTextField numerobusvuelta, DepositoBotonesAsientos depositobotones){
         this.setTitle("Horario Buses");
         this.setContentPane(fondo);
         fondo.setIcon(imagenfondo);
@@ -171,9 +177,6 @@ public class VentanaPago extends Ventana {
             }
         }
 
-
-
-
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
         volver.setIcon(imagenbotonvolver);
@@ -182,7 +185,7 @@ public class VentanaPago extends Ventana {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if(mostrarfechavuelta.isVisible()){super.mouseClicked(e);
-                    Ventana ventanaasientos2=new VentanaAsientos2(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobusvuelta,numerobus);
+                    Ventana ventanaasientos2=new VentanaAsientos2(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobusvuelta,numerobus,depositobotones);
                     ventanaasientos2.setVisible(true);
                     dispose();
                 }
@@ -205,6 +208,11 @@ public class VentanaPago extends Ventana {
                 dispose();
                 Ventana ventanalisto=new VentanaListo();
                 ventanalisto.setVisible(true);
+                for(int i=0;i<depositobotones.getdepositobotonesasiento().size();i++){
+                    if(Objects.equals(depositobotones.getboton(i).getIcon(), imagenocupado)){
+                        depositobotones.getboton(i).setEnabled(false);
+                    }
+                }
             }
         });
 

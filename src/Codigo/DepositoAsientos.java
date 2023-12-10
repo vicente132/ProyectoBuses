@@ -5,9 +5,6 @@ import java.util.Random;
 public class DepositoAsientos {
     private ArrayList<Asiento> asientos;
     private ArrayList<Asiento> asientoscama;
-    private Random numerofilas=new Random();
-    private int filas;
-
     public DepositoAsientos(){
         asientoscama=new ArrayList<>();
         asientos=new ArrayList<>();

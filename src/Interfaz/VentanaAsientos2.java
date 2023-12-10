@@ -1,5 +1,6 @@
 package Interfaz;
 import Codigo.Cliente;
+import Codigo.DepositoBotonesAsientos;
 import Codigo.DepositoBuses;
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +18,8 @@ public class VentanaAsientos2 extends Ventana{
     private JLabel primerpiso=new JLabel();
     private JLabel segundopiso=new JLabel();
 
-    public VentanaAsientos2(Cliente cliente, JTextField origenbus,JTextField destinobus,JTextField mostrarfechaida,JTextField mostrarfechavuelta,JTextField numerobusvuelta,JTextField numerobus){
+    public VentanaAsientos2(Cliente cliente, JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida,
+                            JTextField mostrarfechavuelta, JTextField numerobusvuelta, JTextField numerobus, DepositoBotonesAsientos depositoasientos){
         super();
         this.cliente=cliente;
 
@@ -180,7 +182,7 @@ public class VentanaAsientos2 extends Ventana{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                VentanaPago ventanapago=new VentanaPago(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus,numerobusvuelta);
+                VentanaPago ventanapago=new VentanaPago(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus,numerobusvuelta,depositoasientos);
                 ventanapago.setVisible(true);
 
                 for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();i++){
