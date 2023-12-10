@@ -173,5 +173,27 @@ public class VentanaAsientos2 extends Ventana{
                 dispose();}});
 
 
+        JButton siguiente=new JButton("Siguiente");
+        siguiente.setBounds(900,600,200,50);
+        fondo.add(siguiente);
+        siguiente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                VentanaPago ventanapago=new VentanaPago(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus,numerobusvuelta);
+                ventanapago.setVisible(true);
+
+                for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();i++){
+                    if(!depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).getestado()){
+                        depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).setestado(false);
+                    }
+                }
+                for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsizecama();i++){
+                    if(!depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(i).getestado()){
+                        depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(i).setestado(false);
+                    }
+                }
+            }
+        });
     }
 }

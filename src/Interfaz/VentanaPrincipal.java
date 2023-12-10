@@ -32,10 +32,13 @@ public class VentanaPrincipal extends Ventana{
         planificar.addMouseListener(new EscucharMouse() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                dispose();
+
                 super.mouseClicked(e);
                 VentanaPlanificar ventanaplanificar=new VentanaPlanificar(cliente);
-                ventanaplanificar.setVisible(true);}});
+                ventanaplanificar.setVisible(true);
+                dispose();
+            }
+        });
 
 
 

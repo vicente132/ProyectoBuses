@@ -206,7 +206,7 @@ public class VentanaAsientos extends Ventana{
 
 
                 else {
-                    VentanaPago ventanapago=new VentanaPago(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus);
+                    VentanaPago ventanapago=new VentanaPago(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus,numerobusvuelta);
                     ventanapago.setVisible(true);
 
                     for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();i++){

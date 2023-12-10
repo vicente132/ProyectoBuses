@@ -17,7 +17,7 @@ public class VentanaPago extends Ventana {
     private Cliente cliente;
     private DepositoBuses depositoBuses;
 
-    public VentanaPago(Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,JTextField numerobus){
+    public VentanaPago(Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,JTextField numerobus,JTextField numerobusvuelta){
         this.setTitle("Horario Buses");
         this.setContentPane(fondo);
         fondo.setIcon(imagenfondo);
@@ -109,6 +109,30 @@ public class VentanaPago extends Ventana {
 
             }
         }
+
+        JButton volver=new JButton("volver");
+        volver.setBounds(10,10,200,100);
+        volver.setIcon(imagenbotonvolver);
+        fondo.add(volver);
+        volver.addMouseListener(new EscucharMouse() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                if(mostrarfechavuelta.isVisible()){super.mouseClicked(e);
+                    Ventana ventanaasientos2=new VentanaAsientos2(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobusvuelta,numerobus);
+                    ventanaasientos2.setVisible(true);
+                    dispose();
+                }
+                else{
+                    dispose();
+                    VentanaAsientos ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,mostrarfechavuelta,numerobus);
+                    ventanaAsientos.setVisible(true);
+                }
+
+
+            }
+        }
+        );
 
 
 
