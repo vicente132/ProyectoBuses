@@ -34,31 +34,30 @@ public class VentanaPago extends Ventana {
         origen.setEditable(false);
         fondo.add(origen);
 
-        JTextField origenvuelta=new JTextField(cliente.getDestino());
-        origenvuelta.setBounds(335,200,115,30);
-        origenvuelta.setEditable(false);
-        origenvuelta.setVisible(false);
-        fondo.add(origenvuelta);
-
         JTextField destino=new JTextField(cliente.getDestino());
         destino.setBounds(200,240,115,30);
         destino.setEditable(false);
         fondo.add(destino);
-
-        JTextField destinovuelta=new JTextField(cliente.getOrigen());
-        destinovuelta.setBounds(335,240,115,30);
-        destinovuelta.setEditable(false);
-        destinovuelta.setVisible(false);
-        fondo.add(destinovuelta);
-
 
         JTextField horasalida=new JTextField(String.valueOf(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getHorasalida())+":00");
         horasalida.setBounds(200,280,115,30);
         horasalida.setEditable(false);
         fondo.add(horasalida);
 
-        JTextField horasalidavuelta=new JTextField(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getHorasalida());
-        horasalidavuelta.setBounds(335,280,115,30);
+        JTextField origenvuelta=new JTextField(cliente.getDestino());
+        origenvuelta.setBounds(200,440,115,30);
+        origenvuelta.setEditable(false);
+        origenvuelta.setVisible(false);
+        fondo.add(origenvuelta);
+
+        JTextField destinovuelta=new JTextField(cliente.getOrigen());
+        destinovuelta.setBounds(200,480,115,30);
+        destinovuelta.setEditable(false);
+        destinovuelta.setVisible(false);
+        fondo.add(destinovuelta);
+
+        JTextField horasalidavuelta=new JTextField(String.valueOf(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getHorasalida())+":00");
+        horasalidavuelta.setBounds(200,520,115,30);
         horasalidavuelta.setEditable(false);
         horasalidavuelta.setVisible(false);
         fondo.add(horasalidavuelta);
@@ -69,7 +68,7 @@ public class VentanaPago extends Ventana {
         fechaida.setEditable(false);
         fondo.add(fechaida);
 
-        JTextField fechavuelta=new JTextField(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getFechaida());
+        JTextField fechavuelta=new JTextField(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getFechavuelta());
         fechavuelta.setBounds(200,360,115,30);
         fechavuelta.setEditable(false);
         fechavuelta.setVisible(false);
@@ -98,8 +97,8 @@ public class VentanaPago extends Ventana {
                 asiento.setText(String.valueOf(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).getnumero()-1));
                 tipoasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).gettipo());
 
-                asiento.setBounds(400,240+40*i,115,30);
-                tipoasiento.setBounds(530,240+40*i,115,30);
+                asiento.setBounds(380,200+40*i,115,30);
+                tipoasiento.setBounds(510,200+40*i,115,30);
 
                 fondo.add(asiento);
                 fondo.add(tipoasiento);
@@ -118,14 +117,55 @@ public class VentanaPago extends Ventana {
                 asiento.setText(String.valueOf(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(i).getnumero()-1));
                 tipoasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(i).gettipo());
 
-                asiento.setBounds(655,240+40*i,115,30);
-                tipoasiento.setBounds(785,240+40*i,115,30);
+                asiento.setBounds(635,200+40*i,115,30);
+                tipoasiento.setBounds(765,200+40*i,115,30);
 
                 fondo.add(asiento);
                 fondo.add(tipoasiento);
 
             }
         }
+
+        for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getsize();i++){
+
+            if(!depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(i).getestado()){
+                JTextField asiento=new JTextField();
+                JTextField tipoasiento=new JTextField();
+                asiento.setEditable(false);
+                tipoasiento.setEditable(false);
+
+                asiento.setText(String.valueOf(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(i).getnumero()-1));
+                tipoasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsiento(i).gettipo());
+
+                asiento.setBounds(380,440+40*i,115,30);
+                tipoasiento.setBounds(510,440+40*i,115,30);
+
+                fondo.add(asiento);
+                fondo.add(tipoasiento);
+
+            }
+        }
+        for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getsizecama();i++){
+
+            if(!depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(i).getestado()){
+
+                JTextField asiento=new JTextField();
+                JTextField tipoasiento=new JTextField();
+                asiento.setEditable(false);
+                tipoasiento.setEditable(false);
+
+                asiento.setText(String.valueOf(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(i).getnumero()-1));
+                tipoasiento.setText(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getasientos().getAsientocama(i).gettipo());
+
+                asiento.setBounds(635,440+40*i,115,30);
+                tipoasiento.setBounds(765,440+40*i,115,30);
+
+                fondo.add(asiento);
+                fondo.add(tipoasiento);
+
+            }
+        }
+
 
 
 
