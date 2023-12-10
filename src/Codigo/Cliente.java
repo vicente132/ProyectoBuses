@@ -11,6 +11,11 @@ public class Cliente {
     private String horasalida;
     private String origenvuelta;
     private String destinovuelta;
+    private DepositoAsientos depositoAsientoscliente;
+
+    public Cliente(){
+        depositoAsientoscliente=new DepositoAsientos();
+    }
 
 
 
@@ -25,8 +30,7 @@ public class Cliente {
     public String getHorasalida(){return horasalida;}
     public String getOrigenvuelta(){return origenvuelta;}
     public String getDestinovuelta(){return destinovuelta;}
-
-
+    public DepositoAsientos getDepositoAsientoscliente(){return depositoAsientoscliente;}
 
 
 

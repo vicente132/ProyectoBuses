@@ -26,7 +26,6 @@ public class DepositoAsientos {
             asientos.add(asiento);
         }
     }
-
     public void llenar2piso(){
         for(int i=14;i<22;i++){
             AsientoCama asientocama=new AsientoCama(i);
@@ -34,6 +33,10 @@ public class DepositoAsientos {
         }
     }
 
+    public void addasiento(Asiento asiento){asientos.add(asiento);}
+    public void quitarasiento(Asiento asiento){asientos.remove(asiento);}
+    public void addasientocama(Asiento asiento){asientoscama.add(asiento);}
+    public void quitarasientocama(Asiento asiento){asientoscama.remove(asiento);}
     public int getsize(){
         return asientos.size();
     }
