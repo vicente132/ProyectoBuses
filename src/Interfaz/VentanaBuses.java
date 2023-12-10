@@ -30,22 +30,28 @@ public class VentanaBuses extends Ventana {
         this.setVisible(true);
 
         JTextField horasalida=new JTextField("Hora salida");
-        horasalida.setBounds(200,200,115,30);
+        horasalida.setBounds(500,200,115,30);
         horasalida.setEditable(false);
         fondo.add(horasalida);
 
+
+
         JTextField tipobus=new JTextField("Tipo de bus");
-        tipobus.setBounds(200,240,115,30);
+        tipobus.setBounds(500,240,115,30);
         tipobus.setEditable(false);
         fondo.add(tipobus);
 
+
+
         JTextField fechaida=new JTextField("fecha ida");
-        fechaida.setBounds(200,280,115,30);
+        fechaida.setBounds(500,280,115,30);
         fechaida.setEditable(false);
         fondo.add(fechaida);
 
+
+
         JTextField fechavuelta=new JTextField("Fecha vuelta");
-        fechavuelta.setBounds(200,320,115,30);
+        fechavuelta.setBounds(500,320,115,30);
         fechavuelta.setEditable(false);
         fechavuelta.setVisible(false);
         fondo.add(fechavuelta);
@@ -53,10 +59,13 @@ public class VentanaBuses extends Ventana {
             fechavuelta.setVisible(true);
         }
 
+
         JTextField numerobus=new JTextField("0");
-        numerobus.setBounds(200,360,115,30);
+        numerobus.setBounds(500,360,115,30);
         fechavuelta.setEditable(false);
         fondo.add(numerobus);
+
+
 
 
 
@@ -72,28 +81,29 @@ public class VentanaBuses extends Ventana {
         }
 
 
+        JMenuBar barrabusesvuelta=new JMenuBar();
+        barrabusesvuelta.setBounds(135,200,115,30);
+        fondo.add(barrabusesvuelta);
+        barrabusesvuelta.setVisible(false);
+
         JMenu opcionesbusesvuelta=new JMenu("Buses Disponibles vuelta");
         if(mostrarfechavuelta.isVisible()){
-            JMenuBar barrabusesvuelta=new JMenuBar();
-            barrabusesvuelta.setBounds(135,200,115,30);
-            fondo.add(barrabusesvuelta);
-            barrabusesvuelta.add(opcionesbusesvuelta);
+            barrabusesvuelta.setVisible(true);
             for (int i = 0; i < depositoBuses.getsize(); i++) {
-                System.out.println(depositoBuses.getBus(i).getDestino()+cliente.getDestino());
-                System.out.println(depositoBuses.getBus(i).getOrigen()+cliente.getOrigen());
                 if (Objects.equals(depositoBuses.getBus(i).getDestino(), cliente.getOrigenvuelta())
                         && Objects.equals(depositoBuses.getBus(i).getOrigen(), cliente.getDestinovuelta())
                         && Objects.equals(depositoBuses.getBus(i).getFechaida(), cliente.getFechaorigen())
                         && Objects.equals(depositoBuses.getBus(i).getFechavuelta(),cliente.getFechavuelta())
                 ) {
-
+                    System.out.println("si");
                     ItemMenuBuses itembus = new ItemMenuBuses(horasalida, depositoBuses.getBus(i), tipobus, fechaida, fechavuelta, numerobus, cliente);
-                    opcionesbuses.add(itembus.getItem());
+                    opcionesbusesvuelta.add(itembus.getItem());
                 }
+                else{System.out.println("no");}
             }
         }
 
-
+        barrabusesvuelta.add(opcionesbusesvuelta);
 
 
         JMenuBar barrabuses=new JMenuBar();
@@ -122,7 +132,7 @@ public class VentanaBuses extends Ventana {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                VentanaAsientos ventanaAsientos=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus);
+                VentanaAsientos ventanaAsientos=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus,mostrarfechavuelta);
                 ventanaAsientos.setVisible(true);
             }
         });

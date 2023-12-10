@@ -121,7 +121,7 @@ public class VentanaPago extends Ventana {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                Ventana ventananueva=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus);
+                Ventana ventananueva=new VentanaAsientos(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus,mostrarfechavuelta);
                 ventananueva.setVisible(true);
                 dispose();
 
