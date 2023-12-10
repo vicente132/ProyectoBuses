@@ -29,27 +29,47 @@ public class VentanaPago extends Ventana {
         this.cliente=cliente;
         this.depositoBuses=this.depositoBuses=DepositoBuses.getInstancia("deposito1");
 
-        JTextField origen=new JTextField("Origen");
+        JTextField origen=new JTextField(cliente.getOrigen());
         origen.setBounds(200,200,115,30);
         origen.setEditable(false);
         fondo.add(origen);
 
-        JTextField destino=new JTextField("Destino");
+        JTextField origenvuelta=new JTextField(cliente.getDestino());
+        origenvuelta.setBounds(335,200,115,30);
+        origenvuelta.setEditable(false);
+        origenvuelta.setVisible(false);
+        fondo.add(origenvuelta);
+
+        JTextField destino=new JTextField(cliente.getDestino());
         destino.setBounds(200,240,115,30);
         destino.setEditable(false);
         fondo.add(destino);
 
-        JTextField horasalida=new JTextField("Hora de salida");
+        JTextField destinovuelta=new JTextField(cliente.getOrigen());
+        destinovuelta.setBounds(335,240,115,30);
+        destinovuelta.setEditable(false);
+        destinovuelta.setVisible(false);
+        fondo.add(destinovuelta);
+
+
+        JTextField horasalida=new JTextField(String.valueOf(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getHorasalida())+":00");
         horasalida.setBounds(200,280,115,30);
         horasalida.setEditable(false);
         fondo.add(horasalida);
 
-        JTextField fechaida=new JTextField("fecha de ida");
+        JTextField horasalidavuelta=new JTextField(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getHorasalida());
+        horasalidavuelta.setBounds(335,280,115,30);
+        horasalidavuelta.setEditable(false);
+        horasalidavuelta.setVisible(false);
+        fondo.add(horasalidavuelta);
+
+
+        JTextField fechaida=new JTextField(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getFechaida());
         fechaida.setBounds(200,320,115,30);
         fechaida.setEditable(false);
         fondo.add(fechaida);
 
-        JTextField fechavuelta=new JTextField("fecha vuelta");
+        JTextField fechavuelta=new JTextField(depositoBuses.getBus(Integer.parseInt(numerobusvuelta.getText())).getFechaida());
         fechavuelta.setBounds(200,360,115,30);
         fechavuelta.setEditable(false);
         fechavuelta.setVisible(false);
@@ -57,12 +77,11 @@ public class VentanaPago extends Ventana {
 
         if(mostrarfechavuelta.isVisible()){
             fechavuelta.setVisible(true);
+            destinovuelta.setVisible(true);
+            origenvuelta.setVisible(true);
+            horasalidavuelta.setVisible(true);
         }
 
-
-        origen.setText(cliente.getOrigen());
-        destino.setText(cliente.getDestino());
-        horasalida.setText(cliente.getHorasalida());
         fechaida.setText(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getFechaida());
 
 
@@ -71,7 +90,6 @@ public class VentanaPago extends Ventana {
         for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();i++){
 
             if(!depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).getestado()){
-                System.out.println(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsiento(i).gettipo());
                 JTextField asiento=new JTextField();
                 JTextField tipoasiento=new JTextField();
                 asiento.setEditable(false);
@@ -88,11 +106,10 @@ public class VentanaPago extends Ventana {
 
             }
         }
-
         for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsizecama();i++){
 
             if(!depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(i).getestado()){
-                System.out.println(depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getAsientocama(i).gettipo());
+
                 JTextField asiento=new JTextField();
                 JTextField tipoasiento=new JTextField();
                 asiento.setEditable(false);
@@ -109,6 +126,8 @@ public class VentanaPago extends Ventana {
 
             }
         }
+
+
 
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
