@@ -23,6 +23,7 @@ public class VentanaAsientos2 extends Ventana{
         super();
         this.cliente=cliente;
 
+
         this.depositoBuses=DepositoBuses.getInstancia("deposito1");
         this.setTitle("Seleccion Asientos Vuelta");
         this.setContentPane(fondo);fondo.setIcon(imagenfondo);fondo.setLayout(null);this.setResizable(false);this.setDefaultCloseOperation(EXIT_ON_CLOSE);

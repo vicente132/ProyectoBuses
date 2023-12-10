@@ -23,11 +23,9 @@ public class VentanaAsientos extends Ventana{
     private DepositoBotonesAsientos depositoBotonesAsientos=new DepositoBotonesAsientos();
 
 
-
     public VentanaAsientos(JTextField numerobusvuelta,Cliente cliente,JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta,JTextField mostrarfechvuelta,JTextField numerobus){
         super();
         this.cliente=cliente;
-
 
         this.depositoBuses=DepositoBuses.getInstancia("deposito1");
         this.setTitle("Seleccion Asientos");
@@ -200,11 +198,6 @@ public class VentanaAsientos extends Ventana{
         siguiente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for(int i=0;i<cliente.getDepositoAsientoscliente().getsize();i++){
-                    if(!cliente.getDepositoAsientoscliente().getAsiento(i).getestado()){
-                        depositoBotonesAsientos.getboton(i).setEnabled(false);
-                    }
-                }
                 dispose();
 
                 for(int i=0;i<depositoBuses.getBus(Integer.parseInt(numerobus.getText())).getasientos().getsize();i++){

@@ -185,11 +185,13 @@ public class VentanaPago extends Ventana {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if(mostrarfechavuelta.isVisible()){super.mouseClicked(e);
+
                     Ventana ventanaasientos2=new VentanaAsientos2(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobusvuelta,numerobus,depositobotones);
                     ventanaasientos2.setVisible(true);
                     dispose();
                 }
                 else{
+
                     dispose();
                     VentanaAsientos ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,mostrarfechavuelta,numerobus);
                     ventanaAsientos.setVisible(true);
@@ -209,7 +211,11 @@ public class VentanaPago extends Ventana {
                 Ventana ventanalisto=new VentanaListo();
                 ventanalisto.setVisible(true);
 
-
+                for(int i=0;i<cliente.getDepositoAsientoscliente().getsize()-1;i++){
+                    if(!cliente.getDepositoAsientoscliente().getAsiento(i).getestado()){
+                        depositobotones.getboton(i).setEnabled(false);
+                    }
+                }
             }
         });
 
