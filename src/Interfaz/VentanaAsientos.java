@@ -1,5 +1,4 @@
 package Interfaz;
-import Codigo.Asiento;
 import Codigo.Cliente;
 import Codigo.DepositoBuses;
 import javax.swing.*;
@@ -7,8 +6,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
-import java.awt.image.ImageObserver;
-import java.text.AttributedCharacterIterator;
 import java.util.Objects;
 
 public class VentanaAsientos extends Ventana{
@@ -267,21 +264,6 @@ public class VentanaAsientos extends Ventana{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         JButton volver=new JButton("volver");
         volver.setBounds(10,10,200,100);
         volver.setIcon(imagenbotonvolver);
@@ -293,6 +275,21 @@ public class VentanaAsientos extends Ventana{
                 Ventana ventananueva=new VentanaBuses(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta);
                 ventananueva.setVisible(true);
                 dispose();}});
+
+        JButton siguiente=new JButton("Resumen y pago");
+        siguiente.setBounds(900,600,200,50);
+        fondo.add(siguiente);
+        siguiente.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                VentanaPago ventanapago=new VentanaPago(cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus);
+                ventanapago.setVisible(true);
+            }
+        });
+
+
+
     }
 
 }
