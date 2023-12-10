@@ -53,7 +53,7 @@ public class VentanaBuses extends Ventana {
             fechavuelta.setVisible(true);
         }
 
-        JTextField numerobus=new JTextField("");
+        JTextField numerobus=new JTextField("0");
         numerobus.setBounds(200,360,115,30);
         fechavuelta.setEditable(false);
         fondo.add(numerobus);
@@ -61,29 +61,39 @@ public class VentanaBuses extends Ventana {
 
 
         JMenu opcionesbuses=new JMenu("Buses Disponibles");
-        if(mostrarfechavuelta.isVisible()) {
+        for (int i = 0; i < depositoBuses.getsize(); i++) {
+            if (Objects.equals(depositoBuses.getBus(i).getOrigen(), cliente.getOrigen())
+                    && Objects.equals(depositoBuses.getBus(i).getDestino(), cliente.getDestino())
+                    && Objects.equals(depositoBuses.getBus(i).getFechaida(), cliente.getFechaorigen())
+            ) {
+                ItemMenuBuses itembus = new ItemMenuBuses(horasalida, depositoBuses.getBus(i), tipobus, fechaida, fechavuelta, numerobus, cliente);
+                opcionesbuses.add(itembus.getItem());
+            }
+        }
+
+
+        JMenu opcionesbusesvuelta=new JMenu("Buses Disponibles vuelta");
+        if(mostrarfechavuelta.isVisible()){
+            JMenuBar barrabusesvuelta=new JMenuBar();
+            barrabusesvuelta.setBounds(135,200,115,30);
+            fondo.add(barrabusesvuelta);
+            barrabusesvuelta.add(opcionesbusesvuelta);
             for (int i = 0; i < depositoBuses.getsize(); i++) {
-                if (Objects.equals(depositoBuses.getBus(i).getOrigen(), origenbus.getText())
-                        && Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText())
-                        && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())
-                        && Objects.equals(depositoBuses.getBus(i).getFechavuelta(), mostrarfechavuelta.getText())
+                System.out.println(depositoBuses.getBus(i).getDestino()+cliente.getDestino());
+                System.out.println(depositoBuses.getBus(i).getOrigen()+cliente.getOrigen());
+                if (Objects.equals(depositoBuses.getBus(i).getDestino(), cliente.getOrigenvuelta())
+                        && Objects.equals(depositoBuses.getBus(i).getOrigen(), cliente.getDestinovuelta())
+                        && Objects.equals(depositoBuses.getBus(i).getFechaida(), cliente.getFechaorigen())
+                        && Objects.equals(depositoBuses.getBus(i).getFechavuelta(),cliente.getFechavuelta())
                 ) {
-                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida, depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses,cliente);
+
+                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida, depositoBuses.getBus(i), tipobus, fechaida, fechavuelta, numerobus, cliente);
                     opcionesbuses.add(itembus.getItem());
                 }
             }
         }
-        else{
-            for (int i = 0; i < depositoBuses.getsize(); i++) {
-                if (Objects.equals(depositoBuses.getBus(i).getOrigen(), origenbus.getText())
-                        && Objects.equals(depositoBuses.getBus(i).getDestino(), destinobus.getText())
-                        && Objects.equals(depositoBuses.getBus(i).getFechaida(), mostrarfechaida.getText())
-                ) {
-                    ItemMenuBuses itembus = new ItemMenuBuses(horasalida,depositoBuses.getBus(i), tipobus,fechaida,fechavuelta,numerobus,depositoBuses,cliente);
-                    opcionesbuses.add(itembus.getItem());
-                }
-            }
-        }
+
+
 
 
         JMenuBar barrabuses=new JMenuBar();

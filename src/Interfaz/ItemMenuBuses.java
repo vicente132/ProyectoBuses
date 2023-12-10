@@ -15,7 +15,7 @@ public class ItemMenuBuses{
     private JMenuItem opcion;
     private String nombre;
 
-    public ItemMenuBuses(JTextField horasalida, Bus bus, JTextField tipobus, JTextField fechaida, JTextField fechavuelta, JTextField numerobus, DepositoBuses depositobuses,Cliente cliente){
+    public ItemMenuBuses(JTextField horasalida, Bus bus, JTextField tipobus, JTextField fechaida, JTextField fechavuelta, JTextField numerobus,Cliente cliente){
         this.opcion=new JMenuItem();
         this.cliente=cliente;
         nombre="Bus "+bus.getSerie()+" Hora salida:"+String.valueOf(bus.getHorasalida()+":00");
@@ -32,6 +32,9 @@ public class ItemMenuBuses{
                 numerobus.setText(String.valueOf(bus.getSerie()));
 
                 cliente.sethorasalida(bus.getHorasalida()+":00");
+                cliente.setOrigen(bus.getOrigen());
+                cliente.setDestino(bus.getDestino());
+
 
             }
         });

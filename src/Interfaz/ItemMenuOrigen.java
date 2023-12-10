@@ -19,6 +19,7 @@ public class ItemMenuOrigen {
             public void actionPerformed(ActionEvent e) {
                 seleccion.setText(opcion.getText());
                 cliente.setOrigen(opcion.getText());
+                cliente.setDestinovuelta(opcion.getText());
             }
         });
     }
