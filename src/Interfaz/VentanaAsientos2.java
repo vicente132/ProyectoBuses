@@ -171,7 +171,7 @@ public class VentanaAsientos2 extends Ventana{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                Ventana ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,mostrarfechavuelta,numerobus);
+                Ventana ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus);
                 ventanaAsientos.setVisible(true);
                 dispose();}});
 

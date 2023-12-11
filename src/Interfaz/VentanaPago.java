@@ -241,7 +241,7 @@ public class VentanaPago extends Ventana {
                 else{
 
                     dispose();
-                    VentanaAsientos ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,mostrarfechavuelta,numerobus);
+                    VentanaAsientos ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus);
                     ventanaAsientos.setVisible(true);
                 }
             }

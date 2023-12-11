@@ -149,7 +149,7 @@ public class VentanaBuses extends Ventana {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                VentanaAsientos ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,mostrarfechavuelta,numerobus);
+                VentanaAsientos ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus);
                 ventanaAsientos.setVisible(true);
             }
         });

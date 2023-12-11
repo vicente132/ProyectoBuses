@@ -1,7 +1,11 @@
 package Interfaz;
-import Codigo.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
+/**
+ * Metodo generico de un MousListener
+ * @author vicente132
+ */
 abstract public class EscucharMouse implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
