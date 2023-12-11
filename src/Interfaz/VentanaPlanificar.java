@@ -32,7 +32,8 @@ public class VentanaPlanificar extends Ventana{
         /**
          * Configuración de la VentanaPlanificar, titulo, fondo, layout, setvisible, setbounds
          * setresizeable=false para evitar problemas de dimension de la imagen de fondo
-         *
+         * @author vicente132
+         * @version version 1
          */
         this.cliente=cliente;
         this.setTitle("Ventana Planificar");

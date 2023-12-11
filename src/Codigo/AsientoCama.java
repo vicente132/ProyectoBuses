@@ -12,6 +12,8 @@ public class AsientoCama extends Asiento{
         this.numero=numero;
     }
 
+    public int getprecio(){return precio;}
+
     @Override
     public void paint(Graphics g) {
         g.setColor(Color.gray);

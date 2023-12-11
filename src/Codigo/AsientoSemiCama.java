@@ -11,7 +11,7 @@ public class AsientoSemiCama extends Asiento{
         this.numero=numero;
         
     }
-
+    public int getprecio(){return precio;}
     public void paint(Graphics g){
         g.setColor(Color.GREEN);
         g.fillRect(500,250,100,20);
