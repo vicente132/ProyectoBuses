@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 public class ItemMenuFechaIda {
     private Cliente cliente;
     private JMenuItem fecha;
-    private String diamesano;
+
 
     /**
      * El constructor recibe los siguientes parametros
@@ -21,7 +21,7 @@ public class ItemMenuFechaIda {
      */
     public  ItemMenuFechaIda(String diamesano,Cliente cliente,JTextField mostrarfechaida){
         this.cliente=cliente;
-        this.diamesano=diamesano;
+
         this.fecha=new JMenuItem();
 
         fecha.setText(diamesano);

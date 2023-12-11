@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class DepositoBuses {
     private static DepositoBuses instancia;
-    public String nombre;
+    private String nombre;
     private int j,k,l,m;
     private Random horasalida=new Random();
     private Random tramo=new Random();

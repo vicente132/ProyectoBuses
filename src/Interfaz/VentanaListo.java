@@ -11,9 +11,8 @@ import java.awt.event.ActionListener;
 public class VentanaListo extends Ventana{
     private JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
-    private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
-    private Cliente cliente;
-    private DepositoBuses depositoBuses;
+
+
 
     /**
      * El constructor inicia las variables, mas no hace nada con ellas pues es de "juguete"
