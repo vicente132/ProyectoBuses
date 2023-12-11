@@ -1,6 +1,9 @@
 package Interfaz;
 import Codigo.Cliente;
 import Codigo.DepositoBuses;
+import Codigo.MiHelper2;
+import Codigo.excepcioncustom;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +18,7 @@ public class VentanaBuses extends Ventana {
     private JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/FondoBuses.png");
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
-
+    private MiHelper2 h=new MiHelper2();
 
     public VentanaBuses(Cliente cliente, JTextField origenbus, JTextField destinobus, JTextField mostrarfechaida, JTextField mostrarfechavuelta){
         super();
@@ -148,6 +151,16 @@ public class VentanaBuses extends Ventana {
         siguiente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                try{
+                    h.validadatos(horasalida);
+                }catch(Codigo.excepcioncustom excepcioncustom){
+                    System.out.println(excepcioncustom.getMessage());
+
+                }
+
+
+
                 dispose();
                 VentanaAsientos ventanaAsientos=new VentanaAsientos(numerobusvuelta,cliente,origenbus,destinobus,mostrarfechaida,mostrarfechavuelta,numerobus);
                 ventanaAsientos.setVisible(true);

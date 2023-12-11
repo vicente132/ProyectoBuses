@@ -20,6 +20,7 @@ public class VentanaPlanificar extends Ventana{
     JLabel fondo=new JLabel();
     private Icon imagenfondo=new ImageIcon("imagenes/FondoDatos1.png");
     private Icon imagenbotonvolver=new ImageIcon("imagenes/ImagenBotonVolver.png");
+    private MiHelper h=new MiHelper();
 
     /**
      * Clase constructora de la VentanaPlanificar
@@ -239,6 +240,16 @@ public class VentanaPlanificar extends Ventana{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+
+
+                try{
+                    h.validadatos(selecciondestino,seleccionorigen,mostrarfechaida,mostrarfechavuelta);
+                }catch(excepcioncustom excepcioncustom){
+                    System.out.println(excepcioncustom.getMessage());
+
+                }
+
+
 
                 if(mostrarfechavuelta.isVisible()) {
                     if (!Objects.equals(selecciondestino.getText(), "")
