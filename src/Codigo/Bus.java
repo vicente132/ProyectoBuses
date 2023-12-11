@@ -2,8 +2,20 @@ package Codigo;
 
 import java.awt.*;
 
-
+/**
+ * Clase padre para los buses de 1 piso y los buses de 2 pisos
+ */
 abstract public class Bus {
+    /**
+     * Variables para la definicion de un bus
+     * serie, tipo int que sirve para identificar cada bus
+     * horasalida, int que representa la hora de salida de cada bus
+     * asientos, del tipo arraylist que representa todos los asientos que tiene el bus
+     * indextramo, int que es usado para escoger que tramo cubre el bus
+     * origen/destino, String, componen el tramo del bus
+     * fechaida/fechavuelta, String necesarios para saber en que fechas estan los buses
+     *
+     */
     int serie;
     int horasalida;
     private DepositoAsientos asientos=new DepositoAsientos();
@@ -14,6 +26,16 @@ abstract public class Bus {
     private int fechas;
     private String fechaida;
     private String fechavuelta;
+
+    /**
+     * Constructor que recibe los parametros antes descritos y los asocia a sus variables
+     * ademas recibe 2 numeros que seran usados para esocger que tramo y en que fechas estan los buses
+     * @author vicente132
+     * @param seriee
+     * @param horasalida
+     * @param type
+     * @param fechas
+     */
     public Bus(int seriee,int horasalida,int type, int fechas){
         this.serie=seriee;
         this.horasalida=horasalida;
@@ -73,24 +95,27 @@ abstract public class Bus {
         }
     }
 
+
+    /**
+     * Getters/Setters
+     * @return
+     */
     public int getSerie() {return serie;}
     public int getHorasalida(){return horasalida;}
     public String getOrigen(){return origen;}
     public String getDestino(){return destino;}
-    public int getIndextramo(){return indextramo;}
-
     public String getFechaida(){return fechaida;}
     public String getFechavuelta(){return fechavuelta;}
-    public int getFechas(){return fechas;}
-
     public DepositoAsientos getasientos(){
         return asientos;
     }
-
-
     public void setOrigen(String origen){this.origen=origen;}
     public abstract String gettipo();
 
+    /**
+     * Metodo paint que llama a la impresion de los asientos correspondientes
+     * @param g
+     */
     public void paint(Graphics g){
         for(int i=0;i<asientos.getsize();i++){
             asientos.getAsiento(i).paint(g);

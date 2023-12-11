@@ -8,7 +8,14 @@ public class BusUnPiso extends Bus{
     private String origen;
     private String destino;
 
-
+    /**
+     * Constructor que recibe como parametros todos los datos que necesita la clase padre
+     * @author vicente132
+     * @param serie
+     * @param horasalida
+     * @param type
+     * @param fechas
+     */
     public BusUnPiso(int serie,int horasalida,int type,int fechas){
         super(serie,horasalida,type,fechas);
 
@@ -17,6 +24,12 @@ public class BusUnPiso extends Bus{
         this.asientos=new DepositoAsientos();
         asientos.llenar1erpiso();
     }
+
+    /**
+     * getter
+     * @author vicente132
+     * @return
+     */
 
     public String gettipo(){
         return"Bus de 1 piso";

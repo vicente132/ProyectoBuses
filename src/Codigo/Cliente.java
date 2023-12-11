@@ -1,6 +1,14 @@
 package Codigo;
 
 public class Cliente {
+    /**
+     * Variables necesarios
+     *
+     * RUT,Nombre,Correo, datos que serian utiles si el programa siguiera mas adelante, son como de contexto
+     * origen, destino, fechaorigen,fechavuelta y horasalida son todas varaibles que son sacadas de los buses que correspondan a la seleccion del cliente
+     * depositoaientoscliente es el deposito de asientos del viaje de ida del cliente
+     * depositoasientosvuelta es el deposito de asientos del viaje de vuelta del cliente
+     */
     private int rut;
     private String nombre;
     private String correo;
@@ -14,12 +22,19 @@ public class Cliente {
     private DepositoAsientos depositoAsientoscliente;
     private DepositoAsientos depositoAsientosVuelta;
 
+    /**
+     * El constructor es basico, solo genera cada arrayList
+     */
     public Cliente(){
         depositoAsientoscliente=new DepositoAsientos();
         depositoAsientosVuelta=new DepositoAsientos();
     }
 
 
+    /**
+     * Getters/Setters
+     * @return
+     */
 
     public String getOrigen(){
         return origen;

@@ -2,6 +2,12 @@ package Codigo;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Deposito creado para almacenar todos los buses creados
+ * Es en este punto donde se usa Singleton
+ * @author vicente132
+ */
+
 public class DepositoBuses {
     private static DepositoBuses instancia;
     public String nombre;
@@ -11,7 +17,11 @@ public class DepositoBuses {
     private Random fechas=new Random();
     private ArrayList<Bus> buses;
 
-
+    /**
+     * El constructor iniciliza un arraylist y ademas recib el nombre de la instancia del singleton
+     * @author vicente132
+     * @param valor
+     */
     public DepositoBuses(String valor){
 
         this.nombre=valor;
@@ -21,6 +31,12 @@ public class DepositoBuses {
 
     }
 
+    /**
+     * El metodo tipico del singleton, recibe el nombre que tendra nuestra instancia en comun
+     * @author vicente132
+     * @param valor
+     * @return
+     */
     public static DepositoBuses getInstancia(String valor){
         if(instancia==null){
             instancia=new DepositoBuses(valor);
@@ -29,6 +45,11 @@ public class DepositoBuses {
     }
 
 
+    /**
+     * Nombre parecido a los metodos que llenan de asientos
+     * Pero estos metodos llenan de buses, de uno y dos pisos
+     * @author vicente132
+     */
     public void llenardospisos(){
         for(int i=1;i<101;i++){
             l=tramo.nextInt(6)+1;
@@ -49,23 +70,12 @@ public class DepositoBuses {
     }
 
 
+    /**
+     * Getter/Setters
+     * @return
+     */
     public int getsize(){return buses.size();}
     public Bus getBus(int i){return buses.get(i);}
 
-
-
-    //metodos para checkear que se crean correctamente los buses
-    public void horas(){
-        for(int i=0;i<buses.size();i++){
-            System.out.println(
-                    buses.get(i).getOrigen()+"\n"+
-                    buses.get(i).getDestino()+"\n"+
-                    buses.get(i).getFechaida()+"\n"+
-                    buses.get(i).getFechavuelta()+"\n"+
-                    buses.get(i).getHorasalida()+"\n"
-            );
-        }
-
-    }
 
 }
